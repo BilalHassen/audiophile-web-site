@@ -1,0 +1,27 @@
+@use "./styles/partials/text" as *;
+@use "./styles/partials/variables" as *;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Manrope;
+}
+
+ul {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+
+  &:visited,
+  &:link {
+    color: inherit;
+  }
+}
+
+textarea {
+  overflow: hidden;
+  resize: none;
+}

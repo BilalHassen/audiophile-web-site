@@ -1,8 +1,13 @@
 import { useState } from "react";
-import "./App.css";
+import "./App.scss";
 
 function App() {
-  return <></>;
+  return (
+    <>
+      <h1>hello</h1>
+      <p>world</p>
+    </>
+  );
 }
 
 export default App;
