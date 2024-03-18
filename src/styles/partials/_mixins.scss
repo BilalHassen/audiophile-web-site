@@ -64,12 +64,19 @@
 @mixin m-h2 {
   font-weight: 2.8rem;
   letter-spacing: 0.2rem;
+  font-weight: bold;
 }
 
 @mixin p-1 {
   font-size: 1.5rem;
   line-height: 2rem;
   font-weight: 500;
+}
+
+@mixin p-1-b {
+  font-size: 1.5rem;
+  line-height: 2.5rem;
+  font-weight: bold;
 }
 
 @mixin button-text {
