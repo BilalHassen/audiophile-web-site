@@ -4,7 +4,7 @@ import headphones from "../../assets/shared/desktop/thumbnail-headphones.png";
 import speakers from "../../assets/shared/desktop/image-category-thumbnail-speakers.png";
 import earphones from "../../assets/shared/desktop/image-category-thumbnail-earphones.png";
 import orangeIcon from "../../assets/shared/desktop/icon-arrow-right.svg";
-import "./Header.scss";
+import "./Nav.scss";
 
 export default function Header() {
   return (

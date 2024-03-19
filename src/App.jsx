@@ -1,12 +1,12 @@
 import { useState } from "react";
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import "./App.scss";
-import Header from "./Components/Header/Header";
+import Nav from "./Components/Header/Nav";
 
 function App() {
   return (
     <>
-      <Header />
+      <Nav />
     </>
   );
 }
