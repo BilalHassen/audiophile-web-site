@@ -12,6 +12,16 @@
   align-items: center;
   justify-content: space-between;
 
+  @include mobile-medium {
+    padding-left: 2.6rem;
+    padding-right: 2.6rem;
+  }
+
+  @include mobile-large {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+
   &__icon {
     font-size: 20px;
     color: white;
