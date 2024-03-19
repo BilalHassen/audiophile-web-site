@@ -12,6 +12,14 @@
   align-items: center;
   justify-content: space-between;
 
+  @include tablet-small {
+    &__tablet-wrapper {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+    }
+  }
+
   @include mobile-medium {
     padding-left: 2.6rem;
     padding-right: 2.6rem;
