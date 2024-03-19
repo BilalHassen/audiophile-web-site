@@ -10,7 +10,6 @@ import "./Nav.scss";
 export default function Nav() {
   return (
     <>
-      <Header />
       <nav className="nav">
         <ul className="nav__list-container">
           <li className="nav__list-item">

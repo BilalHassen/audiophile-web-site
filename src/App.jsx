@@ -1,12 +1,12 @@
 import { useState } from "react";
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import "./App.scss";
-import Nav from "./Components/Nav/Nav";
+import HomePage from "./Pages/HomePage/HomePage";
 
 function App() {
   return (
     <>
-      <Nav />
+      <HomePage />
     </>
   );
 }
