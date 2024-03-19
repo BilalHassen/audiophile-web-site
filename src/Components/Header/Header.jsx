@@ -11,7 +11,7 @@ export default function Header() {
   const handleTabletSize = () => {
     if (window.innerWidth >= 768) {
       setTablet(true);
-    } else if (window.innerWidth < 768 || window.innerWidth > 1280) {
+    } else if (window.innerWidth <= 767) {
       setTablet(false);
     }
   };
@@ -19,7 +19,7 @@ export default function Header() {
   useEffect(() => {
     if (window.innerWidth >= 768) {
       window.addEventListener("resize", handleTabletSize);
-    } else if (window.innerWidth < 768 || window.innerWidth >= 1280) {
+    } else if (window.innerWidth < 768) {
       window.removeEventListener("resize", handleTabletSize);
     }
   }, [window.innerWidth]);
