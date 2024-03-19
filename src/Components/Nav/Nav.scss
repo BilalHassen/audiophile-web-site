@@ -1,13 +1,6 @@
 @use "../../styles/partials/mixins" as *;
 @use "../../styles/partials/variables" as *;
 
-.header {
-  margin-bottom: 10rem;
-  &__icon {
-    font-size: 24px;
-  }
-}
-
 .nav {
   padding-left: 1.6rem;
   padding-right: 1.6rem;
