@@ -4,16 +4,13 @@ import headphones from "../../assets/shared/desktop/thumbnail-headphones.png";
 import speakers from "../../assets/shared/desktop/image-category-thumbnail-speakers.png";
 import earphones from "../../assets/shared/desktop/image-category-thumbnail-earphones.png";
 import orangeIcon from "../../assets/shared/desktop/icon-arrow-right.svg";
+import Header from "../Header/Header";
 import "./Nav.scss";
 
-export default function Header() {
+export default function Nav() {
   return (
     <>
-      <div className="header">
-        AUDIOPHILE
-        <FontAwesomeIcon icon={faBars} className="header__icon" />
-      </div>
-
+      <Header />
       <nav className="nav">
         <ul className="nav__list-container">
           <li className="nav__list-item">
