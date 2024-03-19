@@ -19,6 +19,11 @@
     padding-right: 3rem;
   }
 
+  @include tablet-small {
+    padding-left: 3.5rem;
+    padding-right: 3.5rem;
+  }
+
   &__list-container {
     display: flex;
     flex-direction: column;
