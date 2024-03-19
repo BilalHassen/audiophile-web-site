@@ -5,6 +5,10 @@
   padding-left: 1.6rem;
   padding-right: 1.6rem;
 
+  @include desktop-small {
+    display: none;
+  }
+
   @include mobile-medium {
     padding-left: 2.6rem;
     padding-right: 2.6rem;
