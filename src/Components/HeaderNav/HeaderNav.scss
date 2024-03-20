@@ -1,2 +1,17 @@
 @use "../../styles/partials/mixins" as *;
 @use "../../styles/partials/variables" as *;
+
+@include desktop-small {
+  .header__nav {
+    &-wrapper {
+      display: flex;
+      flex-direction: row;
+      gap: 4rem;
+      font-size: 3rem;
+    }
+
+    &-item {
+      color: white;
+    }
+  }
+}

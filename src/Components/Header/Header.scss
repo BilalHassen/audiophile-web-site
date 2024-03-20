@@ -27,9 +27,9 @@
       display: flex;
       align-items: center;
       gap: 2rem;
-      @include desktop-small {
-        // flex-direction: row-reverse;
-      }
+      // @include desktop-small {
+      //   // flex-direction: row-reverse;
+      // }
     }
   }
 
@@ -55,17 +55,6 @@
 
   &__cart-icon {
     font-size: 20px;
-  }
-
-  &__nav-wrapper {
-    display: flex;
-    flex-direction: row;
-    gap: 4rem;
-    font-size: 3rem;
-  }
-
-  &__nav-item {
-    color: white;
   }
 }
 
