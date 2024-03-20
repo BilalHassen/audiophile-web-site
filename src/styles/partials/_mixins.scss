@@ -48,7 +48,7 @@
   }
 }
 
-@mixin desktop-medium {
+@mixin desktop-large {
   @media (min-width: 1920px) {
     @content;
   }
