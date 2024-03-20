@@ -31,8 +31,8 @@
   }
 
   @include desktop-small {
-    padding-left: 20rem;
-    padding-right: 20rem;
+    padding-left: 15rem;
+    padding-right: 15rem;
   }
 
   &__icon {
@@ -48,6 +48,10 @@
     color: white;
     font-size: 2rem;
     font-weight: 900;
+
+    @include desktop-small {
+      font-size: 3.2rem;
+    }
   }
 
   &__cart-icon {
