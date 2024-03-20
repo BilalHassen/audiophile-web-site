@@ -35,6 +35,11 @@
     padding-right: 15rem;
   }
 
+  @include desktop-large {
+    padding-left: 20rem;
+    padding-right: 20rem;
+  }
+
   &__icon {
     font-size: 20px;
     color: white;
