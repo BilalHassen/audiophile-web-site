@@ -27,9 +27,6 @@
       display: flex;
       align-items: center;
       gap: 2rem;
-      // @include desktop-small {
-      //   // flex-direction: row-reverse;
-      // }
     }
   }
 
@@ -56,8 +53,4 @@
   &__cart-icon {
     font-size: 20px;
   }
-}
-
-.red {
-  color: red;
 }
