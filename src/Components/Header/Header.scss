@@ -12,6 +12,16 @@
   align-items: center;
   justify-content: space-between;
 
+  @include mobile-medium {
+    padding-left: 2.6rem;
+    padding-right: 2.6rem;
+  }
+
+  @include mobile-large {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+
   @include tablet-small {
     &__tablet-wrapper {
       display: flex;
@@ -23,14 +33,9 @@
     }
   }
 
-  @include mobile-medium {
-    padding-left: 2.6rem;
-    padding-right: 2.6rem;
-  }
-
-  @include mobile-large {
-    padding-left: 3rem;
-    padding-right: 3rem;
+  @include desktop-small {
+    padding-left: 20rem;
+    padding-right: 20rem;
   }
 
   &__icon {
@@ -50,6 +55,17 @@
 
   &__cart-icon {
     font-size: 20px;
+  }
+
+  &__nav-wrapper {
+    display: flex;
+    flex-direction: row;
+    gap: 4rem;
+    font-size: 3rem;
+  }
+
+  &__nav-item {
+    color: white;
   }
 }
 

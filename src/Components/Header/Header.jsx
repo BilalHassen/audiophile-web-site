@@ -3,6 +3,7 @@ import { faBars } from "@fortawesome/free-solid-svg-icons";
 import cartIcon from "../../assets/shared/desktop/icon-cart.svg";
 import Nav from "../../Components/Nav/Nav";
 import { useState, useEffect } from "react";
+import HeaderNav from "../HeaderNav/HeaderNav";
 import "./Header.scss";
 export default function Header() {
   const [isActive, setIsActive] = useState(false);
@@ -53,7 +54,6 @@ export default function Header() {
               onClick={handleNavDisplay}
             />
             <h1 className="header__title">audiophile</h1>
-            {isDesktop ? <h1 className="red">hello</h1> : null}
           </div>
         ) : (
           <>
@@ -65,7 +65,7 @@ export default function Header() {
             <h1 className="header__title">audiophile</h1>
           </>
         )}
-
+        {isDesktop ? <HeaderNav /> : null}
         <img classname="header__cart-icon" src={cartIcon} alt="cart-icon"></img>
       </section>
       {isActive ? <Nav /> : ""}
