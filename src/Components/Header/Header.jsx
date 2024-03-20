@@ -7,22 +7,34 @@ import "./Header.scss";
 export default function Header() {
   const [isActive, setIsActive] = useState(false);
   const [isTablet, setTablet] = useState(false);
+  const [isDesktop, setDesktop] = useState(false);
 
   const handleTabletSize = () => {
     if (window.innerWidth >= 768) {
       setTablet(true);
     } else if (window.innerWidth <= 767) {
       setTablet(false);
+    } else if (window.innerWidth >= 1366) {
+      setDesktop(true);
+      if (window.innerWidth < 1366) {
+        setDesktop(false);
+      }
     }
   };
 
+  // const handleDesktopNav = () => {
+  //   if (window.innerWidth >= 1366) {
+  //     setDesktop(true);
+  //   } else {
+  //     setDesktop(false);
+  //   }
+  // };
+
   useEffect(() => {
-    if (window.innerWidth >= 768) {
-      window.addEventListener("resize", handleTabletSize);
-    } else if (window.innerWidth < 768) {
-      window.removeEventListener("resize", handleTabletSize);
-    }
-  }, [window.innerWidth]);
+    handleTabletSize();
+
+    window.addEventListener("resize", handleTabletSize);
+  }, [handleTabletSize]);
 
   const handleNavDisplay = () => {
     setIsActive(!isActive);
@@ -54,6 +66,7 @@ export default function Header() {
         <img classname="header__cart-icon" src={cartIcon} alt="cart-icon"></img>
       </section>
       {isActive ? <Nav /> : ""}
+      {isDesktop ? <h1>hello</h1> : ""}
     </>
   );
 }

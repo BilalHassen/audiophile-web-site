@@ -5,9 +5,12 @@ import speakers from "../../assets/shared/desktop/image-category-thumbnail-speak
 import earphones from "../../assets/shared/desktop/image-category-thumbnail-earphones.png";
 import orangeIcon from "../../assets/shared/desktop/icon-arrow-right.svg";
 import Header from "../Header/Header";
+import { useState, useEffect } from "react";
 import "./Nav.scss";
 
 export default function Nav() {
+  const [isDesktop, setDesktop] = useState();
+
   return (
     <>
       <nav className="nav">
