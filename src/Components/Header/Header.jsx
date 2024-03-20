@@ -9,32 +9,34 @@ export default function Header() {
   const [isTablet, setTablet] = useState(false);
   const [isDesktop, setDesktop] = useState(false);
 
-  const handleTabletSize = () => {
+  const handleScreenSize = () => {
     if (window.innerWidth >= 768) {
       setTablet(true);
     } else if (window.innerWidth <= 767) {
       setTablet(false);
-    } else if (window.innerWidth >= 1366) {
+    }
+
+    if (window.innerWidth >= 1366) {
       setDesktop(true);
-      if (window.innerWidth < 1366) {
-        setDesktop(false);
-      }
+    } else if (window.innerWidth < 1366) {
+      setDesktop(false);
+      console.log(window.innerWidth);
     }
   };
 
-  // const handleDesktopNav = () => {
-  //   if (window.innerWidth >= 1366) {
-  //     setDesktop(true);
-  //   } else {
-  //     setDesktop(false);
-  //   }
-  // };
-
   useEffect(() => {
-    handleTabletSize();
+    handleScreenSize();
+    window.addEventListener("resize", handleScreenSize);
+    console.log(window.innerWidth, isDesktop);
 
-    window.addEventListener("resize", handleTabletSize);
-  }, [handleTabletSize]);
+    // clean up function to remove event listener when not needed
+    const cleanUpFunction = () => {
+      window.removeEventListener("resize", handleScreenSize);
+    };
+
+    return cleanUpFunction;
+    // dependency for when window value changes
+  }, [handleScreenSize]);
 
   const handleNavDisplay = () => {
     setIsActive(!isActive);
@@ -51,6 +53,7 @@ export default function Header() {
               onClick={handleNavDisplay}
             />
             <h1 className="header__title">audiophile</h1>
+            {isDesktop ? <h1 className="red">hello</h1> : null}
           </div>
         ) : (
           <>
@@ -66,7 +69,6 @@ export default function Header() {
         <img classname="header__cart-icon" src={cartIcon} alt="cart-icon"></img>
       </section>
       {isActive ? <Nav /> : ""}
-      {isDesktop ? <h1>hello</h1> : ""}
     </>
   );
 }
