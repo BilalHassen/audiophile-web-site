@@ -21,14 +21,12 @@ export default function Header() {
       setDesktop(true);
     } else if (window.innerWidth < 1366) {
       setDesktop(false);
-      console.log(window.innerWidth);
     }
   };
 
   useEffect(() => {
     handleScreenSize();
     window.addEventListener("resize", handleScreenSize);
-    console.log(window.innerWidth, isDesktop);
 
     // clean up function to remove event listener when not needed
     const cleanUpFunction = () => {
