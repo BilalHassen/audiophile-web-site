@@ -24,6 +24,16 @@
     padding-right: 3.5rem;
   }
 
+  @include tablet-medium {
+    padding-left: 4.5rem;
+    padding-right: 4.5rem;
+  }
+
+  @include tablet-large {
+    padding-left: 6rem;
+    padding-right: 6rem;
+  }
+
   &__list-container {
     display: flex;
     flex-direction: column;
