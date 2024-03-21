@@ -37,7 +37,7 @@ export default function Header() {
 
     return cleanUpFunction;
     // dependency for when window value changes
-  }, [handleScreenSize]);
+  }, []);
 
   const handleNavDisplay = () => {
     setIsActive(!isActive);
