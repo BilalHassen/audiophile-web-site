@@ -15,6 +15,11 @@ export default function Hero() {
             maked for the passionate music enthusiast
           </p>
         </div>
+        <div className="hero__button-container">
+          <button className="hero__button">
+            <p className="hero__button-text">see product</p>
+          </button>
+        </div>
       </div>
     </section>
   );

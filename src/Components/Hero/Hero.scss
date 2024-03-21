@@ -2,7 +2,7 @@
 @use "../../styles/partials/variables" as *;
 
 .hero {
-  height: 100vh;
+  height: 90vh;
   background-image: url(../../assets/home/mobile/image-header.jpg);
   //   background-size: cover;
   background-size: 100% 100%;
@@ -12,6 +12,9 @@
   &__content {
     padding-top: 14rem;
     border-top: 1px solid #282828;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
   }
 
   &__product-box {
@@ -24,5 +27,43 @@
     color: $grey;
     letter-spacing: 14px;
     padding-left: 2rem;
+  }
+
+  &__title {
+    text-align: center;
+    color: $white;
+    font-weight: 900;
+    text-transform: uppercase;
+  }
+
+  &__product-description {
+    text-align: center;
+    padding-left: 2.7rem;
+    padding-right: 2.7rem;
+    color: $grey;
+  }
+
+  &__description-text {
+    line-height: 2.5rem;
+  }
+
+  &__button-container {
+    display: flex;
+    justify-content: center;
+  }
+
+  &__button {
+    background-color: $orange;
+    border: none;
+    // treat the button as a block level element
+    display: block;
+    height: 5rem;
+    width: 40%;
+  }
+
+  &__button-text {
+    text-transform: uppercase;
+    color: $white;
+    @include button-text;
   }
 }
