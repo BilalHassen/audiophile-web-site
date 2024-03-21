@@ -2,7 +2,7 @@
 @use "../../styles/partials/variables" as *;
 
 .header {
-  background-color: black;
+  background-color: #191919;
   display: flex;
   padding-left: 1.6rem;
   padding-right: 1.6rem;
@@ -79,8 +79,4 @@
   &__cart-icon {
     font-size: 20px;
   }
-}
-
-.con {
-  position: relative;
 }
