@@ -47,11 +47,15 @@
   @include desktop-small {
     padding-left: 15rem;
     padding-right: 15rem;
+    padding-bottom: 3rem;
+    padding-top: 3rem;
   }
 
   @include desktop-large {
     padding-left: 20rem;
     padding-right: 20rem;
+    padding-bottom: 4rem;
+    padding-top: 4rem;
   }
 
   &__icon {
