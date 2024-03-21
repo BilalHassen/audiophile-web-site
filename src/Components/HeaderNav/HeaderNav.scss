@@ -1,0 +1,31 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+
+.header__nav {
+  &-wrapper {
+    display: flex;
+    flex-direction: row;
+    gap: 4rem;
+    font-size: 3rem;
+    margin-right: 8rem;
+
+    @include desktop-medium {
+      margin-right: 9.5rem;
+    }
+  }
+
+  &-item {
+    color: white;
+    text-transform: uppercase;
+    font-size: 13px;
+    font-weight: 700;
+
+    &:hover {
+      color: $orange;
+    }
+
+    @include desktop-large {
+      font-size: 18px;
+    }
+  }
+}

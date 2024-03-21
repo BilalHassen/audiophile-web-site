@@ -1,13 +1,12 @@
 import { useState } from "react";
+import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import "./App.scss";
+import HomePage from "./Pages/HomePage/HomePage";
 
 function App() {
   return (
     <>
-      <h1>XX99 MARK II HEADPHONES</h1>
-      <p>
-        located at the heart of new york city hfhfhfh shshhshsh sh shsh sh sh s
-      </p>
+      <HomePage />
     </>
   );
 }
