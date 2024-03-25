@@ -2,19 +2,50 @@
 @use "../../styles/partials/variables" as *;
 
 .hero {
-  height: 110vh;
-  background-image: url(../../assets/home/mobile/image-header.jpg);
-  //   background-size: cover;
-  background-size: 100% 100%;
-  background-repeat: no-repeat;
-  background-position: center bottom 100px;
+  height: 100%;
+  width: 100%;
+
+  &__image-wrapper {
+    background-image: url(../../assets/home/mobile/image-header.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 110vh;
+    width: 100vw;
+    background-position: center bottom 80px;
+
+    @include mobile-medium {
+      height: 110vh;
+      background-position: center bottom 60px;
+    }
+
+    @include mobile-large {
+      height: 120vh;
+      background-position: center bottom 60px;
+    }
+  }
 
   &__content {
-    padding-top: 7rem;
+    padding-top: 11rem;
     border-top: 1px solid #282828;
     display: flex;
     flex-direction: column;
     gap: 2rem;
+
+    @include mobile-large {
+      padding-top: 13rem;
+    }
+
+    @include tablet-small {
+      padding-left: 4rem;
+      padding-right: 4rem;
+      padding-top: 18rem;
+      gap: 2.5rem;
+    }
+
+    @include tablet-medium {
+      gap: 4rem;
+      padding-top: 15rem;
+    }
   }
 
   &__product-box {
@@ -25,8 +56,20 @@
   &__product-text {
     font-size: 1.4rem;
     color: $grey;
-    letter-spacing: 5px;
+    letter-spacing: 13px;
     padding-left: 2rem;
+
+    @include mobile-large {
+      font-size: 1.4rem;
+      letter-spacing: 18px;
+    }
+
+    @include tablet-small {
+    }
+
+    @include tablet-medium {
+      font-size: 2.5rem;
+    }
   }
 
   &__title {
@@ -34,6 +77,19 @@
     color: $white;
     font-weight: 900;
     text-transform: uppercase;
+
+    @include tablet-small {
+      padding-left: 10rem;
+      padding-right: 10rem;
+      font-size: 5.6rem;
+    }
+  }
+
+  &__title-text {
+    @include tablet-small {
+      font-size: 5.6rem;
+      line-height: 6.5rem;
+    }
   }
 
   &__product-description {
@@ -41,10 +97,24 @@
     padding-left: 2.7rem;
     padding-right: 2.7rem;
     color: $grey;
+
+    @include tablet-medium {
+      padding-left: 15rem;
+      padding-right: 15rem;
+    }
   }
 
   &__description-text {
     line-height: 2.5rem;
+
+    @include tablet-small {
+      padding-left: 13rem;
+      padding-right: 13rem;
+    }
+
+    @include tablet-medium {
+      font-size: 2rem;
+    }
   }
 
   &__button-container {
@@ -59,6 +129,14 @@
     display: block;
     height: 5rem;
     width: 40%;
+
+    @include tablet-small {
+      width: 25%;
+    }
+
+    @include tablet-medium {
+      width: 20%;
+    }
   }
 
   &__button-text {
