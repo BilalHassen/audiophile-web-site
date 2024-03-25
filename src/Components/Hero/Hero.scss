@@ -2,7 +2,7 @@
 @use "../../styles/partials/variables" as *;
 
 .hero {
-  height: 90vh;
+  height: 110vh;
   background-image: url(../../assets/home/mobile/image-header.jpg);
   //   background-size: cover;
   background-size: 100% 100%;
@@ -10,7 +10,7 @@
   background-position: center bottom 100px;
 
   &__content {
-    padding-top: 14rem;
+    padding-top: 7rem;
     border-top: 1px solid #282828;
     display: flex;
     flex-direction: column;
@@ -25,7 +25,7 @@
   &__product-text {
     font-size: 1.4rem;
     color: $grey;
-    letter-spacing: 14px;
+    letter-spacing: 5px;
     padding-left: 2rem;
   }
 
