@@ -2,49 +2,98 @@
 @use "../../styles/partials/variables" as *;
 
 .hero {
-  height: 100%;
-  width: 100%;
+  display: inline-block;
+  // height: 100%;
+  // height: auto;
+  background-color: #191919;
+
+  &__divider {
+    margin-left: 15rem;
+    margin-right: 15rem;
+    border-color: #282828;
+  }
 
   &__image-wrapper {
+    // border-top: 1px solid #282828;
+    background-color: #282828;
+    display: flex;
+    gap: 2rem;
+    height: 45rem;
+    flex-direction: column;
+    justify-content: center;
     background-image: url(../../assets/home/mobile/image-header.jpg);
     background-size: cover;
     background-repeat: no-repeat;
-    height: 110vh;
-    width: 100vw;
-    background-position: center bottom 80px;
+    background-position: center;
+    background-position: center bottom 0rem;
 
     @include mobile-medium {
-      height: 110vh;
-      background-position: center bottom 60px;
+      height: 50rem;
     }
 
     @include mobile-large {
-      height: 120vh;
-      background-position: center bottom 60px;
+      height: 55rem;
+    }
+
+    @include tablet-small {
+      height: 70rem;
+      background-image: url(../../assets/home/tablet/image-header.jpg);
+    }
+
+    @include tablet-medium {
+      height: 90rem;
+    }
+
+    @include tablet-large {
+      height: 100rem;
+      background-position: center top -20rem;
+    }
+
+    @include desktop-small {
+      background-image: url(../../assets/home/desktop/image-hero.jpg);
+      background-size: auto;
+      background-position: 100px -80px;
+      height: fit-content;
+      justify-content: flex-start;
+      background-repeat: initial;
+      padding-top: 15rem;
+      padding-bottom: 15rem;
+      width: 100vw;
+    }
+
+    @include desktop-large {
+      background-position: 200px -150px;
+      background-repeat: no-repeat;
+      background-size: 100%;
+      background-color: #191919;
+      padding-bottom: 25rem;
     }
   }
 
   &__content {
-    padding-top: 11rem;
-    border-top: 1px solid #282828;
     display: flex;
     flex-direction: column;
     gap: 2rem;
-
-    @include mobile-large {
-      padding-top: 13rem;
-    }
+    padding-top: 4.5rem;
 
     @include tablet-small {
       padding-left: 4rem;
       padding-right: 4rem;
-      padding-top: 18rem;
+      padding-top: 1rem;
       gap: 2.5rem;
     }
 
     @include tablet-medium {
       gap: 4rem;
-      padding-top: 15rem;
+      padding-bottom: 8rem;
+    }
+
+    @include desktop-small {
+      width: 50%;
+      padding-right: 0rem;
+      padding-bottom: 0rem;
+      padding-left: 15rem;
+      gap: 2rem;
     }
   }
 
@@ -70,6 +119,12 @@
     @include tablet-medium {
       font-size: 2.5rem;
     }
+
+    @include desktop-small {
+      padding: 0rem;
+      text-align: start;
+      font-size: 2rem;
+    }
   }
 
   &__title {
@@ -83,12 +138,26 @@
       padding-right: 10rem;
       font-size: 5.6rem;
     }
+
+    @include tablet-large {
+    }
+
+    @include desktop-small {
+      padding: 0rem;
+    }
   }
 
   &__title-text {
     @include tablet-small {
       font-size: 5.6rem;
       line-height: 6.5rem;
+    }
+
+    @include desktop-small {
+      text-align: start;
+      letter-spacing: 1rem;
+      font-size: 6rem;
+      font-weight: 900;
     }
   }
 
@@ -102,6 +171,10 @@
       padding-left: 15rem;
       padding-right: 15rem;
     }
+
+    @include desktop-small {
+      padding: 0rem;
+    }
   }
 
   &__description-text {
@@ -114,12 +187,29 @@
 
     @include tablet-medium {
       font-size: 2rem;
+      line-height: 3.5rem;
+    }
+
+    @include tablet-large {
+      font-size: 2.5rem;
+      line-height: 4.5rem;
+    }
+
+    @include desktop-small {
+      padding: 0rem;
+      text-align: start;
+      width: 110%;
+      padding-bottom: 3rem;
     }
   }
 
   &__button-container {
     display: flex;
     justify-content: center;
+
+    @include desktop-small {
+      justify-content: flex-start;
+    }
   }
 
   &__button {
@@ -127,15 +217,20 @@
     border: none;
     // treat the button as a block level element
     display: block;
-    height: 5rem;
     width: 40%;
+    height: 5rem;
 
     @include tablet-small {
       width: 25%;
+      height: 5rem;
     }
 
     @include tablet-medium {
       width: 20%;
+    }
+
+    @include desktop-small {
+      width: 30%;
     }
   }
 
