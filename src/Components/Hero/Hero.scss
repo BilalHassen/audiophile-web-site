@@ -7,10 +7,31 @@
   // height: auto;
   background-color: #191919;
 
-  &__divider {
-    margin-left: 15rem;
-    margin-right: 15rem;
-    border-color: #282828;
+  @include mobile-small {
+    &__divider {
+      display: none; /* Hide divider on mobile */
+    }
+  }
+
+  @include tablet-small {
+    &__divider {
+      display: none; /* Hide divider on tablet */
+    }
+  }
+
+  @include desktop-small {
+    &__divider {
+      margin-left: 15rem;
+      margin-right: 15rem;
+      border-color: #282828;
+      display: block;
+    }
+    @include desktop-large {
+      &__divider {
+        margin-left: 19.5rem;
+        margin-right: 19.5rem;
+      }
+    }
   }
 
   &__image-wrapper {
@@ -94,6 +115,10 @@
       padding-bottom: 0rem;
       padding-left: 15rem;
       gap: 2rem;
+    }
+
+    @include desktop-large {
+      padding-left: 20rem;
     }
   }
 
@@ -198,7 +223,7 @@
     @include desktop-small {
       padding: 0rem;
       text-align: start;
-      width: 110%;
+      width: 80%;
       padding-bottom: 3rem;
     }
   }

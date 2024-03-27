@@ -3,7 +3,7 @@ export default function Hero() {
   return (
     <>
       <section className="hero">
-        <hr className="hero__divider"></hr>
+        <hr className="hero__divider small"></hr>
         <div className="hero__image-wrapper">
           <div className="hero__content">
             <div className="hero__product-box">
