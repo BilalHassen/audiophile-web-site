@@ -4,6 +4,11 @@
 .nav {
   padding-left: 1.6rem;
   padding-right: 1.6rem;
+  padding-top: 6rem;
+  z-index: 1;
+  background-color: $white;
+  width: 100%;
+  position: absolute;
 
   @include desktop-small {
     display: none;

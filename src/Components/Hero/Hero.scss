@@ -1,0 +1,267 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+
+.hero {
+  display: inline-block;
+  // height: 100%;
+  // height: auto;
+  background-color: #191919;
+
+  @include mobile-small {
+    &__divider {
+      display: none; /* Hide divider on mobile */
+    }
+  }
+
+  @include tablet-small {
+    &__divider {
+      display: none; /* Hide divider on tablet */
+    }
+  }
+
+  @include desktop-small {
+    &__divider {
+      margin-left: 15rem;
+      margin-right: 15rem;
+      border-color: #282828;
+      display: block;
+    }
+    @include desktop-large {
+      &__divider {
+        margin-left: 19.5rem;
+        margin-right: 19.5rem;
+      }
+    }
+  }
+
+  &__image-wrapper {
+    // border-top: 1px solid #282828;
+    background-color: #282828;
+    display: flex;
+    gap: 2rem;
+    height: 45rem;
+    flex-direction: column;
+    justify-content: center;
+    background-image: url(../../assets/home/mobile/image-header.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-position: center bottom 0rem;
+
+    @include mobile-medium {
+      height: 50rem;
+    }
+
+    @include mobile-large {
+      height: 55rem;
+    }
+
+    @include tablet-small {
+      height: 70rem;
+      background-image: url(../../assets/home/tablet/image-header.jpg);
+    }
+
+    @include tablet-medium {
+      height: 90rem;
+    }
+
+    @include tablet-large {
+      height: 100rem;
+      background-position: center top -20rem;
+    }
+
+    @include desktop-small {
+      background-image: url(../../assets/home/desktop/image-hero.jpg);
+      background-size: auto;
+      background-position: 100px -80px;
+      height: fit-content;
+      justify-content: flex-start;
+      background-repeat: initial;
+      padding-top: 15rem;
+      padding-bottom: 15rem;
+      width: 100vw;
+    }
+
+    @include desktop-large {
+      background-position: 200px -150px;
+      background-repeat: no-repeat;
+      background-size: 100%;
+      background-color: #191919;
+      padding-bottom: 25rem;
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding-top: 4.5rem;
+
+    @include tablet-small {
+      padding-left: 4rem;
+      padding-right: 4rem;
+      padding-top: 1rem;
+      gap: 2.5rem;
+    }
+
+    @include tablet-medium {
+      gap: 4rem;
+      padding-bottom: 8rem;
+    }
+
+    @include desktop-small {
+      width: 50%;
+      padding-right: 0rem;
+      padding-bottom: 0rem;
+      padding-left: 15rem;
+      gap: 2rem;
+    }
+
+    @include desktop-large {
+      padding-left: 20rem;
+    }
+  }
+
+  &__product-box {
+    text-align: center;
+    text-transform: uppercase;
+  }
+
+  &__product-text {
+    font-size: 1.4rem;
+    color: $grey;
+    letter-spacing: 13px;
+    padding-left: 2rem;
+
+    @include mobile-large {
+      font-size: 1.4rem;
+      letter-spacing: 18px;
+    }
+
+    @include tablet-small {
+    }
+
+    @include tablet-medium {
+      font-size: 2.5rem;
+    }
+
+    @include desktop-small {
+      padding: 0rem;
+      text-align: start;
+      font-size: 2rem;
+    }
+  }
+
+  &__title {
+    text-align: center;
+    color: $white;
+    font-weight: 900;
+    text-transform: uppercase;
+
+    @include tablet-small {
+      padding-left: 10rem;
+      padding-right: 10rem;
+      font-size: 5.6rem;
+    }
+
+    @include tablet-large {
+    }
+
+    @include desktop-small {
+      padding: 0rem;
+    }
+  }
+
+  &__title-text {
+    @include tablet-small {
+      font-size: 5.6rem;
+      line-height: 6.5rem;
+    }
+
+    @include desktop-small {
+      text-align: start;
+      letter-spacing: 1rem;
+      font-size: 6rem;
+      font-weight: 900;
+    }
+  }
+
+  &__product-description {
+    text-align: center;
+    padding-left: 2.7rem;
+    padding-right: 2.7rem;
+    color: $grey;
+
+    @include tablet-medium {
+      padding-left: 15rem;
+      padding-right: 15rem;
+    }
+
+    @include desktop-small {
+      padding: 0rem;
+    }
+  }
+
+  &__description-text {
+    line-height: 2.5rem;
+
+    @include tablet-small {
+      padding-left: 13rem;
+      padding-right: 13rem;
+    }
+
+    @include tablet-medium {
+      font-size: 2rem;
+      line-height: 3.5rem;
+    }
+
+    @include tablet-large {
+      font-size: 2.5rem;
+      line-height: 4.5rem;
+    }
+
+    @include desktop-small {
+      padding: 0rem;
+      text-align: start;
+      width: 80%;
+      padding-bottom: 3rem;
+    }
+  }
+
+  &__button-container {
+    display: flex;
+    justify-content: center;
+
+    @include desktop-small {
+      justify-content: flex-start;
+    }
+  }
+
+  &__button {
+    background-color: $orange;
+    border: none;
+    // treat the button as a block level element
+    display: block;
+    width: 40%;
+    height: 5rem;
+
+    @include tablet-small {
+      width: 25%;
+      height: 5rem;
+    }
+
+    @include tablet-medium {
+      width: 20%;
+    }
+
+    @include desktop-small {
+      width: 30%;
+    }
+  }
+
+  &__button-text {
+    text-transform: uppercase;
+    color: $white;
+    @include button-text;
+  }
+}
