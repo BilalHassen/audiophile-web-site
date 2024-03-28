@@ -67,6 +67,14 @@
       padding-bottom: 6rem;
       padding-top: 10rem;
     }
+
+    @include desktop-small {
+      flex-direction: row;
+      padding-left: 10rem;
+      padding-bottom: 0rem;
+      gap: 10rem;
+      padding-top: 20rem;
+    }
   }
 
   &__image-wrapper {
@@ -78,6 +86,7 @@
 
     @include tablet-small {
       padding-top: 0rem;
+      height: 100%;
     }
   }
 
@@ -106,6 +115,12 @@
       width: 250px;
       height: 300px;
       margin-bottom: 3rem;
+    }
+
+    @include desktop-small {
+      margin-bottom: 0;
+      width: 300px;
+      height: 400px;
     }
   }
 
@@ -139,6 +154,11 @@
     @include tablet-large {
       padding-bottom: 2rem;
     }
+
+    @include desktop-small {
+      width: 100%;
+      text-align: left;
+    }
   }
 
   &__para {
@@ -169,13 +189,18 @@
     @include tablet-large {
       width: 30%;
     }
+
+    @include desktop-small {
+      text-align: left;
+      width: 50%;
+    }
   }
 
   &__button {
     background-color: $black;
     color: white;
     text-transform: uppercase;
-    height: 4rem;
+    height: 5rem;
     width: 60%;
     border: none;
     @include button-text;
@@ -191,5 +216,12 @@
     @include tablet-large {
       width: 20%;
     }
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    padding-bottom: 10rem;
   }
 }
