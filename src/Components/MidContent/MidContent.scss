@@ -4,35 +4,104 @@
   padding: 1.6rem;
   &__wrapper {
     background-image: url("../../assets/home/desktop/pattern-circles.svg");
-    background-size: 150%;
+    background-size: 174%;
     background-color: $orange;
-    background-position: -75px -140px;
+    background-position: -105px -100px;
     background-repeat: no-repeat;
     border-radius: 4px;
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
-    gap: 1rem;
+    gap: 3rem;
     padding: 1.6rem;
     padding-top: 4rem;
     padding-bottom: 10rem;
+
+    @include mobile-small {
+      background-position: -120px -120px;
+      gap: 3rem;
+      background-size: 170%;
+      padding-bottom: 6rem;
+    }
+
+    @include mobile-large {
+      background-position: -134px -140px;
+      gap: 3rem;
+      background-size: 170%;
+      padding-bottom: 6rem;
+    }
   }
 
   &__image-wrapper {
     height: auto;
+
+    @include mobile-large {
+      padding-top: 1rem;
+    }
+  }
+
+  &__speaker {
+    width: 140px;
+    height: 190px;
+    margin-top: 1rem;
+
+    @include mobile-medium {
+      margin-top: 3rem;
+    }
+
+    @include mobile-large {
+      width: 180px;
+      height: 240px;
+      margin-top: 2rem;
+    }
   }
 
   &__title {
     text-align: center;
     color: $white;
     font-weight: 900;
+    width: 80%;
     text-transform: uppercase;
+
+    @include mobile-medium {
+      padding-top: 2.4rem;
+    }
+
+    @include mobile-large {
+      padding-top: 0.7rem;
+      width: 70%;
+    }
   }
 
-  &__speaker {
-    width: 200px;
-    height: 200px;
-    padding-bottom: 1rem;
+  &__para {
+    color: $white;
+    width: 100%;
+    font-size: 1.4rem;
+
+    @include mobile-medium {
+      width: 98%;
+    }
+
+    @include mobile-large {
+      padding-top: 1rem;
+      font-size: 1.5rem;
+      line-height: 2.5rem;
+      width: 90%;
+    }
+  }
+
+  &__button {
+    background-color: $black;
+    color: white;
+    text-transform: uppercase;
+    height: 4rem;
+    width: 60%;
+    border: none;
+    @include button-text;
+
+    @include mobile-medium {
+      height: 5rem;
+    }
   }
 }
