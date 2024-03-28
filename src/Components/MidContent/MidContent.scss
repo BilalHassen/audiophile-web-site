@@ -2,6 +2,16 @@
 @use "../../styles/partials/variables" as *;
 .midContent {
   padding: 1.6rem;
+
+  @include tablet-small {
+    padding-left: 3.5rem;
+    padding-right: 3.5rem;
+  }
+
+  @include tablet-large {
+    padding: 6rem;
+  }
+
   &__wrapper {
     background-image: url("../../assets/home/desktop/pattern-circles.svg");
     background-size: 174%;
@@ -18,7 +28,7 @@
     padding-top: 4rem;
     padding-bottom: 10rem;
 
-    @include mobile-small {
+    @include mobile-medium {
       background-position: -120px -120px;
       gap: 3rem;
       background-size: 170%;
@@ -31,6 +41,32 @@
       background-size: 170%;
       padding-bottom: 6rem;
     }
+
+    @include tablet-small {
+      background-position: center;
+      background-position: -101px -260px;
+      gap: 3rem;
+      background-size: 130%;
+      padding-bottom: 6rem;
+      padding-top: 5.5rem;
+    }
+
+    @include tablet-medium {
+      background-position: center;
+      background-position: -10px -300px;
+      gap: 3.7rem;
+      background-size: 101.9%;
+      padding-bottom: 6rem;
+    }
+
+    @include tablet-large {
+      background-position: center;
+      background-position: center bottom 60px;
+      gap: 4rem;
+      background-size: 100%;
+      padding-bottom: 6rem;
+      padding-top: 10rem;
+    }
   }
 
   &__image-wrapper {
@@ -38,6 +74,10 @@
 
     @include mobile-large {
       padding-top: 1rem;
+    }
+
+    @include tablet-small {
+      padding-top: 0rem;
     }
   }
 
@@ -55,6 +95,18 @@
       height: 240px;
       margin-top: 2rem;
     }
+
+    @include tablet-small {
+      width: 180px;
+      height: 240px;
+      margin-top: 0rem;
+    }
+
+    @include tablet-large {
+      width: 250px;
+      height: 300px;
+      margin-bottom: 3rem;
+    }
   }
 
   &__title {
@@ -69,8 +121,23 @@
     }
 
     @include mobile-large {
-      padding-top: 0.7rem;
+      padding-top: 1rem;
       width: 70%;
+      line-height: 4rem;
+    }
+
+    @include tablet-small {
+      font-size: 5.6rem;
+      line-height: 6rem;
+      padding-top: 2rem;
+    }
+
+    // @include tablet-medium {
+    //   padding-top: 4rem;
+    // }
+
+    @include tablet-large {
+      padding-bottom: 2rem;
     }
   }
 
@@ -89,6 +156,19 @@
       line-height: 2.5rem;
       width: 90%;
     }
+
+    @include tablet-small {
+      width: 50%;
+      font-size: 15px;
+    }
+    @include tablet-medium {
+      padding-top: 0rem;
+      width: 40%;
+    }
+
+    @include tablet-large {
+      width: 30%;
+    }
   }
 
   &__button {
@@ -102,6 +182,14 @@
 
     @include mobile-medium {
       height: 5rem;
+    }
+
+    @include tablet-small {
+      width: 30%;
+    }
+
+    @include tablet-large {
+      width: 20%;
     }
   }
 }

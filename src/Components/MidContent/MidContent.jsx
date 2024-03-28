@@ -9,7 +9,9 @@ export default function MidContent() {
           <div className="midContent__image-wrapper">
             <img className="midContent__speaker" src={speakers}></img>
           </div>
-          <h1 className="midContent__title">zx9 speaker</h1>
+          <h1 className="midContent__title">
+            zx9 <br></br>speaker
+          </h1>
           <p className="midContent__para">
             Upgrade to premium speakers that are phenomenally built to deliver
             truly remarkable sound
