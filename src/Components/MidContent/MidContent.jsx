@@ -1,5 +1,5 @@
 import cirlces from "../../assets/home/desktop/pattern-circles.svg";
-import speakers from "../../assets/shared/desktop/image-category-thumbnail-speakers.png";
+import speakers from "../../assets/home/mobile/image-speaker-zx9.png";
 import "./MidContent.scss";
 export default function MidContent() {
   return (
