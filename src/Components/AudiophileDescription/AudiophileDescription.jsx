@@ -1,4 +1,4 @@
-import "./AudiophileSescription.scss";
+import "./AudiophileDescription.scss";
 
 export default function AudiophileSescription() {
   return (
