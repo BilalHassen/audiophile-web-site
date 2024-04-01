@@ -1,0 +1,131 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+
+.audiophileDescription {
+  display: flex;
+  flex-direction: column;
+  padding: 1.6rem;
+  gap: 2rem;
+
+  @include mobile-large {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+
+  @include tablet-small {
+    padding-left: 3.5rem;
+    padding-right: 3.5rem;
+  }
+
+  @include tablet-large {
+    padding-left: 8rem;
+    padding-right: 8rem;
+  }
+
+  @include desktop-small {
+    padding-left: 12rem;
+    padding-right: 12rem;
+  }
+
+  @include desktop-medium {
+    padding-left: 14rem;
+    padding-right: 14rem;
+  }
+
+  @include desktop-large {
+    padding-left: 18rem;
+    padding-right: 18rem;
+  }
+
+  &__img-container {
+    background-image: url(../../assets/shared/mobile/image-best-gear.jpg);
+    height: 30rem;
+    background-size: cover;
+    border-radius: 4px;
+
+    @include tablet-small {
+      background-image: url(../../assets/shared/tablet/image-best-gear.jpg);
+    }
+
+    @include tablet-medium {
+      height: 40rem;
+    }
+
+    @include tablet-large {
+      height: 50rem;
+    }
+
+    @include desktop-small {
+      background-image: url(../../assets/shared/tablet/image-best-gear.jpg);
+      background-size: cover;
+      background-repeat: no-repeat;
+      height: 60rem;
+      border-radius: 4px;
+    }
+  }
+
+  &__title {
+    font-size: 2.8rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    text-align: center;
+    @include tablet-small {
+      padding-left: 5.5rem;
+      padding-right: 5.5rem;
+      padding-top: 4rem;
+      font-size: 4rem;
+    }
+  }
+
+  &__para {
+    text-align: center;
+    line-height: 2.5rem;
+
+    @include tablet-small {
+      padding-left: 7rem;
+      padding-right: 7rem;
+      padding-top: 2rem;
+    }
+
+    @include tablet-medium {
+      font-size: 2rem;
+      line-height: 3rem;
+      padding-left: 13rem;
+      padding-right: 13rem;
+    }
+
+    @include desktop-small {
+      font-size: 2.5rem;
+      line-height: 4rem;
+    }
+
+    @include desktop-large {
+      font-size: 2.5rem;
+      line-height: 4rem;
+    }
+  }
+}
+
+span {
+  color: $orange;
+  font-size: 2.8rem;
+  font-weight: 900;
+
+  @include tablet-small {
+    font-size: 4rem;
+  }
+
+  @include desktop-medium {
+    font-size: 4rem;
+  }
+}
+
+@include mobile-small {
+  br {
+    display: none;
+
+    @include tablet-small {
+      display: block;
+    }
+  }
+}
