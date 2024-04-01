@@ -2,7 +2,41 @@
 @use "../../styles/partials/variables" as *;
 
 .midContentSpeaker {
+  margin-left: 1.6rem;
+  margin-right: 1.6rem;
   border-radius: 4px;
-  padding-left: 1.6rem;
-  padding-right: 1.6rem;
+
+  background-image: url(../../assets/home/mobile/image-speaker-zx7.jpg);
+  background-size: 100% 35rem;
+  background-repeat: no-repeat;
+  border-radius: 4px;
+  display: inline-block;
+  max-width: 100%;
+  min-height: 35rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: start;
+  padding-right: 5.5rem;
+
+  &__title {
+    text-transform: uppercase;
+    font-weight: bolder;
+    font-size: 2.8rem;
+  }
+
+  &__button {
+    background-color: transparent;
+    border: 1.5px solid black;
+    width: 80%;
+    height: 5rem;
+    margin-top: 2rem;
+  }
+
+  &__button-txt {
+    text-transform: uppercase;
+    font-size: 1.3rem;
+    letter-spacing: 1px;
+  }
 }
