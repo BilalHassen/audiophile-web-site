@@ -119,3 +119,13 @@ span {
     font-size: 4rem;
   }
 }
+
+@include mobile-small {
+  br {
+    display: none;
+
+    @include tablet-small {
+      display: block;
+    }
+  }
+}
