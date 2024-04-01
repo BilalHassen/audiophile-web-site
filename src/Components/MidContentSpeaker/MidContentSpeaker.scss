@@ -5,7 +5,6 @@
   margin-left: 1.6rem;
   margin-right: 1.6rem;
   border-radius: 4px;
-
   background-image: url(../../assets/home/mobile/image-speaker-zx7.jpg);
   background-size: 100% 35rem;
   background-repeat: no-repeat;
@@ -19,6 +18,15 @@
   align-items: center;
   text-align: start;
   padding-right: 5.5rem;
+
+  @include mobile-medium {
+    padding-right: 6.5rem;
+  }
+
+  @include mobile-large {
+    margin-left: 3rem;
+    margin-right: 3rem;
+  }
 
   &__title {
     text-transform: uppercase;
