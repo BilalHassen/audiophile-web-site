@@ -16,6 +16,7 @@ export default function Home() {
       <Hero />
       {/* <Nav /> */}
       <MidContent />
+      <AudiophileDescription />
     </>
   );
 }
