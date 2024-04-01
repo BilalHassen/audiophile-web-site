@@ -5,11 +5,7 @@ export default function MidContentSpeaker() {
     <>
       <div className="midContentSpeaker">
         <h1 className="midContentSpeaker__title">zx7 speaker</h1>
-        <img
-          className="midContentSpeaker"
-          src={speaker}
-          alt={"homepage-speaker"}
-        ></img>
+
         <button className="midContentSpeaker__button">
           <p className="midContentSpeaker__button-txt">see product</p>
         </button>
