@@ -3,6 +3,10 @@
 .midContent {
   padding: 1.6rem;
 
+  @include mobile-large {
+    padding: 3rem;
+  }
+
   @include tablet-small {
     padding-left: 3.5rem;
     padding-right: 3.5rem;
