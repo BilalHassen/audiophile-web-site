@@ -66,9 +66,9 @@ export default function MidContent() {
               <button className="midContent__button">see product</button>
             </div>
           </section>
-          <MidContentSpeaker />
         </>
       )}
+      <MidContentSpeaker />
     </>
   );
 }

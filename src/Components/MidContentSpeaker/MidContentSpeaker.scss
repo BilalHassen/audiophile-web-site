@@ -47,6 +47,14 @@
     margin-right: 8rem;
   }
 
+  @include desktop-small {
+    background-image: url(../../assets/home/desktop/image-speaker-zx7.jpg);
+    align-items: start;
+    padding-left: 8rem;
+    padding-right: 0rem;
+    z-index: 9999;
+  }
+
   &__title {
     text-transform: uppercase;
     font-weight: bolder;
