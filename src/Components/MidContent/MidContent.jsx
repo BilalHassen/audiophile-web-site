@@ -1,6 +1,7 @@
 import { Component } from "react";
 import cirlces from "../../assets/home/desktop/pattern-circles.svg";
 import speakers from "../../assets/home/mobile/image-speaker-zx9.png";
+import MidContentSpeaker from "../../Components/MidContentSpeaker/MidContentSpeaker";
 import "./MidContent.scss";
 import { useEffect, useState } from "react";
 export default function MidContent() {
@@ -65,6 +66,7 @@ export default function MidContent() {
               <button className="midContent__button">see product</button>
             </div>
           </section>
+          <MidContentSpeaker />
         </>
       )}
     </>
