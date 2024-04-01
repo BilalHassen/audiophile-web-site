@@ -16,6 +16,21 @@
     padding: 8rem;
   }
 
+  @include desktop-small {
+    padding-left: 12rem;
+    padding-right: 12rem;
+  }
+
+  @include desktop-medium {
+    padding-left: 14rem;
+    padding-right: 14rem;
+  }
+
+  @include desktop-large {
+    padding-left: 18rem;
+    padding-right: 18rem;
+  }
+
   &__wrapper {
     background-image: url("../../assets/home/desktop/pattern-circles.svg");
     background-size: 174%;
