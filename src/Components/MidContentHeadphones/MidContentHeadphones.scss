@@ -10,6 +10,11 @@
   gap: 2rem;
   padding-bottom: 4rem;
 
+  @include mobile-large {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+
   @include tablet-small {
     display: flex;
     flex-direction: row;
