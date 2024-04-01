@@ -1,0 +1,265 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+.midContent {
+  padding: 1.6rem;
+
+  @include mobile-large {
+    padding: 3rem;
+  }
+
+  @include tablet-small {
+    padding-left: 3.5rem;
+    padding-right: 3.5rem;
+  }
+
+  @include tablet-large {
+    padding: 8rem;
+  }
+
+  @include desktop-small {
+    padding-left: 12rem;
+    padding-right: 12rem;
+  }
+
+  @include desktop-medium {
+    padding-left: 14rem;
+    padding-right: 14rem;
+  }
+
+  @include desktop-large {
+    padding-left: 18rem;
+    padding-right: 18rem;
+  }
+
+  &__wrapper {
+    background-image: url("../../assets/home/desktop/pattern-circles.svg");
+    background-size: 174%;
+    background-color: $orange;
+    background-position: -105px -100px;
+    background-repeat: no-repeat;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 3rem;
+    padding: 1.6rem;
+    padding-top: 4rem;
+    padding-bottom: 10rem;
+
+    @include mobile-medium {
+      background-position: -120px -120px;
+      gap: 3rem;
+      background-size: 170%;
+      padding-bottom: 6rem;
+    }
+
+    @include mobile-large {
+      background-position: -134px -140px;
+      gap: 3rem;
+      background-size: 170%;
+      padding-bottom: 6rem;
+    }
+
+    @include tablet-small {
+      background-position: center;
+      background-position: -101px -260px;
+      gap: 3rem;
+      background-size: 130%;
+      padding-bottom: 6rem;
+      padding-top: 5.5rem;
+    }
+
+    @include tablet-medium {
+      background-position: center;
+      background-position: -10px -300px;
+      gap: 3.7rem;
+      background-size: 101.9%;
+      padding-bottom: 6rem;
+    }
+
+    @include tablet-large {
+      background-position: center;
+      background-position: center bottom 60px;
+      gap: 4rem;
+      background-size: 100%;
+      padding-bottom: 6rem;
+      padding-top: 10rem;
+    }
+
+    @include desktop-small {
+      background-position: -120px -40px;
+      background-size: 80%;
+      flex-direction: row;
+      padding-left: 15rem;
+      padding-bottom: 0rem;
+      gap: 26rem;
+      padding-top: 15rem;
+      width: 100%;
+    }
+  }
+
+  &__image-wrapper {
+    height: auto;
+
+    @include mobile-large {
+      padding-top: 1rem;
+    }
+
+    @include tablet-small {
+      padding-top: 0rem;
+      height: 100%;
+    }
+  }
+
+  &__speaker {
+    width: 140px;
+    height: 190px;
+    margin-top: 1rem;
+
+    @include mobile-medium {
+      margin-top: 3rem;
+    }
+
+    @include mobile-large {
+      width: 180px;
+      height: 240px;
+      margin-top: 2rem;
+    }
+
+    @include tablet-small {
+      width: 180px;
+      height: 240px;
+      margin-top: 0rem;
+    }
+
+    @include tablet-large {
+      width: 250px;
+      height: 300px;
+      margin-bottom: 3rem;
+    }
+
+    @include desktop-small {
+      margin-bottom: 0;
+      width: 350px;
+      height: 500px;
+      position: relative;
+      top: 13px;
+      left: 50px;
+    }
+  }
+
+  &__title {
+    text-align: center;
+    color: $white;
+    font-weight: 900;
+    width: 80%;
+    text-transform: uppercase;
+
+    @include mobile-medium {
+      padding-top: 2.4rem;
+    }
+
+    @include mobile-large {
+      padding-top: 1rem;
+      width: 70%;
+      line-height: 4rem;
+    }
+
+    @include tablet-small {
+      font-size: 5.6rem;
+      line-height: 6rem;
+      padding-top: 2rem;
+    }
+
+    // @include tablet-medium {
+    //   padding-top: 4rem;
+    // }
+
+    @include tablet-large {
+      padding-bottom: 2rem;
+    }
+
+    @include desktop-small {
+      width: 100%;
+      text-align: left;
+      padding-top: 0rem;
+      padding-bottom: 0rem;
+    }
+  }
+
+  &__para {
+    color: $white;
+    width: 100%;
+    font-size: 1.4rem;
+
+    @include mobile-medium {
+      width: 98%;
+    }
+
+    @include mobile-large {
+      padding-top: 1rem;
+      font-size: 1.5rem;
+      line-height: 2.5rem;
+      width: 90%;
+    }
+
+    @include tablet-small {
+      width: 50%;
+      font-size: 15px;
+    }
+    @include tablet-medium {
+      padding-top: 0rem;
+      width: 40%;
+    }
+
+    @include tablet-large {
+      width: 30%;
+    }
+
+    @include desktop-small {
+      text-align: left;
+      width: 50%;
+    }
+
+    @include desktop-small {
+      font-size: 1.6rem;
+      width: 90%;
+    }
+  }
+
+  &__button {
+    background-color: $black;
+    color: white;
+    text-transform: uppercase;
+    height: 5rem;
+    width: 60%;
+    border: none;
+    @include button-text;
+
+    @include mobile-medium {
+      height: 5rem;
+    }
+
+    @include tablet-small {
+      width: 30%;
+    }
+
+    @include tablet-large {
+      width: 20%;
+    }
+
+    @include desktop-small {
+      width: 40%;
+    }
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    padding-bottom: 12rem;
+    gap: 4rem;
+    width: 50%;
+  }
+}

@@ -28,11 +28,6 @@ export default function Hero() {
           </div>
         </div>
       </section>
-      <div className="hero__button-container">
-        <button className="hero__button">
-          <p className="hero__button-text">see product</p>
-        </button>
-      </div>
     </>
   );
 }
