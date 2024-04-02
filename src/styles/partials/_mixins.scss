@@ -83,3 +83,9 @@
   font-size: 1.3rem;
   letter-spacing: 0.1rem;
 }
+
+@mixin flex-gap($gap: 4rem) {
+  display: flex;
+  flex-direction: column;
+  gap: $gap;
+}
