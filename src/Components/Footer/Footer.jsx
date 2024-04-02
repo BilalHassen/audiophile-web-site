@@ -16,6 +16,14 @@ export default function Footer() {
             <li className="footer__nav-item">earphones</li>
           </ul>
         </div>
+        <div className="footer__info-txt">
+          <p className="footer__para">
+            Audiophile is an all in one stop to fulfill your audio needs. We're
+            a small team of music lovers and sound specialists who are devoted
+            to helping you get the most out of personal audio. Come and visit
+            our demo facility - we’re open 7 days a week.
+          </p>
+        </div>
       </footer>
     </>
   );
