@@ -1,2 +1,20 @@
 @use "../../styles/partials/mixins" as *;
 @use "../../styles/partials/variables" as *;
+
+.footer {
+  background-color: #101010;
+  color: $white;
+  margin-top: 10rem;
+  padding: 1.6rem;
+
+  &__divider {
+    margin: 0 auto;
+    background-color: $orange;
+    border: none;
+    display: block;
+    position: relative;
+    bottom: 16.1px;
+    height: 0.4rem;
+    width: 40%;
+  }
+}

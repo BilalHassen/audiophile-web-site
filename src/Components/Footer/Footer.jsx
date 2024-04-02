@@ -7,6 +7,7 @@ export default function Footer() {
   return (
     <>
       <footer className="footer">
+        <hr className="footer__divider"></hr>
         <div className="footer__logo-container">
           <img className="footer__logo" src={logo} alt={"footer logo"}></img>
           <ul className="footer__nav">
