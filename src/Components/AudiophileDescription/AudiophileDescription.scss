@@ -25,6 +25,9 @@
   @include desktop-small {
     padding-left: 12rem;
     padding-right: 12rem;
+    padding-top: 16rem;
+    flex-direction: row-reverse;
+    gap: 8rem;
   }
 
   @include desktop-medium {
@@ -56,11 +59,13 @@
     }
 
     @include desktop-small {
-      background-image: url(../../assets/shared/tablet/image-best-gear.jpg);
+      background-image: url(../../assets/shared/desktop/image-best-gear.jpg);
       background-size: cover;
       background-repeat: no-repeat;
+      background-position: center;
       height: 60rem;
       border-radius: 4px;
+      width: 50%;
     }
   }
 
@@ -74,6 +79,11 @@
       padding-right: 5.5rem;
       padding-top: 4rem;
       font-size: 4rem;
+    }
+
+    @include desktop-small {
+      text-align: start;
+      padding: 0rem 0rem 2rem 0rem;
     }
   }
 
@@ -95,13 +105,24 @@
     }
 
     @include desktop-small {
-      font-size: 2.5rem;
-      line-height: 4rem;
+      font-size: 1.5rem;
+      line-height: 2.5rem;
+      padding: 0rem;
+      text-align: start;
     }
 
     @include desktop-large {
       font-size: 2.5rem;
       line-height: 4rem;
+    }
+  }
+
+  @include desktop-small {
+    &__text-box {
+      width: 50%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
     }
   }
 }
@@ -127,5 +148,18 @@ span {
     @include tablet-small {
       display: block;
     }
+
+    @include desktop-small {
+      display: none;
+    }
+  }
+}
+
+.audiophileDescription__br-desktop {
+  @include mobile-small {
+    display: none;
+  }
+  @include desktop-small {
+    display: block;
   }
 }
