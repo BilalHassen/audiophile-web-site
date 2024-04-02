@@ -33,10 +33,10 @@ export default function Footer() {
                 <img className="footer__icon" src={facebookIcon}></img>
               </li>
               <li className="footer__icons">
-                <img className="footer__icon" src={instagramIcon}></img>
+                <img className="footer__icon-twitter" src={twitterIcon}></img>
               </li>
               <li className="footer__icons">
-                <img className="footer__icon" src={twitterIcon}></img>
+                <img className="footer__icon" src={instagramIcon}></img>
               </li>
             </ul>
           </div>
