@@ -5,11 +5,39 @@
   background-color: #101010;
   color: $white;
   margin-top: 10rem;
-  padding: 1.6rem;
+  padding: 1.6rem 1.6rem 4rem 1.6rem;
   gap: 4rem;
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  @include tablet-small {
+    align-items: start;
+  }
+
+  @include mobile-large {
+    padding: 1.6rem 3rem 4rem 3rem;
+  }
+
+  @include tablet-small {
+    padding: 1.6rem 3.5rem 4rem 3.5rem;
+  }
+
+  @include tablet-large {
+    padding: 1.6rem 8rem 4rem 8rem;
+  }
+
+  @include desktop-small {
+    padding: 4rem 12rem 4rem 12rem;
+  }
+
+  @include desktop-medium {
+    padding: 4rem 14rem 4rem 14rem;
+  }
+
+  @include desktop-large {
+    padding: 6rem 18rem 6rem 18rem;
+  }
 
   &__divider {
     margin: 0 auto;
@@ -20,6 +48,21 @@
     bottom: 16.1px;
     height: 0.4rem;
     width: 40%;
+
+    @include tablet-small {
+      width: 15%;
+      margin-left: 0rem;
+    }
+
+    @include desktop-small {
+      bottom: 40px;
+      width: 8%;
+    }
+
+    @include desktop-large {
+      bottom: 60px;
+      width: 8%;
+    }
   }
 
   &__logo-container {
@@ -27,13 +70,36 @@
     align-items: center;
     flex-direction: column;
     gap: 3rem;
+
+    @include tablet-small {
+      align-items: start;
+    }
+
+    @include desktop-small {
+      display: flex;
+      flex-direction: row;
+      width: 100%;
+      justify-content: space-between;
+      align-items: center;
+    }
   }
+
+  //   &__logo {
+  //     @include tablet-small {
+  //       height: 3rem;
+  //     }
+  //   }
 
   &__nav {
     display: flex;
     flex-direction: column;
     gap: 1rem;
     align-items: center;
+
+    @include tablet-small {
+      flex-direction: row;
+      gap: 2rem;
+    }
   }
 
   &__nav-item {
@@ -47,6 +113,20 @@
     align-items: center;
     flex-direction: column;
     gap: 4rem;
+
+    @include tablet-small {
+      align-items: start;
+      gap: 8rem;
+    }
+
+    @include tablet-medium {
+      align-items: start;
+    }
+
+    @include desktop-small {
+      align-items: start;
+      gap: 5rem;
+    }
   }
 
   &__para {
@@ -54,12 +134,33 @@
     font-size: 1.5rem;
     text-align: center;
     color: grey;
+
+    @include tablet-small {
+      text-align: start;
+      width: 100%;
+    }
+
+    @include tablet-medium {
+      text-align: start;
+      width: 64%;
+    }
+
+    @include desktop-small {
+      width: 49.5%;
+    }
   }
 
   &__copyright {
     display: flex;
     flex-direction: column;
     gap: 4rem;
+
+    @include tablet-small {
+      flex-direction: row;
+      justify-content: space-between;
+      width: 100%;
+      align-items: center;
+    }
   }
 
   &__copyright-text {
@@ -70,6 +171,11 @@
     display: flex;
     justify-content: center;
     gap: 2rem;
+
+    @include desktop-small {
+      position: relative;
+      bottom: 55px;
+    }
   }
 
   &__icon-twitter {
