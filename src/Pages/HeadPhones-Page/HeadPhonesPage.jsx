@@ -1,7 +1,12 @@
+import Header from "../../Components/Header/Header";
+import AudiophileDescription from "../../Components/AudiophileDescription/AudiophileDescription";
+import Footer from "../../Components/Footer/Footer";
 export default function HeadPhonesPage() {
   return (
     <>
-      <h1>this is the headphonespage</h1>
+      <Header />
+      <AudiophileDescription />
+      <Footer />
     </>
   );
 }
