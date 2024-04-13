@@ -22,7 +22,9 @@ export default function HeadPhonesCard({
       </div>
       <h1 className="headphones__card-title">{name}</h1>
       <p className="headphones__para">{description}</p>
-      <button className="headphones__button">View Details</button>
+      <div className="headphones__button-container">
+        <button className="headphones__button">see product</button>
+      </div>
     </div>
   );
 }
