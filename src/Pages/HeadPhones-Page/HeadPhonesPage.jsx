@@ -17,22 +17,25 @@ export default function HeadPhonesPage() {
     fetchData();
   }, []);
 
-  console.log({ headphonesData });
+  console.log(headphonesData);
 
   return (
     <>
       <Header />
+      <div className="headphones-title">headphones</div>
       <section className="headphones">
-        {headphonesData.map((data) => (
-          <HeadPhonesCard
-            id={data.id}
-            name={data.name}
-            description={data.description}
-            urlMobile={data.url_mobile}
-            urlTablet={data.url_tablet}
-            urlDesktop={data.url_desktop}
-          />
-        ))}
+        {headphonesData &&
+          headphonesData.map((data, index) => (
+            <HeadPhonesCard
+              newProduct={index === 0 ? "New Product" : null}
+              id={data.id}
+              name={data.name}
+              description={data.description}
+              urlMobile={data.url_mobile}
+              urlTablet={data.url_tablet}
+              urlDesktop={data.url_desktop}
+            />
+          ))}
       </section>
       <AudiophileDescription />
       <Footer />

@@ -8,7 +8,7 @@ export default function HeadPhonesCard({
   urlMobile,
   urlTablet,
   urlDesktop,
-  console,
+  newProduct,
 }) {
   return (
     <div className="headphones__card">
@@ -18,6 +18,7 @@ export default function HeadPhonesCard({
           src={urlMobile}
           alt="headphones image"
         ></img>
+        <h2 className="headphones__new-product">{newProduct}</h2>
       </div>
       <h1 className="headphones__card-title">{name}</h1>
       <p className="headphones__para">{description}</p>
