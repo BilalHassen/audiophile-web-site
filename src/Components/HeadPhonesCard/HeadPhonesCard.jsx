@@ -72,13 +72,14 @@ export default function HeadPhonesCard({
             alt="headphones image"
           ></img>
         ) : null}
-
-        <h2 className="headphones__new-product">{newProduct}</h2>
       </div>
-      <h1 className={`headphones__card-title ${thirdClass}`}>{name}</h1>
-      <p className="headphones__para">{description}</p>
-      <div className="headphones__button-container">
-        <button className="headphones__button">see product</button>
+      <div className="text-container">
+        <h2 className="headphones__new-product">{newProduct}</h2>
+        <h1 className={`headphones__card-title ${thirdClass}`}>{name}</h1>
+        <p className="headphones__para">{description}</p>
+        <div className="headphones__button-container">
+          <button className="headphones__button">see product</button>
+        </div>
       </div>
     </div>
   );

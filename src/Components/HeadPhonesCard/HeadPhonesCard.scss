@@ -11,6 +11,12 @@
   font-size: 2.8rem;
   font-weight: 900;
   padding-bottom: 3rem;
+
+  @include tablet-small {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+    font-size: 3.6rem;
+  }
 }
 
 .headphones {
@@ -27,6 +33,16 @@
     padding-right: 3rem;
   }
 
+  @include tablet-medium {
+    padding-left: 3.5rem;
+    padding-right: 3.5rem;
+  }
+
+  @include tablet-large {
+    padding-left: 8rem;
+    padding-right: 8rem;
+  }
+
   &__new-product {
     font-size: 2rem;
     text-align: center;
@@ -34,7 +50,7 @@
     margin-top: 2rem;
     margin-bottom: 2rem;
     text-transform: uppercase;
-    letter-spacing: 0.9rem;
+    letter-spacing: 0.5rem;
     font-size: 1.4rem;
   }
 
@@ -52,6 +68,11 @@
     text-align: center;
     font-size: 2.8rem;
     text-transform: uppercase;
+
+    @include tablet-small {
+      padding-left: 20rem;
+      padding-right: 20rem;
+    }
   }
 
   &__para {
@@ -63,6 +84,21 @@
     @include mobile-large {
       padding-left: 2rem;
       padding-right: 2rem;
+    }
+
+    @include tablet-small {
+      padding-left: 9rem;
+      padding-right: 9rem;
+    }
+
+    @include tablet-medium {
+      padding-left: 20rem;
+      padding-right: 20rem;
+    }
+
+    @include tablet-large {
+      padding-left: 28rem;
+      padding-right: 28rem;
     }
   }
 
@@ -86,10 +122,26 @@
     @include mobile-large {
       width: 50%;
     }
+
+    @include tablet-small {
+      width: 25%;
+      height: 5rem;
+    }
+
+    @include tablet-medium {
+      width: 20%;
+      height: 5rem;
+    }
   }
 }
 
 .break {
   padding-left: 6rem;
   padding-right: 6rem;
+}
+
+.headphones__card {
+  @include desktop-small {
+    display: flex;
+  }
 }
