@@ -73,7 +73,7 @@ export default function HeadPhonesCard({
           ></img>
         ) : null}
       </div>
-      <div className="text-container">
+      <div className="headphones__text-container">
         <h2 className="headphones__new-product">{newProduct}</h2>
         <h1 className={`headphones__card-title ${thirdClass}`}>{name}</h1>
         <p className="headphones__para">{description}</p>
