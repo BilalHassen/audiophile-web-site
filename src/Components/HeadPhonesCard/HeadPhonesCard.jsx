@@ -11,6 +11,7 @@ export default function HeadPhonesCard({
   urlDesktop,
   newProduct,
   thirdClass,
+  secondClass,
 }) {
   const [isMobile, setMobile] = useState(true);
   const [isTablet, setTablet] = useState(false);
@@ -47,7 +48,7 @@ export default function HeadPhonesCard({
   }, []);
 
   return (
-    <div className="headphones__card">
+    <div className={`headphones__card ${secondClass}`}>
       <div className="headphones__image-container">
         {isMobile ? (
           <img

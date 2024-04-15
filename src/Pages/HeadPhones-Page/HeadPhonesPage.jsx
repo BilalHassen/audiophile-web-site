@@ -29,6 +29,7 @@ export default function HeadPhonesPage() {
             <HeadPhonesCard
               newProduct={index === 0 ? "New Product" : null}
               thirdClass={index === 2 ? "break" : null}
+              secondClass={index === 1 ? "reverse" : null}
               id={data.id}
               name={data.name}
               description={data.description}

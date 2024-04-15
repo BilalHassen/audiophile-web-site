@@ -48,6 +48,12 @@
     padding-right: 8rem;
   }
 
+  @include desktop-small {
+    padding-left: 12rem;
+    padding-right: 12rem;
+    padding-top: 15rem;
+  }
+
   &__new-product {
     font-size: 2rem;
     text-align: center;
@@ -93,7 +99,9 @@
     @include desktop-small {
       text-align: start;
       padding: 0;
-      padding-right: 23rem;
+      width: 50%;
+      padding-bottom: 2rem;
+      font-size: 4rem;
     }
   }
 
@@ -125,8 +133,8 @@
 
     @include desktop-small {
       padding: 0;
-      padding-right: 16rem;
       text-align: start;
+      font-size: 1.5rem;
     }
   }
 
@@ -193,5 +201,13 @@
     flex-direction: column;
     justify-content: center;
     padding-bottom: 6rem;
+  }
+}
+
+.reverse {
+  @include desktop-small {
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 10rem;
   }
 }
