@@ -28,6 +28,7 @@ export default function HeadPhonesPage() {
           headphonesData.map((data, index) => (
             <HeadPhonesCard
               newProduct={index === 0 ? "New Product" : null}
+              thirdClass={index === 2 ? "break" : null}
               id={data.id}
               name={data.name}
               description={data.description}
