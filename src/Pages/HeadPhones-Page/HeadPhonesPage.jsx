@@ -9,7 +9,9 @@ export default function HeadPhonesPage() {
 
   useEffect(() => {
     const fetchData = async () => {
-      let response = await axios.get("http://localhost:8080/products");
+      let response = await axios.get(
+        "http://localhost:8080/products/headphones"
+      );
       console.log(response.data);
       setHeadphonesData(response.data);
     };
