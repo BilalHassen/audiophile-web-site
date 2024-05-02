@@ -6,10 +6,17 @@ export default function SpeakersCard({
   urlMobile,
   urlTablet,
   urlDesktop,
+  newProduct,
 }) {
   const [mobile, setMobile] = useState(false);
   const [tablet, setTablet] = useState(false);
   const [desktop, setDesktop] = useState(false);
+
+  if (newProduct) {
+    console.log(newProduct);
+  } else {
+    console.log(false);
+  }
 
   const handleScreenSize = () => {
     const currentWidth = window.innerWidth;
@@ -33,21 +40,27 @@ export default function SpeakersCard({
   return (
     <>
       <div className="speakers__card">
-        {mobile ? (
-          <img className="speakers__card-image" src={urlMobile}></img>
-        ) : null}
+        <div className="speakers__image-container">
+          {mobile ? (
+            <img className="speakers__image-container" src={urlMobile}></img>
+          ) : null}
 
-        {tablet ? (
-          <img className="speakers__card-image" src={urlTablet}></img>
-        ) : null}
+          {tablet ? (
+            <img className="speakers__image-container" src={urlTablet}></img>
+          ) : null}
 
-        {desktop ? (
-          <img className="speakers__card-image" src={urlDesktop}></img>
-        ) : null}
-
-        <h1 className="speakers__card-name">{name}</h1>
-        <p className="speakers__card-description">{description}</p>
-        <button className="speakers__card-button">see product</button>
+          {desktop ? (
+            <img className="speakers__image-container" src={urlDesktop}></img>
+          ) : null}
+        </div>
+        <div className="speakers__text-container">
+          <h2 className="speakers__new-product">{newProduct}</h2>
+          <h1 className={`speakers__card-title `}>{name}</h1>
+          <p className="speakers__para">{description}</p>
+          <div className="speakers__button-container">
+            <button className="speakers__button">see product</button>
+          </div>
+        </div>
       </div>
     </>
   );

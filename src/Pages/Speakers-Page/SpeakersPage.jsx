@@ -26,11 +26,12 @@ export default function SpeakersPage() {
   return (
     <>
       <Header />
-      <h1 className="speakers__title">speakers</h1>
+      <h1 className="speakers-title">speakers</h1>
       <section className="speakers">
-        {speakersData.map((data) => (
+        {speakersData.map((data, index) => (
           <SpeakersCard
             key={data.id}
+            newProduct={index === 1 ? "new product" : null}
             name={data.name}
             description={data.description}
             urlMobile={data.url_mobile}
