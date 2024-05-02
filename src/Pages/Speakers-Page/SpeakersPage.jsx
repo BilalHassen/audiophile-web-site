@@ -32,6 +32,8 @@ export default function SpeakersPage() {
           <SpeakersCard
             key={data.id}
             newProduct={index === 1 ? "new product" : null}
+            reverseClass={index === 0 ? "reverse" : null}
+            textWidthClass={index === 0 ? "textWidthClass" : null}
             name={data.name}
             description={data.description}
             urlMobile={data.url_mobile}

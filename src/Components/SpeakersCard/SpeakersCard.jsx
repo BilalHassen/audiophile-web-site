@@ -7,6 +7,8 @@ export default function SpeakersCard({
   urlTablet,
   urlDesktop,
   newProduct,
+  reverseClass,
+  textWidthClass,
 }) {
   const [mobile, setMobile] = useState(false);
   const [tablet, setTablet] = useState(false);
@@ -39,7 +41,7 @@ export default function SpeakersCard({
 
   return (
     <>
-      <div className="speakers__card">
+      <div className={`speakers__card ${reverseClass}`}>
         <div className="speakers__image-container">
           {mobile ? (
             <img className="speakers__image-container" src={urlMobile}></img>
@@ -56,7 +58,7 @@ export default function SpeakersCard({
         <div className="speakers__text-container">
           <h2 className="speakers__new-product">{newProduct}</h2>
           <h1 className={`speakers__card-title `}>{name}</h1>
-          <p className="speakers__para">{description}</p>
+          <p className={`speakers__para ${textWidthClass}`}>{description}</p>
           <div className="speakers__button-container">
             <button className="speakers__button">see product</button>
           </div>

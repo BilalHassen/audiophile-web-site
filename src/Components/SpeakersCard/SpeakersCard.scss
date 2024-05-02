@@ -125,8 +125,15 @@
 
     @include desktop-small {
       padding: 0;
+      width: 90%;
       text-align: start;
       font-size: 1.5rem;
+    }
+  }
+
+  &__text-container {
+    @include desktop-small {
+      width: 95%;
     }
   }
 
@@ -168,5 +175,26 @@
     @include desktop-small {
       width: 30%;
     }
+  }
+}
+
+.speakers__card {
+  @include desktop-small {
+    display: flex;
+    gap: 10rem;
+  }
+}
+
+.speakers__text-container {
+  @include desktop-small {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-bottom: 6rem;
+  }
+}
+.textWidthClass {
+  @include desktop-small {
+    width: 99%;
   }
 }
