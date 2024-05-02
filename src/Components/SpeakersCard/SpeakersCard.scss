@@ -1,7 +1,5 @@
-.card {
-  color: blue;
-}
-
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
 .speakers__card-image {
   width: 100px;
   height: 100px;
