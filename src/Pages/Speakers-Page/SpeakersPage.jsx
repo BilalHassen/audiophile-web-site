@@ -3,6 +3,7 @@ import Header from "../../Components/Header/Header";
 import AudiophileDescription from "../../Components/AudiophileDescription/AudiophileDescription";
 import Footer from "../../Components/Footer/Footer";
 import { useEffect, useState } from "react";
+import SpeakersCard from "../../Components/SpeakersCard/SpeakersCard";
 export default function SpeakersPage() {
   const [speakersData, setSpeakersData] = useState([]);
 
