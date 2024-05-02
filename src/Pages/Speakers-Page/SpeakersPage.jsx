@@ -26,9 +26,8 @@ export default function SpeakersPage() {
   return (
     <>
       <Header />
-      <section className="speakers">
-        <h1 className="speakers__title">speakers</h1>
-      </section>
+      <h1 className="speakers__title">speakers</h1>
+      <section className="speakers"></section>
       <AudiophileDescription />
       <Footer />
     </>
