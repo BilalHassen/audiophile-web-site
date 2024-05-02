@@ -14,24 +14,9 @@ export default function SpeakersCard({
   const handleScreenSize = () => {
     const currentWidth = window.innerWidth;
 
-    if (currentWidth < 768) {
-      setMobile(true);
-    } else {
-      setMobile(false);
-    }
-
-    if (currentWidth >= 768) {
-      setTablet(true);
-    } else {
-      setTablet(false);
-    }
-
-    if (currentWidth >= 1366) {
-      setTablet(false);
-      setDesktop(true);
-    } else {
-      setDesktop(false);
-    }
+    setMobile(currentWidth < 768);
+    setTablet(currentWidth >= 768 && currentWidth < 1366);
+    setDesktop(currentWidth >= 1366);
   };
 
   useEffect(() => {
