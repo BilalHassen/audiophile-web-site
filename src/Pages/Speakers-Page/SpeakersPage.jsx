@@ -27,7 +27,18 @@ export default function SpeakersPage() {
     <>
       <Header />
       <h1 className="speakers__title">speakers</h1>
-      <section className="speakers"></section>
+      <section className="speakers">
+        {speakersData.map((data) => (
+          <SpeakersCard
+            key={data.id}
+            name={data.name}
+            description={data.description}
+            urlMobile={data.url_mobile}
+            urlTablet={data.url_tablet}
+            urlDesktop={data.url_desktop}
+          />
+        ))}
+      </section>
       <AudiophileDescription />
       <Footer />
     </>
