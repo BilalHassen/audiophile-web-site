@@ -7,6 +7,7 @@ import orangeIcon from "../../assets/shared/desktop/icon-arrow-right.svg";
 import Header from "../Header/Header";
 import { useState, useEffect } from "react";
 import "./Nav.scss";
+import { Link } from "react-router-dom";
 
 export default function Nav() {
   const [isDesktop, setDesktop] = useState();
@@ -19,26 +20,32 @@ export default function Nav() {
             <li className="nav__list-item">
               <img className="nav__list-img" src={headphones}></img>
               <p className="nav__list-title">headphones</p>
-              <div className="nav__shop-container">
-                <p className="nav__text">shop</p>
-                <img className="nav__orange-icon" src={orangeIcon}></img>
-              </div>
+              <Link to="/headphones">
+                <div className="nav__shop-container">
+                  <p className="nav__text">shop</p>
+                  <img className="nav__orange-icon" src={orangeIcon}></img>
+                </div>
+              </Link>
             </li>
             <li className="nav__list-item">
               <img className="nav__list-img" src={speakers}></img>
               <p className="nav__list-title">speakers</p>
-              <div className="nav__shop-container">
-                <p className="nav__text">shop</p>
-                <img className="nav__orange-icon" src={orangeIcon}></img>
-              </div>
+              <Link to="/speakers">
+                <div className="nav__shop-container">
+                  <p className="nav__text">shop</p>
+                  <img className="nav__orange-icon" src={orangeIcon}></img>
+                </div>
+              </Link>
             </li>
             <li className="nav__list-item">
               <img className="nav__list-img" src={earphones}></img>
               <p className="nav__list-title">Earphones</p>
-              <div className="nav__shop-container">
-                <p className="nav__text">shop</p>
-                <img className="nav__orange-icon" src={orangeIcon}></img>
-              </div>
+              <Link to="/earphones">
+                <div className="nav__shop-container">
+                  <p className="nav__text">shop</p>
+                  <img className="nav__orange-icon" src={orangeIcon}></img>
+                </div>
+              </Link>
             </li>
           </ul>
         </nav>
