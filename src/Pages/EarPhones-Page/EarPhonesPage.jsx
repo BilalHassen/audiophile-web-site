@@ -29,7 +29,18 @@ export default function EarPhonesPage() {
     <>
       <Header />
       <div className="earphones-title">earphones</div>
-      <section className="earphones"></section>
+      <section className="earphones">
+        {earphonesData.map((data, index) => (
+          <EarPhonesCard
+            key={data.id}
+            name={data.name}
+            description={data.description}
+            urlMobile={data.url_mobile}
+            urlTablet={data.url_tablet}
+            urlDesktop={data.url_desktop}
+          />
+        ))}
+      </section>
 
       <AudiophileDescription />
       <Footer />

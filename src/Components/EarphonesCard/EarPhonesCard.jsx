@@ -2,7 +2,13 @@ import React from "react";
 import "./HeadPhonesCard.scss";
 import { useEffect, useState } from "react";
 
-export default function EarPhonesCard() {
+export default function EarPhonesCard({
+  name,
+  description,
+  urlMobile,
+  urlTablet,
+  urlDesktop,
+}) {
   return (
     <>
       <div className={`earphones__card`}>
