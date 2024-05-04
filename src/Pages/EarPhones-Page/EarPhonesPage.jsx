@@ -5,9 +5,33 @@ import HeadPhonesCard from "../../Components/HeadPhonesCard/HeadPhonesCard";
 import axios from "axios";
 import { useEffect, useState } from "react";
 export default function EarPhonesPage() {
+  const apiURL = "http://localhost:8080/products/earphones";
+
+  const [earphonesData, setEarPhonesData] = useState([]);
+
+  const getEarphonesData = async () => {
+    try {
+      const response = await axios.get(apiURL);
+      const data = response.data;
+      setEarPhonesData(data);
+    } catch {
+      console.log("error fetching data", error);
+    }
+  };
+
+  useEffect(() => {
+    getEarphonesData();
+    console.log(earphonesData);
+  }, []);
+
   return (
     <>
-      <h1>earphones page for the earphones item</h1>
+      <Header />
+      <div className="earphones-title">earphones</div>
+      <section className="earphones"></section>
+
+      <AudiophileDescription />
+      <Footer />
     </>
   );
 }
