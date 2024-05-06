@@ -67,6 +67,10 @@
     @include desktop-small {
       text-align: start;
     }
+
+    @include desktop-large {
+      font-size: 2rem;
+    }
   }
 
   &__image-container {
@@ -82,7 +86,7 @@
     height: 30rem;
     border-radius: 4px;
     @include desktop-small {
-      height: 90%;
+      height: 100%;
     }
   }
 
@@ -102,6 +106,7 @@
       width: 50%;
       padding-bottom: 2rem;
       font-size: 4rem;
+      line-height: 4.5rem;
     }
   }
 
@@ -135,6 +140,12 @@
       padding: 0;
       text-align: start;
       font-size: 1.5rem;
+      width: 75%;
+      line-height: 2.5rem;
+    }
+
+    @include desktop-large {
+      font-size: 2rem;
     }
   }
 
@@ -145,6 +156,10 @@
 
     @include desktop-small {
       justify-content: flex-start;
+    }
+
+    @include desktop-large {
+      margin-top: 4rem;
     }
   }
 
@@ -176,5 +191,25 @@
     @include desktop-small {
       width: 30%;
     }
+
+    @include desktop-large {
+      width: 20%;
+    }
+  }
+}
+
+.earphones__card {
+  @include desktop-small {
+    display: flex;
+    gap: 10rem;
+  }
+}
+
+.earphones__text-container {
+  @include desktop-small {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-bottom: 6rem;
   }
 }
