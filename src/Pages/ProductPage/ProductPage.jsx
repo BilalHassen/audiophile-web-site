@@ -3,6 +3,7 @@ import "./ProductPage";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import { useState, useEffect } from "react";
+import ProductCard from "../../Components/ProductCard/ProductCard";
 
 export default function ProductPage() {
   const [productData, setProductData] = useState();
@@ -32,6 +33,7 @@ export default function ProductPage() {
   return (
     <>
       <section className="product"></section>
+      <ProductCard />
     </>
   );
 }
