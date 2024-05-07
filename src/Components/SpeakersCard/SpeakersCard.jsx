@@ -1,6 +1,8 @@
 import "./SpeakersCard.scss";
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 export default function SpeakersCard({
+  id,
   name,
   description,
   urlMobile,
@@ -59,9 +61,12 @@ export default function SpeakersCard({
           <h2 className="speakers__new-product">{newProduct}</h2>
           <h1 className={`speakers__card-title `}>{name}</h1>
           <p className={`speakers__para ${textWidthClass}`}>{description}</p>
-          <div className="speakers__button-container">
-            <button className="speakers__button">see product</button>
-          </div>
+
+          <Link to={`/products/${id}`}>
+            <div className="speakers__button-container">
+              <button className="speakers__button">see product</button>
+            </div>
+          </Link>
         </div>
       </div>
     </>
