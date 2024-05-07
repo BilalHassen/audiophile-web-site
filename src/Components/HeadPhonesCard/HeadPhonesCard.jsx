@@ -1,6 +1,7 @@
 import React from "react";
 import "./HeadPhonesCard.scss";
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 export default function HeadPhonesCard({
   id,
@@ -78,9 +79,11 @@ export default function HeadPhonesCard({
         <h2 className="headphones__new-product">{newProduct}</h2>
         <h1 className={`headphones__card-title ${thirdClass}`}>{name}</h1>
         <p className="headphones__para">{description}</p>
-        <div className="headphones__button-container">
-          <button className="headphones__button">see product</button>
-        </div>
+        <Link to={`/products/${id}`}>
+          <div className="headphones__button-container">
+            <button className="headphones__button">see product</button>
+          </div>
+        </Link>
       </div>
     </div>
   );
