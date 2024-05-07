@@ -1,9 +1,22 @@
 import "./ProductCard.scss";
 
-export default function ProductCard() {
+export default function ProductCard({
+  name,
+  description,
+  features,
+  includes,
+  price,
+  urlMobile,
+  urlTablet,
+  urlDesktop,
+  imageData,
+}) {
+  console.log(urlMobile);
   return (
     <>
-      <h1>products cards</h1>
+      <div className="product__card">
+        <img className="product__img" src={urlMobile}></img>
+      </div>
     </>
   );
 }

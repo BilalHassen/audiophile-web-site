@@ -6,8 +6,7 @@ import { useState, useEffect } from "react";
 import ProductCard from "../../Components/ProductCard/ProductCard";
 
 export default function ProductPage() {
-  const [productData, setProductData] = useState();
-  const [productImageData, setProductImageData] = useState();
+  const [productData, setProductData] = useState([]);
 
   const { id } = useParams();
   console.log(id);
@@ -18,10 +17,8 @@ export default function ProductPage() {
     const getProductData = async () => {
       try {
         let response = await axios.get(apiUrl);
-        let data = response.data.data;
-        let imageData = response.data.imageData;
-        setProductData(data);
-        setProductImageData(imageData);
+        let data = response.data;
+        setProductData([data]);
       } catch (error) {
         console.log(error);
       }
@@ -32,8 +29,26 @@ export default function ProductPage() {
 
   return (
     <>
-      <section className="product"></section>
-      <ProductCard />
+      <section className="product">
+        {productData.map((data, index) => {
+          let defaultData = data.data[0];
+          let imageData = data.imageData;
+
+          return (
+            <ProductCard
+              name={defaultData.name}
+              description={defaultData.description}
+              features={defaultData.features}
+              includes={defaultData.includes}
+              price={defaultData.price}
+              urlMobile={defaultData.url_mobile}
+              urlTablet={defaultData.url_tablet}
+              urlDesktop={defaultData.url_Desktop}
+              imageData={imageData}
+            />
+          );
+        })}
+      </section>
     </>
   );
 }
