@@ -35,8 +35,8 @@ export default function ProductPage() {
           let defaultData = data.data[0];
           let imageData = data.imageData;
           let productIncludes = data.data[0].includes;
+          // Parse the 'includes' data from a JSON string to a JavaScript object array
           const jsonIncludesData = JSON.parse(productIncludes);
-          console.log(jsonIncludesData);
           return (
             <ProductCard
               key={index}
