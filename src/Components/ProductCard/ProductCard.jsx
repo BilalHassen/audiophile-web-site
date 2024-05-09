@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import "./ProductCard.scss";
+import ProductIncludes from "../ProductIncludes/ProductIncludes";
 
 export default function ProductCard({
   id,
@@ -47,6 +48,12 @@ export default function ProductCard({
         <div className="product__features-container">
           <p className="product__features">{}</p>
         </div>
+
+        {includes.map((data, index) => (
+          <div className="products__includes-container">
+            <ProductIncludes />
+          </div>
+        ))}
       </div>
     </>
   );
