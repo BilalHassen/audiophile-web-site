@@ -51,7 +51,7 @@ export default function ProductCard({
 
         {includes.map((data, index) => (
           <div className="products__includes-container">
-            <ProductIncludes />
+            <ProductIncludes quantity={data.quantity} item={data.item} />
           </div>
         ))}
       </div>

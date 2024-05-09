@@ -1,8 +1,11 @@
 import "./ProductIncludes.scss";
-export default function ProductIncludes() {
+export default function ProductIncludes(quantity, item) {
+  console.log(quantity);
+
   return (
     <>
-      <h1>product includes component</h1>
+      <div className="product__quantity">{`${quantity.quantity}x`}</div>
+      <div className="product__item">{quantity.item}</div>
     </>
   );
 }
