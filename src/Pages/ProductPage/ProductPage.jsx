@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom";
 import axios from "axios";
 import { useState, useEffect } from "react";
 import ProductCard from "../../Components/ProductCard/ProductCard";
+import Header from "../../Components/Header/Header";
 
 export default function ProductPage() {
   const [productData, setProductData] = useState([]);
@@ -29,6 +30,7 @@ export default function ProductPage() {
 
   return (
     <>
+      <Header />
       <section className="product">
         {productData.map((data, index) => {
           let defaultData = data.data[0];
