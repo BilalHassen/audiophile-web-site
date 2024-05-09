@@ -1,6 +1,6 @@
 import "../../Components/Header/Header";
 import "./ProductPage";
-import { useParams } from "react-router-dom";
+import { json, useParams } from "react-router-dom";
 import axios from "axios";
 import { useState, useEffect } from "react";
 import ProductCard from "../../Components/ProductCard/ProductCard";
@@ -10,7 +10,6 @@ export default function ProductPage() {
   const [productData, setProductData] = useState([]);
 
   const { id } = useParams();
-  console.log(id);
 
   const apiUrl = `http://localhost:8080/products/${id}`;
 
@@ -35,13 +34,17 @@ export default function ProductPage() {
         {productData.map((data, index) => {
           let defaultData = data.data[0];
           let imageData = data.imageData;
-
+          let productIncludes = data.data[0].includes;
+          const jsonIncludesData = JSON.parse(productIncludes);
+          console.log(jsonIncludesData);
           return (
             <ProductCard
+              key={index}
+              id={id}
               name={defaultData.name}
               description={defaultData.description}
               features={defaultData.features}
-              includes={defaultData.includes}
+              includes={jsonIncludesData}
               price={defaultData.price}
               urlMobile={defaultData.url_mobile}
               urlTablet={defaultData.url_tablet}

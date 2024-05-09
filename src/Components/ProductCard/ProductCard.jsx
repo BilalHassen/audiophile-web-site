@@ -1,6 +1,8 @@
+import { useEffect, useState } from "react";
 import "./ProductCard.scss";
 
 export default function ProductCard({
+  id,
   name,
   description,
   features,
@@ -11,12 +13,14 @@ export default function ProductCard({
   urlDesktop,
   imageData,
 }) {
-  console.log(urlMobile);
-  return (
-    <>
-      <div className="product__card">
-        <img className="product__img" src={urlMobile}></img>
-      </div>
-    </>
-  );
+  const [is_new, setIsNew] = useState(false);
+
+  useEffect(() => {
+    const isNew = () => {
+      setIsNew(id === "1" || id === "2" || id === "6");
+    };
+    isNew();
+  }, []);
+
+  return <></>;
 }
