@@ -21,14 +21,63 @@
     padding-top: 1.6rem;
     padding-bottom: 1.6rem;
     color: $orange;
+    text-transform: uppercase;
+    font-size: 1.4rem;
+    letter-spacing: 1rem;
   }
 
   &__title {
     padding-bottom: 1.6rem;
+    font-size: 3rem;
+    text-transform: uppercase;
   }
 
   &__description {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     color: #808080;
+    padding-bottom: 1.6rem;
+  }
+
+  &__price {
+    font-size: 1.29rem;
+    padding-bottom: 1.6rem;
+  }
+
+  &__controller-container {
+    display: flex;
+    width: 35%;
+  }
+
+  &__add-delete {
+    display: flex;
+    gap: 1.5rem;
+  }
+
+  &__button {
+    background-color: $orange;
+    background-color: $orange;
+    border: none;
+    justify-content: center;
+    height: 3.5rem;
+    font-size: 1rem;
+    width: 45%;
+    color: white;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+  }
+
+  &__delete {
+    border: none;
+    background-color: $light-grey;
+    width: 100%;
+  }
+
+  &__number {
+    display: flex;
+    align-items: center;
+    background-color: $light-grey;
+    font-size: 1rem;
   }
 }
