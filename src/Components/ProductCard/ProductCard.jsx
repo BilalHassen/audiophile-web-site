@@ -26,7 +26,9 @@ export default function ProductCard({
   return (
     <>
       <div className="product__card">
-        <img className="product__img" src={urlMobile}></img>
+        <div className="product__img-container">
+          <img className="product__img" src={urlMobile}></img>
+        </div>
         {is_new ? (
           <h2 className={is_new ? "product__new-product" : null}>
             {" "}

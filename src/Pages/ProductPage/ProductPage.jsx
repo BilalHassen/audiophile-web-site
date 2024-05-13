@@ -31,7 +31,7 @@ export default function ProductPage() {
     <>
       <Header />
       <section className="product">
-        <button className="product_direction">Go Back</button>
+        <button className="product__direction">Go Back</button>
         {productData.map((data, index) => {
           let defaultData = data.data[0];
           let imageData = data.imageData;
