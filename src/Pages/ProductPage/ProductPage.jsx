@@ -1,6 +1,6 @@
 import "../../Components/Header/Header";
 import "./ProductPage";
-import { json, useParams } from "react-router-dom";
+import { json, useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { useState, useEffect } from "react";
 import ProductCard from "../../Components/ProductCard/ProductCard";
@@ -27,11 +27,17 @@ export default function ProductPage() {
     getProductData();
   }, []);
 
+  function goBack() {
+    window.history.back();
+  }
+
   return (
     <>
       <Header />
       <section className="product">
-        <button className="product__direction">Go Back</button>
+        <button className="product__direction" onClick={goBack}>
+          Go Back
+        </button>
         {productData.map((data, index) => {
           let defaultData = data.data[0];
           let imageData = data.imageData;
