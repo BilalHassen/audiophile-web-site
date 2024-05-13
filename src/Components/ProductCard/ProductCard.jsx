@@ -46,13 +46,16 @@ export default function ProductCard({
           </div>
           <button className="product__button">add to cart</button>
         </div>
-
         <h3 className="product__features-title">features</h3>
-        {includes.map((data, index) => (
-          <div className="products__includes-container">
-            <ProductIncludes quantity={data.quantity} item={data.item} />
-          </div>
-        ))}
+
+        <h3 className="product__quantity-title">In the box</h3>
+        <div className="product__includes-wrapper">
+          {includes.map((data, index) => (
+            <div className="product__includes-container">
+              <ProductIncludes quantity={data.quantity} item={data.item} />
+            </div>
+          ))}
+        </div>
       </div>
     </>
   );

@@ -1,6 +1,6 @@
 import "./ProductIncludes.scss";
 export default function ProductIncludes(quantity, item) {
-  console.log(quantity);
+  // console.log(quantity);
 
   return (
     <>
