@@ -14,6 +14,11 @@ export default function ProductCard({
   urlDesktop,
   imageData,
 }) {
+  let featuresSplit = features.split("\n\n");
+  console.log(featuresSplit[0]);
+  let featuresParaOne = featuresSplit[0];
+  let featuresParaTwo = featuresSplit[1];
+
   const [is_new, setIsNew] = useState(false);
 
   useEffect(() => {
@@ -47,6 +52,10 @@ export default function ProductCard({
           <button className="product__button">add to cart</button>
         </div>
         <h3 className="product__features-title">features</h3>
+        <div className="product__features-container">
+          <p className="product__features">{featuresParaOne}</p>
+          <p className="product__features">{featuresParaTwo}</p>
+        </div>
 
         <h3 className="product__quantity-title">In the box</h3>
         <div className="product__includes-wrapper">
