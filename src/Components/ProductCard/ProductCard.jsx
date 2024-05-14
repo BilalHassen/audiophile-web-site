@@ -14,8 +14,9 @@ export default function ProductCard({
   urlDesktop,
   imageData,
 }) {
+  console.log(imageData);
+
   let featuresSplit = features.split("\n\n");
-  console.log(featuresSplit[0]);
   let featuresParaOne = featuresSplit[0];
   let featuresParaTwo = featuresSplit[1];
 
