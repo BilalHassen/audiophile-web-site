@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import "./ProductCard.scss";
 import ProductIncludes from "../ProductIncludes/ProductIncludes";
+import ProductGallery from "../ProductGallery/ProductGallery";
 
 export default function ProductCard({
   id,
@@ -14,8 +15,6 @@ export default function ProductCard({
   urlDesktop,
   imageData,
 }) {
-  console.log(imageData);
-
   let featuresSplit = features.split("\n\n");
   let featuresParaOne = featuresSplit[0];
   let featuresParaTwo = featuresSplit[1];
@@ -65,6 +64,9 @@ export default function ProductCard({
               <ProductIncludes quantity={data.quantity} item={data.item} />
             </div>
           ))}
+        </div>
+        <div className="product__gallery">
+          <ProductGallery imageData={imageData} />
         </div>
       </div>
     </>
