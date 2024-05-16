@@ -31,90 +31,84 @@ export default function ProductGallery({ imageData }) {
 
   return (
     <>
+      <div className="product__gallery-larger-container">
+        {isMobile ? (
+          <div className="product__img-container">
+            <img
+              className="product__gallery-img"
+              src={galleryFirst.url_mobile}
+              alt="Mobile Image"
+            />
+          </div>
+        ) : null}
+        {isTablet ? (
+          <div className="product__img-container">
+            <img
+              className="product__gallery-img"
+              src={galleryFirst.url_tablet}
+              alt="Tablet Image"
+            />
+          </div>
+        ) : null}
+        {isDesktop ? (
+          <div className="product__img-container">
+            <img
+              className="product__gallery-img"
+              src={galleryFirst.url_desktop}
+              alt="Desktop Image"
+            />
+          </div>
+        ) : null}
+        {isMobile ? (
+          <div className="product__img-container">
+            <img
+              className="product__gallery-img"
+              src={gallerySecond.url_mobile}
+              alt="Mobile Image"
+            />
+          </div>
+        ) : null}
+        {isTablet ? (
+          <div className="product__img-container">
+            <img
+              className="product__gallery-img"
+              src={gallerySecond.url_tablet}
+              alt="Tablet Image"
+            />
+          </div>
+        ) : null}
+        {isDesktop ? (
+          <div className="product__img-container">
+            <img
+              className="product__gallery-img"
+              src={gallerySecond.url_desktop}
+              alt="Desktop Image"
+            />
+          </div>
+        ) : null}
+      </div>
       {isMobile ? (
         <div className="product__img-container">
           <img
-            className="product__gallery-img"
-            src={galleryFirst.url_mobile}
-            alt="Mobile Image"
-          />
-        </div>
-      ) : null}
-
-      {isTablet ? (
-        <div className="product__img-container">
-          <img
-            className="product__gallery-img"
-            src={galleryFirst.url_tablet}
-            alt="Tablet Image"
-          />
-        </div>
-      ) : null}
-
-      {isDesktop ? (
-        <div className="product__img-container">
-          <img
-            className="product__gallery-img"
-            src={galleryFirst.url_desktop}
-            alt="Desktop Image"
-          />
-        </div>
-      ) : null}
-
-      {isMobile ? (
-        <div className="product__img-container">
-          <img
-            className="product__gallery-img"
-            src={gallerySecond.url_mobile}
-            alt="Mobile Image"
-          />
-        </div>
-      ) : null}
-
-      {isTablet ? (
-        <div className="product__img-container">
-          <img
-            className="product__gallery-img"
-            src={gallerySecond.url_tablet}
-            alt="Tablet Image"
-          />
-        </div>
-      ) : null}
-
-      {isDesktop ? (
-        <div className="product__img-container">
-          <img
-            className="product__gallery-img"
-            src={gallerySecond.url_desktop}
-            alt="Desktop Image"
-          />
-        </div>
-      ) : null}
-
-      {isMobile ? (
-        <div className="product__img-container">
-          <img
-            className="product__gallery-img"
+            className="product__gallery-img large"
             src={galleryThird.url_mobile}
             alt="Mobile Image"
           />
         </div>
       ) : null}
-
       {isTablet ? (
         <div className="product__img-container">
           <img
-            className="product__gallery-img"
+            className="product__gallery-img large"
             src={galleryThird.url_tablet}
             alt="Tablet Image"
           />
         </div>
       ) : null}
-
       {isDesktop ? (
         <div className="product__img-container">
           <img
-            className="product__gallery-img"
+            className="product__gallery-img large"
             src={galleryThird.url_desktop}
             alt="Desktop Image"
           />
