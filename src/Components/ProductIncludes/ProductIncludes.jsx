@@ -4,8 +4,10 @@ export default function ProductIncludes(quantity, item) {
 
   return (
     <>
-      <div className="product__quantity">{`${quantity.quantity}x`}</div>
-      <div className="product__item">{quantity.item}</div>
+      <div className="product__inthebox">
+        <div className="product__quantity">{`${quantity.quantity}x`}</div>
+        <div className="product__item">{quantity.item}</div>
+      </div>
     </>
   );
 }

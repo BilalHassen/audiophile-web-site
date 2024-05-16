@@ -18,6 +18,7 @@
 
   &__flex-container {
     display: flex;
+    gap: 4.7rem;
   }
 
   &__details-wrapper {
@@ -28,6 +29,11 @@
     width: 100%;
     height: 30rem;
     border-radius: 4px;
+
+    @include tablet-small {
+      height: 130%;
+      width: 100%;
+    }
   }
 
   &__new-product {
@@ -37,23 +43,39 @@
     text-transform: uppercase;
     font-size: 1.4rem;
     letter-spacing: 1rem;
+
+    @include tablet-small {
+      padding-top: 6rem;
+    }
   }
 
   &__title {
     padding-bottom: 1.6rem;
     font-size: 3rem;
     text-transform: uppercase;
+
+    @include tablet-small {
+      padding-bottom: 3rem;
+    }
   }
 
   &__description {
     font-size: 1.4rem;
     color: #808080;
     padding-bottom: 1.6rem;
+
+    @include tablet-small {
+      padding-bottom: 2.5rem;
+    }
   }
 
   &__price {
     font-size: 1.29rem;
     padding-bottom: 1.6rem;
+
+    @include tablet-small {
+      padding-bottom: 2.5rem;
+    }
   }
 
   &__controller-container {
@@ -119,6 +141,10 @@
     text-transform: uppercase;
     padding-bottom: 2rem;
     font-weight: 700;
+
+    @include tablet-small {
+      font-size: 3.2rem;
+    }
   }
 
   &__includes-wrapper {
@@ -167,13 +193,31 @@
     display: flex;
     flex-direction: column;
     gap: 2rem;
-    height: 100%;
+  }
+
+  &__includes-container {
+    display: flex;
+    flex-direction: column;
+
+    @include tablet-small {
+      flex-direction: row;
+      gap: 20rem;
+      align-items: baseline;
+    }
+  }
+
+  &__inthebox {
+    display: flex;
+    gap: 2rem;
   }
 }
 
 // styling for 3rd image in product gallery
-.large {
-  height: 99.5%;
+
+@include tablet-small {
+  .large {
+    height: 99.5%;
+  }
 }
 
 .product__direction {
