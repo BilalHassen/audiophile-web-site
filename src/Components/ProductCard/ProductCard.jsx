@@ -33,7 +33,7 @@ export default function ProductCard({
       <div className="product__card">
         <div className="product__flex-container">
           <div className="product__img-container">
-            <img className="product__img" src={urlMobile}></img>
+            <img className="product__img main" src={urlMobile}></img>
           </div>
           <div className="product__details-wrapper">
             {is_new ? (
@@ -44,7 +44,7 @@ export default function ProductCard({
             ) : null}
 
             <h1 className="product__title">{name}</h1>
-            <p className="product__description">{description}</p>
+            <p className="product__description">{description}.</p>
             <p className="product__price">$ {price}</p>
             <div className="product__add-delete">
               <div className="product__controller-container">
