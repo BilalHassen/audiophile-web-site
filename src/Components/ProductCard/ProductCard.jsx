@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import "./ProductCard.scss";
 import ProductIncludes from "../ProductIncludes/ProductIncludes";
 import ProductGallery from "../ProductGallery/ProductGallery";
+import RelatedProducts from "../RelatedProducts/RelatedProducts";
 
 export default function ProductCard({
   id,
@@ -18,6 +19,7 @@ export default function ProductCard({
   let featuresSplit = features.split("\n\n");
   let featuresParaOne = featuresSplit[0];
   let featuresParaTwo = featuresSplit[1];
+  console.log(id);
 
   const [is_new, setIsNew] = useState(false);
 
@@ -74,6 +76,10 @@ export default function ProductCard({
         </div>
         <div className="product__gallery">
           <ProductGallery imageData={imageData} />
+        </div>
+
+        <div className="products__related">
+          <RelatedProducts productId={id} />
         </div>
       </div>
     </>
