@@ -3,7 +3,7 @@ import "./ProductCard.scss";
 import ProductIncludes from "../ProductIncludes/ProductIncludes";
 import ProductGallery from "../ProductGallery/ProductGallery";
 import RelatedProducts from "../RelatedProducts/RelatedProducts";
-
+import AudiophileDescription from "../../Components/AudiophileDescription/AudiophileDescription";
 export default function ProductCard({
   id,
   name,
@@ -82,6 +82,7 @@ export default function ProductCard({
           <RelatedProducts productId={id} />
         </div>
       </div>
+      <AudiophileDescription />
     </>
   );
 }
