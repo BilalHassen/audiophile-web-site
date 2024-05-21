@@ -79,6 +79,7 @@ export default function ProductCard({
           <ProductGallery imageData={imageData} />
         </div>
 
+        <h3 className="product__related-title">you may also like</h3>
         <div className="product__related">
           <RelatedProducts productId={id} />
         </div>

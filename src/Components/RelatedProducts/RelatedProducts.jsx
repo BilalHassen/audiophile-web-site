@@ -65,7 +65,6 @@ export default function RelatedProducts({ productId }) {
 
   return (
     <>
-      <h3 className="product__related-title">you may also like</h3>
       {productData.slice(0, 3).map((data) => {
         return (
           <div className="product__related-card">
