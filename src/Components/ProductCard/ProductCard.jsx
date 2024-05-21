@@ -78,7 +78,7 @@ export default function ProductCard({
           <ProductGallery imageData={imageData} />
         </div>
 
-        <div className="products__related">
+        <div className="product__related">
           <RelatedProducts productId={id} />
         </div>
       </div>
