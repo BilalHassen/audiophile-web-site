@@ -14,6 +14,14 @@
       gap: 1rem;
       width: 100%;
     }
+
+    @include tablet-medium {
+      gap: 2rem;
+    }
+
+    @include tablet-large {
+      gap: 3rem;
+    }
   }
 
   &__related-card {
@@ -46,6 +54,10 @@
       padding-top: 4rem;
       padding-bottom: 0.5rem;
     }
+
+    @include tablet-medium {
+      font-size: 3rem;
+    }
   }
 
   &__related-img-container {
@@ -60,6 +72,14 @@
     @include tablet-small {
       height: 35rem;
       background-size: 110%;
+    }
+
+    @include tablet-medium {
+      height: 45rem;
+    }
+
+    @include tablet-large {
+      height: 55rem;
     }
   }
 
@@ -82,6 +102,11 @@
     @include tablet-small {
       width: 55%;
       height: 3.7rem;
+    }
+
+    @include tablet-medium {
+      font-size: 1.2rem;
+      height: 5rem;
     }
   }
 }

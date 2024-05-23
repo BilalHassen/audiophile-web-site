@@ -20,11 +20,24 @@
     padding-left: 3.5rem;
     padding-right: 3.5rem;
   }
+
+  @include tablet-medium {
+    padding-left: 5rem;
+    padding-right: 5rem;
+  }
+
+  @include tablet-large {
+    padding-left: 8rem;
+    padding-right: 8rem;
+  }
 }
 
 .product {
   &__img-container {
     width: 100%;
+
+    @include tablet-small {
+    }
   }
 
   @include tablet-small {
@@ -32,6 +45,9 @@
       display: flex;
       gap: 6rem;
       width: 100%;
+      @include tablet-medium {
+        gap: 8rem;
+      }
     }
   }
 
@@ -42,6 +58,10 @@
       display: flex;
       flex-direction: column;
       justify-content: center;
+    }
+
+    @include tablet-medium {
+      width: 100%;
     }
   }
 
@@ -62,6 +82,11 @@
     @include tablet-small {
       padding-top: 4rem;
     }
+
+    @include tablet-large {
+      font-size: 2rem;
+      padding-bottom: 3rem;
+    }
   }
 
   &__title {
@@ -72,16 +97,32 @@
     @include tablet-small {
       padding-bottom: 3rem;
     }
+
+    @include tablet-small {
+      width: 89%;
+    }
+
+    @include tablet-large {
+      width: 80%;
+      font-size: 4rem;
+    }
   }
 
   &__description {
     font-size: 1.4rem;
     color: #808080;
     padding-bottom: 1.6rem;
+    line-height: 2rem;
 
     @include tablet-small {
       padding-bottom: 2.5rem;
       width: 100%;
+    }
+
+    @include tablet-large {
+      font-size: 1.6rem;
+      width: 89%;
+      line-height: 3rem;
     }
   }
 
@@ -91,6 +132,7 @@
 
     @include tablet-small {
       padding-bottom: 2.5rem;
+      font-size: 1.8rem;
     }
   }
 
@@ -145,6 +187,12 @@
 
     @include tablet-small {
       margin-top: 15rem;
+      font-size: 3rem;
+    }
+
+    @include tablet-medium {
+      margin-top: 10rem;
+      padding-bottom: 4rem;
     }
   }
 
@@ -153,10 +201,19 @@
     flex-direction: column;
     gap: 2.5rem;
     color: $grey;
+
+    @include tablet-large {
+      padding-bottom: 8rem;
+    }
   }
 
   &__features {
     line-height: 2.5rem;
+
+    @include tablet-medium {
+      font-size: 1.8rem;
+      line-height: 3rem;
+    }
   }
 
   &__quantity-title {
@@ -191,6 +248,10 @@
   &__item {
     font-size: 1.5rem;
     color: $grey;
+
+    @include tablet-large {
+      font-size: 2rem;
+    }
   }
 
   &__gallery {
@@ -201,22 +262,40 @@
     @include tablet-small {
       display: flex;
       flex-direction: row;
+      padding-top: 2rem;
+    }
+
+    @include tablet-medium {
+      gap: 4rem;
+      padding-top: 4rem;
     }
   }
 
-  &__image-container {
-    width: auto;
+  // image container
+  &__img-container {
+    @include tablet-medium {
+      width: 100%;
+    }
   }
 
   &__gallery-img {
     width: 100%;
     border-radius: 4px;
+
+    @include tablet-large {
+      height: 30rem;
+    }
   }
 
   &__gallery-larger-container {
     display: flex;
     flex-direction: column;
     gap: 2rem;
+    height: 100%;
+
+    @include tablet-large {
+      width: 70%;
+    }
   }
 
   &__includes-container {
@@ -241,6 +320,12 @@
 @include tablet-small {
   .large {
     height: 99.5%;
+    @include tablet-medium {
+      height: 84.9%;
+    }
+    @include tablet-large {
+      height: 99.5%;
+    }
   }
 }
 
@@ -271,5 +356,9 @@
   @include tablet-small {
     width: 100%;
     height: 120%;
+  }
+
+  @include tablet-medium {
+    height: 110%;
   }
 }
