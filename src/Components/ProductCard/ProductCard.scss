@@ -4,6 +4,7 @@
 .product__card {
   padding-left: 1.6rem;
   padding-right: 1.6rem;
+  padding-bottom: 15rem;
 
   @include mobile-medium {
     padding-left: 2.5rem;
@@ -64,7 +65,7 @@
   }
 
   &__title {
-    padding-bottom: 1.6rem;
+    padding-bottom: 2rem;
     font-size: 3rem;
     text-transform: uppercase;
 
@@ -86,7 +87,7 @@
 
   &__price {
     font-size: 1.29rem;
-    padding-bottom: 1.6rem;
+    padding-bottom: 2rem;
 
     @include tablet-small {
       padding-bottom: 2.5rem;
@@ -136,7 +137,7 @@
   }
 
   &__features-title {
-    padding-top: 4rem;
+    padding-top: 8rem;
     font-size: 2.4rem;
     text-transform: uppercase;
     padding-bottom: 1.6rem;
@@ -259,6 +260,7 @@
   }
 
   @include tablet-small {
+    padding-top: 4rem;
     padding-left: 3.5rem;
   }
 }

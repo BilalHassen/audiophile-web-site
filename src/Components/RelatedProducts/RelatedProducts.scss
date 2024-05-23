@@ -25,8 +25,14 @@
   &__related-title {
     text-transform: uppercase;
     text-align: center;
-    padding-top: 8rem;
+    padding-top: 10rem;
     font-size: 2rem;
+    padding-bottom: 4rem;
+    letter-spacing: 0.1rem;
+
+    @include tablet-small {
+      font-size: 3rem;
+    }
   }
 
   &__related-name {
