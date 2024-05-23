@@ -59,22 +59,27 @@ export default function ProductCard({
             </div>
           </div>
         </div>
-        <h3 className="product__features-title">features</h3>
-        <div className="product__features-container">
-          <p className="product__features">{featuresParaOne}</p>
-          <p className="product__features">{featuresParaTwo}</p>
-        </div>
+        <div className="product__features-flex-container">
+          <div className="product__features-wrapper">
+            <h3 className="product__features-title">features</h3>
+            <div className="product__features-container">
+              <p className="product__features">{featuresParaOne}</p>
+              <p className="product__features">{featuresParaTwo}</p>
+            </div>
+          </div>
 
-        <div className="product__includes-container">
-          <h3 className="product__quantity-title">In the box</h3>
-          <div className="product__includes-wrapper">
-            {includes.map((data, index) => (
-              <div className="product__includes-container">
-                <ProductIncludes quantity={data.quantity} item={data.item} />
-              </div>
-            ))}
+          <div className="product__includes-container">
+            <h3 className="product__quantity-title">In the box</h3>
+            <div className="product__includes-wrapper">
+              {includes.map((data, index) => (
+                <div className="product__includes-container">
+                  <ProductIncludes quantity={data.quantity} item={data.item} />
+                </div>
+              ))}
+            </div>
           </div>
         </div>
+
         <div className="product__gallery">
           <ProductGallery imageData={imageData} />
         </div>

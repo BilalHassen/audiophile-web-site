@@ -81,6 +81,11 @@
     @include tablet-large {
       height: 55rem;
     }
+
+    @include desktop-small {
+      height: 40rem;
+      background-size: 100%;
+    }
   }
 
   &__related-button-container {

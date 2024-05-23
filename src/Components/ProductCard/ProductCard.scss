@@ -30,6 +30,11 @@
     padding-left: 8rem;
     padding-right: 8rem;
   }
+
+  @include desktop-small {
+    padding-left: 12rem;
+    padding-right: 12rem;
+  }
 }
 
 .product {
@@ -47,6 +52,9 @@
       width: 100%;
       @include tablet-medium {
         gap: 8rem;
+      }
+      @include desktop-small {
+        gap: 14rem;
       }
     }
   }
@@ -105,6 +113,7 @@
     @include tablet-large {
       width: 80%;
       font-size: 4rem;
+      line-height: 5rem;
     }
   }
 
@@ -194,6 +203,10 @@
       margin-top: 10rem;
       padding-bottom: 4rem;
     }
+
+    @include desktop-small {
+      font-size: 3.2rem;
+    }
   }
 
   &__features-container {
@@ -226,6 +239,10 @@
     @include tablet-small {
       font-size: 3.2rem;
     }
+
+    @include desktop-small {
+      padding: 0rem;
+    }
   }
 
   &__includes-wrapper {
@@ -233,6 +250,10 @@
     flex-direction: column;
     gap: 1.6rem;
     padding-bottom: 8rem;
+
+    @include desktop-small {
+      padding-bottom: 0rem;
+    }
   }
 
   &__includes-container {
@@ -307,11 +328,37 @@
       gap: 20rem;
       align-items: baseline;
     }
+
+    @include desktop-small {
+      flex-direction: column;
+      gap: 0rem;
+    }
   }
 
   &__inthebox {
     display: flex;
     gap: 2rem;
+  }
+
+  // container to display feature and box items on desktop display
+  @include desktop-small {
+    &__features-flex-container {
+      display: flex;
+      gap: 10rem;
+      align-items: center;
+    }
+
+    &__features-wrapper {
+      width: 60%;
+    }
+
+    &__includes-wrapper {
+      padding-bottom: 5rem;
+    }
+
+    &__quantity-title {
+      padding-bottom: 4rem;
+    }
   }
 }
 
@@ -347,6 +394,12 @@
   @include tablet-small {
     padding-top: 4rem;
     padding-left: 3.5rem;
+  }
+
+  @include desktop-small {
+    padding-left: 12rem;
+    padding-top: 8rem;
+    padding-bottom: 6rem;
   }
 }
 
