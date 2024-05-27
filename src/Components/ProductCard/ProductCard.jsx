@@ -5,6 +5,7 @@ import ProductGallery from "../ProductGallery/ProductGallery";
 import RelatedProducts from "../RelatedProducts/RelatedProducts";
 import AudiophileDescription from "../../Components/AudiophileDescription/AudiophileDescription";
 import Footer from "../Footer/Footer";
+import axios from "axios";
 export default function ProductCard({
   id,
   name,
@@ -17,6 +18,8 @@ export default function ProductCard({
   urlDesktop,
   imageData,
 }) {
+  const baseUrl = `http://localhost:8080/cart/additem/${id}`;
+
   let featuresSplit = features.split("\n\n");
   let featuresParaOne = featuresSplit[0];
   let featuresParaTwo = featuresSplit[1];
@@ -44,6 +47,25 @@ export default function ProductCard({
     };
     isNew();
   }, []);
+
+  const productCartData = {
+    id: parseInt(id),
+    product_id: parseInt(id),
+    quantity: quantity,
+    price: price,
+  };
+
+  function addToCart() {
+    if (quantity === 0) {
+      alert("Please Select Item");
+      return;
+    } else if (quantity >= 1) {
+      let sendData = axios.post(baseUrl, productCartData);
+      alert("item added");
+    }
+  }
+
+  console.log(productCartData);
 
   return (
     <>
@@ -73,7 +95,9 @@ export default function ProductCard({
                   +
                 </button>
               </div>
-              <button className="product__button">add to cart</button>
+              <button className="product__button" onClick={addToCart}>
+                add to cart
+              </button>
             </div>
           </div>
         </div>
