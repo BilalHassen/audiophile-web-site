@@ -35,6 +35,11 @@
     padding-left: 12rem;
     padding-right: 12rem;
   }
+
+  @include desktop-large {
+    padding-left: 18rem;
+    padding-right: 18rem;
+  }
 }
 
 .product {
@@ -95,6 +100,10 @@
       font-size: 2rem;
       padding-bottom: 3rem;
     }
+
+    @include desktop-large {
+      font-size: 3rem;
+    }
   }
 
   &__title {
@@ -115,6 +124,11 @@
       font-size: 4rem;
       line-height: 5rem;
     }
+
+    @include desktop-large {
+      font-size: 5rem;
+      line-height: 6rem;
+    }
   }
 
   &__description {
@@ -133,6 +147,12 @@
       width: 89%;
       line-height: 3rem;
     }
+
+    @include desktop-large {
+      font-size: 2.4rem;
+      line-height: 3.5rem;
+      width: 98%;
+    }
   }
 
   &__price {
@@ -142,6 +162,12 @@
     @include tablet-small {
       padding-bottom: 2.5rem;
       font-size: 1.8rem;
+    }
+
+    @include desktop-large {
+      font-size: 3rem;
+      padding-top: 2rem;
+      padding-bottom: 4rem;
     }
   }
 
@@ -155,7 +181,7 @@
     gap: 1.5rem;
 
     @include tablet-small {
-      width: 80%;
+      width: 70%;
     }
   }
 
@@ -172,12 +198,22 @@
     padding-right: 1rem;
     text-transform: uppercase;
     letter-spacing: 0.1rem;
+
+    @include desktop-large {
+      height: 6rem;
+      font-size: 1.4rem;
+    }
   }
 
   &__delete {
     border: none;
     background-color: $light-grey;
     width: 100%;
+
+    @include desktop-large {
+      height: 6rem;
+      font-size: 2rem;
+    }
   }
 
   &__number {
@@ -185,6 +221,11 @@
     align-items: center;
     background-color: $light-grey;
     font-size: 1rem;
+
+    @include desktop-large {
+      height: 6rem;
+      font-size: 2rem;
+    }
   }
 
   &__features-title {
@@ -207,6 +248,10 @@
     @include desktop-small {
       font-size: 3.2rem;
     }
+
+    @include desktop-small {
+      font-size: 4rem;
+    }
   }
 
   &__features-container {
@@ -227,6 +272,10 @@
       font-size: 1.8rem;
       line-height: 3rem;
     }
+
+    @include desktop-large {
+      font-size: 2rem;
+    }
   }
 
   &__quantity-title {
@@ -242,6 +291,10 @@
 
     @include desktop-small {
       padding: 0rem;
+    }
+
+    @include desktop-large {
+      font-size: 4rem;
     }
   }
 
@@ -346,10 +399,17 @@
       display: flex;
       gap: 10rem;
       align-items: center;
+
+      @include desktop-large {
+        gap: 18rem;
+      }
     }
 
     &__features-wrapper {
       width: 60%;
+      @include desktop-large {
+        width: 55%;
+      }
     }
 
     &__includes-wrapper {
@@ -358,6 +418,10 @@
 
     &__quantity-title {
       padding-bottom: 4rem;
+
+      @include desktop-large {
+        padding-top: 6.5rem;
+      }
     }
   }
 }
@@ -372,6 +436,10 @@
     }
     @include tablet-large {
       height: 99.5%;
+    }
+
+    @include desktop-large {
+      height: 74.5%;
     }
   }
 }
@@ -400,6 +468,11 @@
     padding-left: 12rem;
     padding-top: 8rem;
     padding-bottom: 6rem;
+  }
+
+  @include desktop-large {
+    padding-left: 18rem;
+    font-size: 2rem;
   }
 }
 

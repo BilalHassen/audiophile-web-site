@@ -41,6 +41,11 @@
     @include tablet-small {
       font-size: 3rem;
     }
+
+    @include desktop-large {
+      font-size: 4rem;
+      padding-bottom: 8rem;
+    }
   }
 
   &__related-name {
@@ -86,6 +91,11 @@
       height: 40rem;
       background-size: 100%;
     }
+
+    @include desktop-large {
+      height: 50rem;
+      background-size: 90%;
+    }
   }
 
   &__related-button-container {
@@ -112,6 +122,16 @@
     @include tablet-medium {
       font-size: 1.2rem;
       height: 5rem;
+    }
+
+    @include desktop-small {
+      font-size: 1.4rem;
+    }
+
+    @include desktop-large {
+      font-size: 1.8rem;
+      width: 40%;
+      height: 6rem;
     }
   }
 }
