@@ -32,6 +32,7 @@ export default function EarPhonesPage() {
       <section className="earphones">
         {earphonesData.map((data, index) => (
           <EarPhonesCard
+            id={data.id}
             key={data.id}
             name={data.name}
             description={data.description}

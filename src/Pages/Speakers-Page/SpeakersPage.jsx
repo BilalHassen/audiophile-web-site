@@ -30,6 +30,7 @@ export default function SpeakersPage() {
       <section className="speakers">
         {speakersData.map((data, index) => (
           <SpeakersCard
+            id={data.id}
             key={data.id}
             newProduct={index === 1 ? "new product" : null}
             reverseClass={index === 0 ? "reverse" : null}

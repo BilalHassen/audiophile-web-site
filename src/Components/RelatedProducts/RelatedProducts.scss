@@ -1,0 +1,137 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+
+.product {
+  &__related {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+
+    @include tablet-small {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      gap: 1rem;
+      width: 100%;
+    }
+
+    @include tablet-medium {
+      gap: 2rem;
+    }
+
+    @include tablet-large {
+      gap: 3rem;
+    }
+  }
+
+  &__related-card {
+    @include tablet-small {
+      width: 100%;
+    }
+  }
+
+  &__related-title {
+    text-transform: uppercase;
+    text-align: center;
+    padding-top: 10rem;
+    font-size: 2rem;
+    padding-bottom: 4rem;
+    letter-spacing: 0.1rem;
+
+    @include tablet-small {
+      font-size: 3rem;
+    }
+
+    @include desktop-large {
+      font-size: 4rem;
+      padding-bottom: 8rem;
+    }
+  }
+
+  &__related-name {
+    font-size: 2rem;
+    text-align: center;
+    padding-top: 2rem;
+    letter-spacing: 0.2rem;
+
+    @include tablet-small {
+      font-size: 2.4rem;
+      padding-top: 4rem;
+      padding-bottom: 0.5rem;
+    }
+
+    @include tablet-medium {
+      font-size: 3rem;
+    }
+  }
+
+  &__related-img-container {
+    width: 100%;
+    height: 100px;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-color: #f1f1f1;
+    border-radius: 4px;
+
+    @include tablet-small {
+      height: 35rem;
+      background-size: 110%;
+    }
+
+    @include tablet-medium {
+      height: 45rem;
+    }
+
+    @include tablet-large {
+      height: 55rem;
+    }
+
+    @include desktop-small {
+      height: 40rem;
+      background-size: 100%;
+    }
+
+    @include desktop-large {
+      height: 50rem;
+      background-size: 90%;
+    }
+  }
+
+  &__related-button-container {
+    display: flex;
+    justify-content: center;
+  }
+
+  &__related-button {
+    width: 45%;
+    border: none;
+    background-color: $orange;
+    color: white;
+    height: 4rem;
+    font-size: 1rem;
+    margin-top: 2rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+
+    @include tablet-small {
+      width: 55%;
+      height: 3.7rem;
+    }
+
+    @include tablet-medium {
+      font-size: 1.2rem;
+      height: 5rem;
+    }
+
+    @include desktop-small {
+      font-size: 1.4rem;
+    }
+
+    @include desktop-large {
+      font-size: 1.8rem;
+      width: 40%;
+      height: 6rem;
+    }
+  }
+}
