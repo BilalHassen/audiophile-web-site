@@ -23,6 +23,20 @@ export default function ProductCard({
   console.log(id);
 
   const [is_new, setIsNew] = useState(false);
+  const [quantity, setQuantity] = useState(0);
+
+  // functions for adding and deleting products
+  const addProduct = () => {
+    setQuantity(quantity + 1);
+  };
+
+  const deleteProduct = () => {
+    if (quantity > 0) {
+      setQuantity(quantity - 1);
+    } else if (quantity === 0) {
+      setQuantity(0);
+    }
+  };
 
   useEffect(() => {
     const isNew = () => {
@@ -51,9 +65,13 @@ export default function ProductCard({
             <p className="product__price">$ {price}</p>
             <div className="product__add-delete">
               <div className="product__controller-container">
-                <button className="product__delete">-</button>
-                <p className="product__number">1</p>
-                <button className="product__delete">+</button>
+                <button className="product__delete" onClick={deleteProduct}>
+                  -
+                </button>
+                <p className="product__number">{quantity}</p>
+                <button className="product__delete" onClick={addProduct}>
+                  +
+                </button>
               </div>
               <button className="product__button">add to cart</button>
             </div>
