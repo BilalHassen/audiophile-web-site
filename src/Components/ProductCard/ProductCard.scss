@@ -438,6 +438,10 @@
       height: 99.5%;
     }
 
+    @include desktop-medium {
+      height: 97.5%;
+    }
+
     @include desktop-large {
       height: 74.5%;
     }
