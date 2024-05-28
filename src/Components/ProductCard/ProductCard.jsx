@@ -6,6 +6,8 @@ import RelatedProducts from "../RelatedProducts/RelatedProducts";
 import AudiophileDescription from "../../Components/AudiophileDescription/AudiophileDescription";
 import Footer from "../Footer/Footer";
 import axios from "axios";
+import { v4 as uuidv4 } from "uuid";
+
 export default function ProductCard({
   id,
   name,
@@ -18,7 +20,7 @@ export default function ProductCard({
   urlDesktop,
   imageData,
 }) {
-  const baseUrl = `http://localhost:8080/cart/additem/${id}`;
+  const cartUrl = `http://localhost:8080/cart/additem/${id}`;
 
   let featuresSplit = features.split("\n\n");
   let featuresParaOne = featuresSplit[0];
@@ -46,13 +48,33 @@ export default function ProductCard({
       setIsNew(id === "1" || id === "2" || id === "6");
     };
     isNew();
+    setIdInLocalStorage();
   }, []);
+
+  const CART_KEY = "cart_id";
+  let localId = "";
+
+  const setIdInLocalStorage = () => {
+    let cardId = localStorage.getItem(CART_KEY);
+    if (!cardId) {
+      cardId = uuidv4();
+      localStorage.setItem(CART_KEY, cardId);
+    }
+  };
+
+  const getLocalId = () => {
+    localId = localStorage.getItem(CART_KEY);
+    return localId;
+  };
+
+  getLocalId();
 
   const productCartData = {
     id: parseInt(id),
     product_id: parseInt(id),
     quantity: quantity,
     price: price,
+    cart_id: getLocalId(),
   };
 
   function addToCart() {
@@ -60,7 +82,8 @@ export default function ProductCard({
       alert("Please Select Item");
       return;
     } else if (quantity >= 1) {
-      let sendData = axios.post(baseUrl, productCartData);
+      axios.post(cartUrl, productCartData);
+      setQuantity(0);
       alert("item added");
     }
   }

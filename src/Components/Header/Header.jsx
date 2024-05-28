@@ -5,10 +5,14 @@ import Nav from "../../Components/Nav/Nav";
 import { useState, useEffect } from "react";
 import HeaderNav from "../HeaderNav/HeaderNav";
 import "./Header.scss";
+import { Link } from "react-router-dom";
 export default function Header() {
   const [isActive, setIsActive] = useState(false);
   const [isTablet, setTablet] = useState(false);
   const [isDesktop, setDesktop] = useState(false);
+
+  const storedData = localStorage.getItem("cart_id");
+  console.log(storedData);
 
   const handleScreenSize = () => {
     if (window.innerWidth >= 768) {
@@ -64,7 +68,13 @@ export default function Header() {
           </>
         )}
         {isDesktop ? <HeaderNav /> : null}
-        <img classname="header__cart-icon" src={cartIcon} alt="cart-icon"></img>
+        <Link to={`cart/${storedData}`}>
+          <img
+            classname="header__cart-icon"
+            src={cartIcon}
+            alt="cart-icon"
+          ></img>
+        </Link>
       </section>
       {isActive ? <Nav /> : ""}
     </>
