@@ -74,6 +74,7 @@ export default function ProductCard({
     product_id: parseInt(id),
     quantity: quantity,
     price: price,
+    name: name,
     cart_id: getLocalId(),
   };
 

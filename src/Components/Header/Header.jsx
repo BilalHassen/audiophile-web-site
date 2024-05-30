@@ -16,7 +16,6 @@ export default function Header() {
   const [isOpen, setModalOpen] = useState(false);
 
   const storedData = localStorage.getItem("cart_id");
-  console.log(storedData);
 
   const handleScreenSize = () => {
     if (window.innerWidth >= 768) {

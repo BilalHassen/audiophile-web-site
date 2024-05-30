@@ -1,16 +1,21 @@
 @use "../../styles/partials/mixins" as *;
 @use "../../styles/partials/variables" as *;
 
+body {
+  position: relative;
+}
+
 .cart {
   width: 100%;
-  z-index: 1000;
   position: absolute;
-  top: 18%;
-  right: 0%;
-  background-color: black;
+  top: 2%;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5);
   padding-left: 1.6rem;
   padding-right: 1.6rem;
-
+  z-index: 10;
   &__container {
     background-color: white;
     border-radius: 4px;
