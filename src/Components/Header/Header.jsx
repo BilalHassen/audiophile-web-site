@@ -6,10 +6,14 @@ import { useState, useEffect } from "react";
 import HeaderNav from "../HeaderNav/HeaderNav";
 import "./Header.scss";
 import { Link } from "react-router-dom";
+import Cart from "../Cart/Cart";
 export default function Header() {
   const [isActive, setIsActive] = useState(false);
   const [isTablet, setTablet] = useState(false);
   const [isDesktop, setDesktop] = useState(false);
+
+  // state for handling modal open and close
+  const [isOpen, setModalOpen] = useState(false);
 
   const storedData = localStorage.getItem("cart_id");
   console.log(storedData);
@@ -45,6 +49,12 @@ export default function Header() {
     setIsActive(!isActive);
   };
 
+  const handleCartModal = () => {
+    setModalOpen((prevState) => {
+      return !prevState;
+    });
+  };
+
   return (
     <>
       <section className="header">
@@ -68,13 +78,14 @@ export default function Header() {
           </>
         )}
         {isDesktop ? <HeaderNav /> : null}
-        <Link to={`cart/${storedData}`}>
-          <img
-            classname="header__cart-icon"
-            src={cartIcon}
-            alt="cart-icon"
-          ></img>
-        </Link>
+
+        <img
+          onClick={handleCartModal}
+          classname="header__cart-icon"
+          src={cartIcon}
+          alt="cart-icon"
+        ></img>
+        {isOpen ? <Cart /> : null}
       </section>
       {isActive ? <Nav /> : ""}
     </>
