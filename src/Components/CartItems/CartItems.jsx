@@ -66,6 +66,15 @@ export default function CartItems({
             })`,
           }}
         ></div>
+        <div className="cart__name-price-container">
+          <h4 className="cart__item-name">{item_name}</h4>
+          <p className="cart__item-price">${price}</p>
+        </div>
+        <div className="cart__controller-container">
+          <button className="cart__delete">-</button>
+          <p className="cart__number">{quantity}</p>
+          <button className="cart__add">+</button>
+        </div>
       </div>
     </>
   );
