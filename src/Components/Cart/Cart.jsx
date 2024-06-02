@@ -38,7 +38,7 @@ export default function Cart() {
     <div className="cart">
       <div className="cart__container">
         <div className="cart__text-container">
-          <h3 className="cart__count">{cartData.length}</h3>
+          <h3 className="cart__count">cart ({cartData.length})</h3>
           <button className="cart__remove-button">Remove all</button>
         </div>
         {cartData.map((items) => (

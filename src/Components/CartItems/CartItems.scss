@@ -1,2 +1,8 @@
 @use "../../styles/partials/mixins" as *;
 @use "../../styles/partials/variables" as *;
+
+.cart__image-container {
+  width: 100px;
+  height: 100px;
+  background-size: cover;
+}
