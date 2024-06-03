@@ -6,8 +6,9 @@
   padding-right: 3rem;
 
   &__container {
-    padding-top: 1.6rem;
+    padding-top: 2rem;
     align-items: center;
+    padding-bottom: 2rem;
   }
 
   &__count {
@@ -103,6 +104,26 @@
   }
 
   &__text-container-2 {
-    background-color: red;
+    display: flex;
+    padding-left: 1.6rem;
+    padding-right: 1.6rem;
+    justify-content: space-between;
+  }
+
+  &__total {
+    text-transform: uppercase;
+    color: $grey;
+  }
+
+  &__checkout-button {
+    background-color: $orange;
+    justify-content: center;
+    color: white;
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    margin-left: 1.6rem;
+    margin-right: 1.6rem;
+    margin-top: 2rem;
   }
 }

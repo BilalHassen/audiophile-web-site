@@ -34,6 +34,19 @@ export default function Cart() {
 
   console.log(total);
 
+  function formatTotal(total) {
+    let totalStr = total.toString();
+
+    if (totalStr.length <= 4 && totalStr.length > 3) {
+      console.log("first if");
+      return totalStr[0] + "," + totalStr.slice(1);
+    } else if (totalStr.length >= 5) {
+      return totalStr[0] + totalStr[1] + "," + totalStr.slice(2);
+    }
+
+    return totalStr;
+  }
+
   return (
     <div className="cart">
       <div className="cart__container">
@@ -55,7 +68,7 @@ export default function Cart() {
         </div>
         <div className="cart__text-container-2">
           <p className="cart__total">total</p>
-          <p className="cart__total-amount">${total}</p>
+          <p className="cart__total-amount">${formatTotal(total)}</p>
         </div>
         <div className="cart__checkout-button">checkout</div>
       </div>
