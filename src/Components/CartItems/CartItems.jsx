@@ -52,6 +52,7 @@ export default function CartItems({
     return removeEventListener;
   }, []);
 
+  // function for formatting string with comma
   function formatPrice(price) {
     let priceStr = price.toString();
 

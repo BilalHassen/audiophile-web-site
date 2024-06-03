@@ -53,9 +53,9 @@ export default function Cart() {
             />
           ))}
         </div>
-        <div className="card__text-container-2">
-          <p className="card__total">total</p>
-          <p className="card__total-amount">${total}</p>
+        <div className="cart__text-container-2">
+          <p className="cart__total">total</p>
+          <p className="cart__total-amount">${total}</p>
         </div>
         <div className="cart__checkout-button">checkout</div>
       </div>
