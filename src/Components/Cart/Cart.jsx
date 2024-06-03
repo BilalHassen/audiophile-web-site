@@ -41,16 +41,18 @@ export default function Cart() {
           <h3 className="cart__count">cart ({cartData.length})</h3>
           <button className="cart__remove-button">Remove all</button>
         </div>
-        {cartData.map((items) => (
-          <CartItems
-            item_name={items.item_name}
-            quantity={items.quantity}
-            price={items.price}
-            url_mobile={items.url_mobile}
-            url_tablet={items.url_tablet}
-            url_desktop={items.url_desktop}
-          />
-        ))}
+        <div className="cart__items-wrapper">
+          {cartData.map((items) => (
+            <CartItems
+              item_name={items.item_name}
+              quantity={items.quantity}
+              price={items.price}
+              url_mobile={items.url_mobile}
+              url_tablet={items.url_tablet}
+              url_desktop={items.url_desktop}
+            />
+          ))}
+        </div>
         <div className="card__text-container-2">
           <p className="card__total">total</p>
           <p className="card__total-amount">${total}</p>

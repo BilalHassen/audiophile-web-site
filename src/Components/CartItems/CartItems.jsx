@@ -51,6 +51,16 @@ export default function CartItems({
 
     return removeEventListener;
   }, []);
+
+  function formatPrice(price) {
+    let priceStr = price.toString();
+
+    if (priceStr.length >= 4) {
+      return priceStr[0] + "," + priceStr.slice(1);
+    }
+    return priceStr;
+  }
+
   return (
     <>
       <div className="cart__item-container">
@@ -66,14 +76,16 @@ export default function CartItems({
             })`,
           }}
         ></div>
-        <div className="cart__name-price-container">
-          <h4 className="cart__item-name">{item_name}</h4>
-          <p className="cart__item-price">${price}</p>
-        </div>
-        <div className="cart__controller-container">
-          <button className="cart__delete">-</button>
-          <p className="cart__number">{quantity}</p>
-          <button className="cart__add">+</button>
+        <div className="cart__dynamic-wrapper">
+          <div className="cart__name-price-container">
+            <h4 className="cart__item-name">{item_name}</h4>
+            <p className="cart__item-price">$ {formatPrice(price)}</p>
+          </div>
+          <div className="cart__controller-container">
+            <button className="cart__delete">-</button>
+            <p className="cart__number">{quantity}</p>
+            <button className="cart__add">+</button>
+          </div>
         </div>
       </div>
     </>
