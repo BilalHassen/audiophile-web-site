@@ -7,21 +7,34 @@ import CartItems from "../CartItems/CartItems";
 export default function Cart() {
   const [cartData, setCartData] = useState([]);
   const [total, setTotal] = useState(0);
-  const card_id = localStorage.getItem("cart_id");
+  const cart_id = localStorage.getItem("cart_id");
+
+  // get cart data add from the product cards// original cart data
+  const getCartData = async () => {
+    let response = await axios.get(
+      `http://localhost:8080/cart/getitems/${cart_id}`
+    );
+    let products_data = response.data;
+
+    setCartData(products_data);
+  };
+
+  // this will update the state of the cart data
+  // with any data added within the cart
+  const getUpdatedCartData = async () => {
+    let response = await axios.get(
+      `http://localhost:8080/cart/getitems/${cart_id}`
+    );
+    let products_data = response.data;
+    console.log(products_data);
+    setCartData(products_data);
+  };
 
   useEffect(() => {
-    const getCartData = async () => {
-      let response = await axios.get(
-        `http://localhost:8080/cart/getitems/${card_id}`
-      );
-      let products_data = response.data;
-      setCartData(products_data);
-    };
     getCartData();
   }, []);
 
-  console.log("dynamic data:", cartData);
-
+  // calculation of the total amount of items when ever the state of cart Data changes
   useEffect(() => {
     let totalAmount = 0;
 
@@ -32,13 +45,11 @@ export default function Cart() {
     setTotal(totalAmount);
   }, [cartData]);
 
-  console.log(total);
-
+  // function to format the total amoutn with the comma at the correct place
   function formatTotal(total) {
     let totalStr = total.toString();
 
     if (totalStr.length <= 4 && totalStr.length > 3) {
-      console.log("first if");
       return totalStr[0] + "," + totalStr.slice(1);
     } else if (totalStr.length >= 5) {
       return totalStr[0] + totalStr[1] + "," + totalStr.slice(2);
@@ -55,8 +66,16 @@ export default function Cart() {
           <button className="cart__remove-button">Remove all</button>
         </div>
         <div className="cart__items-wrapper">
-          {cartData.map((items) => (
+          {cartData.map((items, index) => (
             <CartItems
+              //function for updating cardData state
+              key={items.product_id}
+              // pass the update cart function down child component will call function
+              // allowing the passed props to be updated
+              getUpdatedCartData={getUpdatedCartData}
+              index={index}
+              cart_id={items.cart_id}
+              id={items.product_id}
               item_name={items.item_name}
               quantity={items.quantity}
               price={items.price}

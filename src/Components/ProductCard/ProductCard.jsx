@@ -25,7 +25,6 @@ export default function ProductCard({
   let featuresSplit = features.split("\n\n");
   let featuresParaOne = featuresSplit[0];
   let featuresParaTwo = featuresSplit[1];
-  console.log(id);
 
   const [is_new, setIsNew] = useState(false);
   const [quantity, setQuantity] = useState(0);
@@ -89,7 +88,7 @@ export default function ProductCard({
     }
   }
 
-  console.log(productCartData);
+  console.log("from product card:", productCartData.quantity);
 
   return (
     <>
@@ -115,7 +114,7 @@ export default function ProductCard({
                   -
                 </button>
                 <p className="product__number">{quantity}</p>
-                <button className="product__delete" onClick={addProduct}>
+                <button className="product__add" onClick={addProduct}>
                   +
                 </button>
               </div>

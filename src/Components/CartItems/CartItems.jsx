@@ -1,7 +1,12 @@
 import "./CartItems.scss";
 import { useState, useEffect } from "react";
+import axios from "axios";
 
 export default function CartItems({
+  index,
+  cart_id,
+  getUpdatedCartData,
+  id,
   item_name,
   quantity,
   price,
@@ -10,6 +15,45 @@ export default function CartItems({
   url_desktop,
 }) {
   const [screenSize, setScreenSize] = useState(handleImageUrl());
+
+  const [itemQuantity, setItemQuantity] = useState(quantity);
+
+  // url for adding item to cart
+  const cartUrl = `http://localhost:8080/cart/updateitem/${id}`;
+
+  const CART_KEY = "cart_id";
+  let localId = "";
+
+  const getLocalId = () => {
+    localId = localStorage.getItem(CART_KEY);
+    return localId;
+  };
+
+  const updateItemsInCart = async (Quantity) => {
+    const productCartData = {
+      id: parseInt(id),
+      product_id: parseInt(id),
+      quantity: Quantity,
+      price: price,
+    };
+
+    try {
+      let response = await axios.put(cartUrl, productCartData);
+      getUpdatedCartData();
+    } catch (error) {
+      console.log("error updating cart:", error);
+    }
+  };
+
+  const addProduct = () => {
+    setItemQuantity((prevQuantity) => prevQuantity + 1);
+  };
+
+  useEffect(() => {
+    if (itemQuantity !== quantity) {
+      updateItemsInCart(itemQuantity);
+    }
+  }, [itemQuantity]);
 
   function handleImageUrl() {
     let width = window.innerWidth;
@@ -84,8 +128,10 @@ export default function CartItems({
           </div>
           <div className="cart__controller-container">
             <button className="cart__delete">-</button>
-            <p className="cart__number">{quantity}</p>
-            <button className="cart__add">+</button>
+            <p className="cart__number">{itemQuantity}</p>
+            <button className="cart__add" onClick={addProduct}>
+              +
+            </button>
           </div>
         </div>
       </div>
