@@ -9,6 +9,9 @@ export default function Cart({ closeModal, handleCartModal }) {
   const [total, setTotal] = useState(0);
   const [allItems, setAllItems] = useState(0);
   const cart_id = localStorage.getItem("cart_id");
+  console.log(cart_id);
+
+  console.log(cartData.length);
 
   // create a reference to the cart__container element
   const cartRef = useRef(null);
@@ -49,6 +52,18 @@ export default function Cart({ closeModal, handleCartModal }) {
     setCartData(products_data);
   };
 
+  // function to delete all items in cart
+  const deleteAllItems = async () => {
+    try {
+      let response = await axios.delete(
+        `http://localhost:8080/cart/deleteitems/${cart_id}`
+      );
+      getCartData();
+    } catch (error) {
+      console.log("failed to delete items in cart", error);
+    }
+  };
+
   useEffect(() => {
     getCartData();
   }, []);
@@ -85,28 +100,34 @@ export default function Cart({ closeModal, handleCartModal }) {
       <div className="cart__container" ref={cartRef}>
         <div className="cart__text-container">
           <h3 className="cart__count">cart ({allItems})</h3>
-          <button className="cart__remove-button">Remove all</button>
+          <button className="cart__remove-button" onClick={deleteAllItems}>
+            Remove all
+          </button>
         </div>
-        <div className="cart__items-wrapper">
-          {cartData.map((items, index) => (
-            <CartItems
-              //function for updating cardData state
-              key={items.product_id}
-              // pass the update cart function down child component will call function
-              // allowing the passed props to be updated
-              getUpdatedCartData={getUpdatedCartData}
-              index={index}
-              cart_id={items.cart_id}
-              id={items.product_id}
-              item_name={items.item_name}
-              quantity={items.quantity}
-              price={items.price}
-              url_mobile={items.url_mobile}
-              url_tablet={items.url_tablet}
-              url_desktop={items.url_desktop}
-            />
-          ))}
-        </div>
+        {cartData.length === 0 ? (
+          <div className="cart__empty">Your Cart is empty!</div>
+        ) : (
+          <div className="cart__items-wrapper">
+            {cartData.map((items, index) => (
+              <CartItems
+                //function for updating cardData state
+                key={items.product_id}
+                // pass the update cart function down child component will call function
+                // allowing the passed props to be updated
+                getUpdatedCartData={getUpdatedCartData}
+                index={index}
+                cart_id={items.cart_id}
+                id={items.product_id}
+                item_name={items.item_name}
+                quantity={items.quantity}
+                price={items.price}
+                url_mobile={items.url_mobile}
+                url_tablet={items.url_tablet}
+                url_desktop={items.url_desktop}
+              />
+            ))}
+          </div>
+        )}
         <div className="cart__text-container-2">
           <p className="cart__total">total</p>
           <p className="cart__total-amount">${formatTotal(total)}</p>
