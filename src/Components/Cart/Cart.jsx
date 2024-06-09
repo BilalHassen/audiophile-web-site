@@ -1,13 +1,31 @@
 import { useParams } from "react-router-dom";
 import "./Cart.scss";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import axios from "axios";
 import CartItems from "../CartItems/CartItems";
 
-export default function Cart() {
+export default function Cart({ closeModal, handleCartModal }) {
   const [cartData, setCartData] = useState([]);
   const [total, setTotal] = useState(0);
   const cart_id = localStorage.getItem("cart_id");
+
+  // create a reference to the cart__container element
+  const cartRef = useRef(null);
+
+  useEffect(() => {
+    const handleClick = (e) => {
+      // check if the click happened within the cart__container
+      if (!cartRef.current.contains(e.target)) {
+        handleCartModal(e);
+      }
+    };
+
+    document.addEventListener("click", handleClick);
+
+    return () => {
+      document.removeEventListener("click", handleClick);
+    };
+  }, []);
 
   // get cart data add from the product cards// original cart data
   const getCartData = async () => {
@@ -60,7 +78,8 @@ export default function Cart() {
 
   return (
     <div className="cart">
-      <div className="cart__container">
+      {/*attach the reference to the element */}
+      <div className="cart__container" ref={cartRef}>
         <div className="cart__text-container">
           <h3 className="cart__count">cart ({cartData.length})</h3>
           <button className="cart__remove-button">Remove all</button>

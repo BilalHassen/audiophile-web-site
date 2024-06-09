@@ -2,7 +2,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 import cartIcon from "../../assets/shared/desktop/icon-cart.svg";
 import Nav from "../../Components/Nav/Nav";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import HeaderNav from "../HeaderNav/HeaderNav";
 import "./Header.scss";
 import { Link } from "react-router-dom";
@@ -47,8 +47,12 @@ export default function Header() {
   const handleNavDisplay = () => {
     setIsActive(!isActive);
   };
+  console.log({ isOpen });
 
-  const handleCartModal = () => {
+  const handleCartModal = (e) => {
+    // stop the cart icon listener from travelling up and triggering the
+    // the event listener on the document
+    e.stopPropagation();
     setModalOpen((prevState) => {
       return !prevState;
     });
@@ -71,7 +75,9 @@ export default function Header() {
             <FontAwesomeIcon
               icon={faBars}
               className="header__icon"
-              onClick={handleNavDisplay}
+              onClick={() => {
+                handleNavDisplay();
+              }}
             />
             <h1 className="header__title">audiophile</h1>
           </>
@@ -80,11 +86,13 @@ export default function Header() {
 
         <img
           onClick={handleCartModal}
-          classname="header__cart-icon"
+          className="header__cart-icon"
           src={cartIcon}
           alt="cart-icon"
         ></img>
-        {isOpen ? <Cart /> : null}
+        {isOpen ? (
+          <Cart closeModal={closeModal} handleCartModal={handleCartModal} />
+        ) : null}
       </section>
       {isActive ? <Nav /> : ""}
     </>
