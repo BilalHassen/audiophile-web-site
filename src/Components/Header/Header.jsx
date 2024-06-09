@@ -90,9 +90,7 @@ export default function Header() {
           src={cartIcon}
           alt="cart-icon"
         ></img>
-        {isOpen ? (
-          <Cart closeModal={closeModal} handleCartModal={handleCartModal} />
-        ) : null}
+        {isOpen ? <Cart handleCartModal={handleCartModal} /> : null}
       </section>
       {isActive ? <Nav /> : ""}
     </>

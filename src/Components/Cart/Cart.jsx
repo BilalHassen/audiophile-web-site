@@ -7,6 +7,7 @@ import CartItems from "../CartItems/CartItems";
 export default function Cart({ closeModal, handleCartModal }) {
   const [cartData, setCartData] = useState([]);
   const [total, setTotal] = useState(0);
+  const [allItems, setAllItems] = useState(0);
   const cart_id = localStorage.getItem("cart_id");
 
   // create a reference to the cart__container element
@@ -55,11 +56,13 @@ export default function Cart({ closeModal, handleCartModal }) {
   // calculation of the total amount of items when ever the state of cart Data changes
   useEffect(() => {
     let totalAmount = 0;
-
+    let totalCartItems = 0;
     for (let i = 0; i < cartData.length; i++) {
+      console.log(cartData[i].quantity);
+      totalCartItems = totalCartItems += cartData[i].quantity;
       totalAmount = totalAmount += cartData[i].price;
     }
-
+    setAllItems(totalCartItems);
     setTotal(totalAmount);
   }, [cartData]);
 
@@ -81,7 +84,7 @@ export default function Cart({ closeModal, handleCartModal }) {
       {/*attach the reference to the element */}
       <div className="cart__container" ref={cartRef}>
         <div className="cart__text-container">
-          <h3 className="cart__count">cart ({cartData.length})</h3>
+          <h3 className="cart__count">cart ({allItems})</h3>
           <button className="cart__remove-button">Remove all</button>
         </div>
         <div className="cart__items-wrapper">

@@ -49,6 +49,19 @@ export default function CartItems({
     setItemQuantity((prevQuantity) => prevQuantity + 1);
   };
 
+  const deleteProduct = () => {
+    setItemQuantity((prevQuantity) => {
+      console.log(prevQuantity);
+      let newQuantity = prevQuantity - 1;
+      console.log(newQuantity);
+      if (newQuantity === 0) {
+        return 0;
+      } else {
+        return newQuantity;
+      }
+    });
+  };
+
   useEffect(() => {
     if (itemQuantity !== quantity) {
       updateItemsInCart(itemQuantity);
@@ -127,7 +140,9 @@ export default function CartItems({
             <p className="cart__item-price">$ {formatPrice(price)}</p>
           </div>
           <div className="cart__controller-container">
-            <button className="cart__delete">-</button>
+            <button className="cart__delete" onClick={deleteProduct}>
+              -
+            </button>
             <p className="cart__number">{itemQuantity}</p>
             <button className="cart__add" onClick={addProduct}>
               +
