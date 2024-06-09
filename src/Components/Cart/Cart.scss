@@ -17,6 +17,27 @@ body {
   padding-right: 1.6rem;
   z-index: 10;
 
+  &__empty {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+    padding-left: 1.6rem;
+    padding-right: 1.6rem;
+    text-align: center;
+  }
+
+  &__empty-image {
+    height: 100px;
+  }
+
+  &__empty-title {
+    font-size: 2rem;
+    padding-bottom: 1.6rem;
+    padding-top: 1.6rem;
+  }
+  &__empty-text {
+    font-size: 1.4rem;
+  }
+
   &__container {
     background-color: white;
     border-radius: 4px;
@@ -26,18 +47,22 @@ body {
     }
 
     @include tablet-medium {
-      margin-left: 50rem;
+      margin-left: 60rem;
     }
     @include tablet-large {
-      margin-left: 75rem;
+      margin-left: 86rem;
+    }
+
+    @include desktop-small {
+      margin-left: 83rem;
     }
 
     @include desktop-medium {
-      margin-left: 80rem;
+      margin-left: 90rem;
     }
 
     @include desktop-large {
-      margin-left: 125rem;
+      margin-left: 130rem;
     }
   }
 }

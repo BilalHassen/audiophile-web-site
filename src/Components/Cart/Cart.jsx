@@ -3,6 +3,7 @@ import "./Cart.scss";
 import { useEffect, useState, useRef } from "react";
 import axios from "axios";
 import CartItems from "../CartItems/CartItems";
+import emptyCart from "../../assets/cart/empty-cart.png";
 
 export default function Cart({ closeModal, handleCartModal }) {
   const [cartData, setCartData] = useState([]);
@@ -105,7 +106,17 @@ export default function Cart({ closeModal, handleCartModal }) {
           </button>
         </div>
         {cartData.length === 0 ? (
-          <div className="cart__empty">Your Cart is empty!</div>
+          <div className="cart__empty">
+            <img
+              className="cart__empty-image"
+              src={emptyCart}
+              alt="empty cart image"
+            ></img>
+            <h2 className="cart__empty-title">Your Cart Is Empty</h2>
+            <p className="cart__empty-text">
+              Looks like you haven't made your choice yet...
+            </p>
+          </div>
         ) : (
           <div className="cart__items-wrapper">
             {cartData.map((items, index) => (
