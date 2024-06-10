@@ -18,80 +18,97 @@ export default function Checkout() {
           <h1 className="checkout__title">checkout</h1>
           <div className="checkout__billing-details">
             <p className="checkout__billing-details-title">billing details</p>
-            <label htmlFor="name" className="checkout__name">
-              Name
-            </label>
-            <input
-              type="text"
-              id="name"
-              name="name"
-              placeholder="Bilal Hassen"
-              className="checkout__name-input"
-            />
-            <label htmlFor="name" className="checkout__email">
-              Email Address
-            </label>
-            <input
-              type="text"
-              id="email"
-              name="email"
-              placeholder="bilal91@hotmail.com"
-              className="checkout__email-input"
-            />
-            <label htmlFor="name" className="checkout__phone-number">
-              Phone Number
-            </label>
-            <input
-              type="text"
-              id="number"
-              name="number"
-              placeholder="+1 202-555-0136"
-              className="checkout__number-input"
-            />
+            <div className="checkout__name-box">
+              <label htmlFor="name" className="checkout__name">
+                Name
+              </label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                placeholder="Bilal Hassen"
+                className="checkout__name-input"
+              />
+            </div>
+            <div className="checkout__email-box">
+              <label htmlFor="name" className="checkout__email">
+                Email Address
+              </label>
+              <input
+                type="text"
+                id="email"
+                name="email"
+                placeholder="bilal91@hotmail.com"
+                className="checkout__email-input"
+              />
+            </div>
+            <div className="checkout__number-box">
+              <label htmlFor="name" className="checkout__phone-number">
+                Phone Number
+              </label>
+              <input
+                type="text"
+                id="number"
+                name="number"
+                placeholder="+1 202-555-0136"
+                className="checkout__number-input"
+              />
+            </div>
+
+            {/* shipping info below */}
           </div>
           <div className="checkout__shipping-info">
             <p className="checkout__shipping-title">shipping info</p>
-            <label htmlFor="name" className="checkout__address">
-              Your Address
-            </label>
-            <input
-              type="text"
-              id="address"
-              name="address"
-              placeholder="1137 Williams Avenue"
-              className="checkout__address-input"
-            />
-            <label htmlFor="name" className="checkout__zip">
-              ZIP Code
-            </label>
-            <input
-              type="text"
-              id="zip-code"
-              name="zip-code"
-              placeholder="10001"
-              className="checkout__zip-code-input"
-            />
-            <label htmlFor="name" className="checkout__city">
-              City
-            </label>
-            <input
-              type="text"
-              id="city"
-              name="city"
-              placeholder="New York"
-              className="checkout__zip-city-input"
-            />
-            <label htmlFor="name" className="checkout__country">
-              Country
-            </label>
-            <input
-              type="text"
-              id="country"
-              name="country"
-              placeholder="United States"
-              className="checkout__country"
-            />
+            <div className="checkout__address-box">
+              <label htmlFor="name" className="checkout__address">
+                Your Address
+              </label>
+              <input
+                type="text"
+                id="address"
+                name="address"
+                placeholder="1137 Williams Avenue"
+                className="checkout__address-input"
+              />
+            </div>
+            <div className="checkout__zip-box">
+              <label htmlFor="name" className="checkout__zip">
+                ZIP Code
+              </label>
+              <input
+                type="text"
+                id="zip-code"
+                name="zip-code"
+                placeholder="10001"
+                className="checkout__zip-code-input"
+              />
+            </div>
+            <div className="checkout__city-box">
+              <label htmlFor="name" className="checkout__city">
+                City
+              </label>
+              <input
+                type="text"
+                id="city"
+                name="city"
+                placeholder="New York"
+                className="checkout__zip-city-input"
+              />
+            </div>
+            <div className="checkout__country-box">
+              <label htmlFor="name" className="checkout__country">
+                Country
+              </label>
+              <input
+                type="text"
+                id="country"
+                name="country"
+                placeholder="United States"
+                className="checkout__country"
+              />
+            </div>
           </div>
+          {/* payment info below */}
           <div className="checkout__payment-details">
             <p className="checkout__payment-title">payment details</p>
             <div className="checkout__input-radio">
@@ -125,26 +142,30 @@ export default function Checkout() {
               />
             </div>
             <div className="checkout__payment-method-info">
-              <label htmlFor="name" className="checkout__e-money-title">
-                e-Money Number
-              </label>
-              <input
-                type="text"
-                id="e-money"
-                name="e-Money"
-                placeholder="23851226"
-                className="checkout__cash-input"
-              />
-              <label htmlFor="name" className="checkout__e-money-pin">
-                e-money PIN
-              </label>
-              <input
-                type="text"
-                id="e-money-pin"
-                name="e-Money-pin"
-                placeholder="9021"
-                className="checkout__cash-input"
-              />
+              <div className="checkout__e-money-box">
+                <label htmlFor="name" className="checkout__e-money-title">
+                  e-Money Number
+                </label>
+                <input
+                  type="text"
+                  id="e-money"
+                  name="e-Money"
+                  placeholder="23851226"
+                  className="checkout__cash-input"
+                />
+              </div>
+              <div className="checkout__e-money-pin-box">
+                <label htmlFor="name" className="checkout__e-money-pin">
+                  e-money PIN
+                </label>
+                <input
+                  type="text"
+                  id="e-money-pin"
+                  name="e-Money-pin"
+                  placeholder="9021"
+                  className="checkout__cash-input"
+                />
+              </div>
             </div>
           </div>
         </div>
