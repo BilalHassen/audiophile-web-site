@@ -7,6 +7,7 @@ import SpeakersPage from "./Pages/Speakers-Page/SpeakersPage";
 import EarPhonesPage from "./Pages/EarPhones-Page/EarPhonesPage";
 import ProductPage from "./Pages/ProductPage/ProductPage";
 import Cart from "./Components/Cart/Cart";
+import Checkout from "./Components/Checkout/Checkout";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
           <Route path="earphones" element={<EarPhonesPage />} />
           <Route path="products/:id" element={<ProductPage />} />
           <Route path="cart" element={<Cart />} />
+          <Route path="checkout" element={<Checkout />} />
         </Routes>
       </BrowserRouter>
     </>

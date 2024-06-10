@@ -1,18 +1,17 @@
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import "./Cart.scss";
 import { useEffect, useState, useRef } from "react";
 import axios from "axios";
 import CartItems from "../CartItems/CartItems";
 import emptyCart from "../../assets/cart/empty-cart.png";
+import Checkout from "../Checkout/Checkout";
 
 export default function Cart({ closeModal, handleCartModal }) {
   const [cartData, setCartData] = useState([]);
   const [total, setTotal] = useState(0);
   const [allItems, setAllItems] = useState(0);
   const cart_id = localStorage.getItem("cart_id");
-  console.log(cart_id);
-
-  console.log(cartData.length);
+  const [isCheckout, setIsCheckout] = useState(false);
 
   // create a reference to the cart__container element
   const cartRef = useRef(null);
@@ -143,7 +142,9 @@ export default function Cart({ closeModal, handleCartModal }) {
           <p className="cart__total">total</p>
           <p className="cart__total-amount">${formatTotal(total)}</p>
         </div>
-        <div className="cart__checkout-button">checkout</div>
+        <Link to="/Checkout">
+          <div className="cart__checkout-button">checkout</div>
+        </Link>
       </div>
     </div>
   );
