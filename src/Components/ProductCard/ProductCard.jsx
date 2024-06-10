@@ -5,6 +5,9 @@ import ProductGallery from "../ProductGallery/ProductGallery";
 import RelatedProducts from "../RelatedProducts/RelatedProducts";
 import AudiophileDescription from "../../Components/AudiophileDescription/AudiophileDescription";
 import Footer from "../Footer/Footer";
+import axios from "axios";
+import { v4 as uuidv4 } from "uuid";
+
 export default function ProductCard({
   id,
   name,
@@ -17,19 +20,75 @@ export default function ProductCard({
   urlDesktop,
   imageData,
 }) {
+  const cartUrl = `http://localhost:8080/cart/additem/${id}`;
+
   let featuresSplit = features.split("\n\n");
   let featuresParaOne = featuresSplit[0];
   let featuresParaTwo = featuresSplit[1];
-  console.log(id);
 
   const [is_new, setIsNew] = useState(false);
+  const [quantity, setQuantity] = useState(0);
+
+  // functions for adding and deleting products
+  const addProduct = () => {
+    setQuantity(quantity + 1);
+  };
+
+  const deleteProduct = () => {
+    if (quantity > 0) {
+      setQuantity(quantity - 1);
+    } else if (quantity === 0) {
+      setQuantity(0);
+    }
+  };
 
   useEffect(() => {
     const isNew = () => {
       setIsNew(id === "1" || id === "2" || id === "6");
     };
     isNew();
+    setIdInLocalStorage();
   }, []);
+
+  const CART_KEY = "cart_id";
+  let localId = "";
+
+  const setIdInLocalStorage = () => {
+    let cardId = localStorage.getItem(CART_KEY);
+    if (!cardId) {
+      cardId = uuidv4();
+      localStorage.setItem(CART_KEY, cardId);
+    }
+  };
+
+  const getLocalId = () => {
+    localId = localStorage.getItem(CART_KEY);
+    return localId;
+  };
+
+  getLocalId();
+
+  const productCartData = {
+    id: parseInt(id),
+    product_id: parseInt(id),
+    quantity: quantity,
+    price: price,
+    name: name,
+    cart_id: getLocalId(),
+  };
+
+  function addToCart() {
+    if (quantity === 0) {
+      alert("Please Select Item");
+      return;
+    } else if (quantity >= 1) {
+      axios.post(cartUrl, productCartData);
+      setQuantity(0);
+      alert("item added");
+    }
+  }
+
+  console.log("from product card:", productCartData.quantity);
 
   return (
     <>
@@ -51,11 +110,17 @@ export default function ProductCard({
             <p className="product__price">$ {price}</p>
             <div className="product__add-delete">
               <div className="product__controller-container">
-                <button className="product__delete">-</button>
-                <p className="product__number">1</p>
-                <button className="product__delete">+</button>
+                <button className="product__delete" onClick={deleteProduct}>
+                  -
+                </button>
+                <p className="product__number">{quantity}</p>
+                <button className="product__add" onClick={addProduct}>
+                  +
+                </button>
               </div>
-              <button className="product__button">add to cart</button>
+              <button className="product__button" onClick={addToCart}>
+                add to cart
+              </button>
             </div>
           </div>
         </div>

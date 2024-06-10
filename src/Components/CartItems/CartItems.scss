@@ -1,0 +1,203 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+
+.cart {
+  padding-left: 1.6rem;
+  padding-right: 1.6rem;
+  padding-top: 4rem;
+
+  @include tablet-small {
+    padding-right: 3.5rem;
+  }
+
+  @include tablet-medium {
+    padding-right: 4.5rem;
+  }
+
+  @include desktop-small {
+    padding-right: 15rem;
+  }
+
+  @include desktop-large {
+    padding-right: 20rem;
+  }
+
+  &__container {
+    padding-top: 2rem;
+    align-items: center;
+    padding-bottom: 2rem;
+
+    @include tablet-medium {
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+  }
+
+  &__count {
+    font-size: 1.8rem;
+    text-transform: uppercase;
+  }
+
+  &__remove-button {
+    text-decoration: underline;
+    color: $grey;
+    border: none;
+    background-color: white;
+    font-size: 1.5rem;
+  }
+
+  &__text-container {
+    display: flex;
+    justify-content: space-between;
+    padding-left: 1.6rem;
+    padding-right: 1.6rem;
+
+    @include mobile-large {
+      padding-left: 2rem;
+      padding-right: 2.4rem;
+    }
+
+    @include tablet-small {
+      padding-left: 2rem;
+      padding-right: 2.4rem;
+    }
+  }
+
+  &__items-wrapper {
+    gap: 2rem;
+    flex-direction: column;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    display: flex;
+    padding-bottom: 2rem;
+    padding-top: 3rem;
+  }
+
+  &__item-container {
+    display: flex;
+    gap: 1.5rem;
+
+    @include mobile-large {
+      gap: 2rem;
+    }
+
+    @include tablet-small {
+      gap: 2rem;
+    }
+  }
+
+  &__name-price-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  &__image-container {
+    width: 6rem;
+    height: 6rem;
+    background-size: cover;
+    border-radius: 4px;
+
+    @include tablet-small {
+      background-position: center;
+      height: 8.5rem;
+      width: 8.5rem;
+    }
+  }
+
+  &__controller-container {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    text-align: center;
+  }
+
+  &__delete {
+    width: 50%;
+    background-color: $light-grey;
+    border: none;
+    height: 3rem;
+  }
+
+  &__add {
+    width: 50%;
+    background-color: $light-grey;
+    border: none;
+    height: 3rem;
+  }
+
+  &__number {
+    background-color: $light-grey;
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    font-size: 1.3rem;
+  }
+
+  &__item-price {
+    font-size: 1rem;
+    color: $grey;
+
+    @include tablet-small {
+      font-size: 1.2rem;
+    }
+    @include tablet-medium {
+      font-size: 1.4rem;
+    }
+  }
+
+  &__dynamic-wrapper {
+    display: flex;
+    align-items: center;
+    width: 70%;
+
+    @include mobile-large {
+      gap: 2rem;
+      width: 80%;
+    }
+
+    @include tablet-small {
+      gap: 2rem;
+      width: 80%;
+    }
+  }
+
+  &__item-name {
+    font-size: 1rem;
+    @include tablet-small {
+      font-size: 1.1rem;
+      width: 100%;
+    }
+    @include tablet-medium {
+      font-size: 1.5rem;
+      padding-bottom: 0.5rem;
+    }
+  }
+
+  &__text-container-2 {
+    display: flex;
+    padding-left: 1.6rem;
+    padding-right: 1.6rem;
+    justify-content: space-between;
+  }
+
+  &__total {
+    text-transform: uppercase;
+    color: $grey;
+  }
+
+  &__checkout-button {
+    background-color: $orange;
+    justify-content: center;
+    color: white;
+    height: 4rem;
+    display: flex;
+    align-items: center;
+    margin-left: 1.6rem;
+    margin-right: 1.6rem;
+    margin-top: 2rem;
+    font-size: 1.3rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+  }
+}

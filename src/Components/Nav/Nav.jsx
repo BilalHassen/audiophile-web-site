@@ -9,7 +9,7 @@ import { useState, useEffect } from "react";
 import "./Nav.scss";
 import { Link } from "react-router-dom";
 
-export default function Nav() {
+export default function Nav(handleCartModalinChild) {
   const [isDesktop, setDesktop] = useState();
 
   return (

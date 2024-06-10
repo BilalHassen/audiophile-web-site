@@ -2,13 +2,20 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 import cartIcon from "../../assets/shared/desktop/icon-cart.svg";
 import Nav from "../../Components/Nav/Nav";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import HeaderNav from "../HeaderNav/HeaderNav";
 import "./Header.scss";
+import { Link } from "react-router-dom";
+import Cart from "../Cart/Cart";
 export default function Header() {
   const [isActive, setIsActive] = useState(false);
   const [isTablet, setTablet] = useState(false);
   const [isDesktop, setDesktop] = useState(false);
+
+  // state for handling modal open and close
+  const [isOpen, setModalOpen] = useState(false);
+
+  const storedData = localStorage.getItem("cart_id");
 
   const handleScreenSize = () => {
     if (window.innerWidth >= 768) {
@@ -40,6 +47,16 @@ export default function Header() {
   const handleNavDisplay = () => {
     setIsActive(!isActive);
   };
+  console.log({ isOpen });
+
+  const handleCartModal = (e) => {
+    // stop the cart icon listener from travelling up and triggering the
+    // the event listener on the document
+    e.stopPropagation();
+    setModalOpen((prevState) => {
+      return !prevState;
+    });
+  };
 
   return (
     <>
@@ -58,13 +75,22 @@ export default function Header() {
             <FontAwesomeIcon
               icon={faBars}
               className="header__icon"
-              onClick={handleNavDisplay}
+              onClick={() => {
+                handleNavDisplay();
+              }}
             />
             <h1 className="header__title">audiophile</h1>
           </>
         )}
         {isDesktop ? <HeaderNav /> : null}
-        <img classname="header__cart-icon" src={cartIcon} alt="cart-icon"></img>
+
+        <img
+          onClick={handleCartModal}
+          className="header__cart-icon"
+          src={cartIcon}
+          alt="cart-icon"
+        ></img>
+        {isOpen ? <Cart handleCartModal={handleCartModal} /> : null}
       </section>
       {isActive ? <Nav /> : ""}
     </>

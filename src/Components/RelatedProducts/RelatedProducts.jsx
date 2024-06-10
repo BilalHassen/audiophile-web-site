@@ -29,11 +29,11 @@ export default function RelatedProducts({ productId }) {
       return "mobile";
     }
 
-    if (width > 768 && width < 1366) {
+    if (width >= 768 && width < 1366) {
       return "tablet";
     }
 
-    if (width > 1366) {
+    if (width >= 1366) {
       return "desktop";
     }
   }
