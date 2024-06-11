@@ -13,6 +13,8 @@ export default function Cart({ closeModal, handleCartModal }) {
   const cart_id = localStorage.getItem("cart_id");
   const [isCheckout, setIsCheckout] = useState(false);
 
+  console.log(cartData.length);
+
   // create a reference to the cart__container element
   const cartRef = useRef(null);
 
@@ -142,7 +144,7 @@ export default function Cart({ closeModal, handleCartModal }) {
           <p className="cart__total">total</p>
           <p className="cart__total-amount">${formatTotal(total)}</p>
         </div>
-        <Link to="/Checkout">
+        <Link to="/checkout">
           <div className="cart__checkout-button">checkout</div>
         </Link>
       </div>
