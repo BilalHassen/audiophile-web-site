@@ -110,14 +110,16 @@ export default function CartItems({
   }, []);
 
   // function for formatting string with comma
-  function formatPrice(price) {
-    let priceStr = price.toString();
+  // function formatPrice(price) {
+  //   let priceStr = price.toString();
 
-    if (priceStr.length >= 4) {
-      return priceStr[0] + "," + priceStr.slice(1);
-    }
-    return priceStr;
-  }
+  //   if (priceStr.length >= 4) {
+  //     return priceStr[0] + "," + priceStr.slice(1);
+  //   }
+  //   return priceStr;
+  // }
+
+  // formatPrice(price);
 
   return (
     <>
