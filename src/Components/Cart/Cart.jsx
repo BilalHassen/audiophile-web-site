@@ -33,6 +33,25 @@ export default function Cart({ closeModal, handleCartModal }) {
     };
   }, []);
 
+  function goBack() {
+    window.history.back();
+  }
+
+  const isCartEmpty = () => {
+    console.log(cartData.length);
+    if (cartData.length > 0) {
+      setIsCheckout(true);
+    }
+    if (cartData.length === 0) {
+      console.log("from else block:", cartData.length);
+      setIsCheckout(false);
+    }
+  };
+
+  useEffect(() => {
+    isCartEmpty();
+  }, [cartData]);
+
   // get cart data add from the product cards// original cart data
   const getCartData = async () => {
     let response = await axios.get(
@@ -68,6 +87,7 @@ export default function Cart({ closeModal, handleCartModal }) {
 
   useEffect(() => {
     getCartData();
+    isCartEmpty();
   }, []);
 
   // calculation of the total amount of items when ever the state of cart Data changes
@@ -75,7 +95,6 @@ export default function Cart({ closeModal, handleCartModal }) {
     let totalAmount = 0;
     let totalCartItems = 0;
     for (let i = 0; i < cartData.length; i++) {
-      console.log(cartData[i].quantity);
       totalCartItems = totalCartItems += cartData[i].quantity;
       totalAmount = totalAmount += cartData[i].price;
     }
@@ -144,9 +163,15 @@ export default function Cart({ closeModal, handleCartModal }) {
           <p className="cart__total">total</p>
           <p className="cart__total-amount">${formatTotal(total)}</p>
         </div>
-        <Link to="/checkout">
+        {isCheckout ? (
+          <Link to="/checkout">
+            <div className="cart__checkout-button" onClick={isCartEmpty}>
+              checkout
+            </div>
+          </Link>
+        ) : (
           <div className="cart__checkout-button">checkout</div>
-        </Link>
+        )}
       </div>
     </div>
   );

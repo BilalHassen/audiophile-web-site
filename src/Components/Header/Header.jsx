@@ -47,7 +47,6 @@ export default function Header() {
   const handleNavDisplay = () => {
     setIsActive(!isActive);
   };
-  console.log({ isOpen });
 
   const handleCartModal = (e) => {
     // stop the cart icon listener from travelling up and triggering the

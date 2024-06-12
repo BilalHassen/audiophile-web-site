@@ -3,6 +3,7 @@ import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import Summary from "../Summary/Summary";
 export default function Checkout() {
   const cart_id = localStorage.getItem("cart_id");
   const [cartData, setCartData] = useState([]);
@@ -187,6 +188,7 @@ export default function Checkout() {
             </div>
           </div>
         </div>
+        <Summary cartData={cartData} />
       </div>
       <Footer />
     </>

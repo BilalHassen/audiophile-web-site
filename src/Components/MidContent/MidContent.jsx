@@ -11,7 +11,6 @@ export default function MidContent() {
 
   const handleScreenSize = () => {
     if (window.innerWidth >= 1366) {
-      console.log(width);
       setDesktop(true);
     }
 
@@ -23,7 +22,7 @@ export default function MidContent() {
   useEffect(() => {
     handleScreenSize();
     window.addEventListener("resize", handleScreenSize);
-    console.log(isDeskTop);
+
     return () => {
       window.removeEventListener("resize", handleScreenSize);
     };
