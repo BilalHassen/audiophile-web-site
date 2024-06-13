@@ -88,8 +88,6 @@ export default function ProductCard({
     }
   }
 
-  console.log("from product card:", productCartData.quantity);
-
   return (
     <>
       <div className="product__card">

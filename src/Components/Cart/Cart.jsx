@@ -13,8 +13,6 @@ export default function Cart({ closeModal, handleCartModal }) {
   const cart_id = localStorage.getItem("cart_id");
   const [isCheckout, setIsCheckout] = useState(false);
 
-  console.log(cartData.length);
-
   // create a reference to the cart__container element
   const cartRef = useRef(null);
 
@@ -38,12 +36,10 @@ export default function Cart({ closeModal, handleCartModal }) {
   }
 
   const isCartEmpty = () => {
-    console.log(cartData.length);
     if (cartData.length > 0) {
       setIsCheckout(true);
     }
     if (cartData.length === 0) {
-      console.log("from else block:", cartData.length);
       setIsCheckout(false);
     }
   };

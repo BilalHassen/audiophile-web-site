@@ -21,8 +21,6 @@ export default function Checkout() {
     getUpdatedCartData();
   }, []);
 
-  console.log(cartData);
-
   function goBack() {
     window.history.back();
   }

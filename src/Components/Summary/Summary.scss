@@ -2,13 +2,16 @@
 @use "../../styles/partials/variables" as *;
 
 .summary {
-  &__summary-calculations {
+  &__calculations {
     display: flex;
     flex-direction: column;
+    gap: 1rem;
   }
 
   &__total,
-  &__shipping {
+  &__shipping,
+  &__vat,
+  &__grand-total {
     display: flex;
     justify-content: space-between;
   }

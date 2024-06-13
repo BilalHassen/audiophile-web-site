@@ -22,7 +22,6 @@ export default function EarPhonesPage() {
 
   useEffect(() => {
     getEarphonesData();
-    console.log(earphonesData);
   }, []);
 
   return (

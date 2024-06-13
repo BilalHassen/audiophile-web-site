@@ -18,7 +18,6 @@ export default function ProductPage() {
       try {
         let response = await axios.get(apiUrl);
         let data = response.data;
-        console.log(data);
         setProductData([data]);
       } catch (error) {
         console.log(error);
