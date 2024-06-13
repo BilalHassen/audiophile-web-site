@@ -139,7 +139,7 @@ export default function CartItems({
         <div className="cart__dynamic-wrapper">
           <div className="cart__name-price-container">
             <h4 className="cart__item-name">{item_name}</h4>
-            <p className="cart__item-price">x{quantity}</p>
+            <p className="cart__item-price">$ {price}</p>
           </div>
           <div className="cart__controller-container">
             <button className="cart__delete" onClick={deleteProduct}>
