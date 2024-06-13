@@ -107,7 +107,7 @@ export default function Summary({ cartData }) {
             <p className="summary__total-title">total</p>
             <p className="summary__total-price">$ {total}</p>
           </div>
-          <div className="sumamry__shippping">
+          <div className="summary__shipping">
             <p className="summary__shipping-title">shipping</p>
             <p className="summary__shipping-price">${shipping}</p>
           </div>

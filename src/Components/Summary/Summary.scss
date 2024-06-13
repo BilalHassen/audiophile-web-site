@@ -2,4 +2,24 @@
 @use "../../styles/partials/variables" as *;
 
 .summary {
+  &__summary-calculations {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__total,
+  &__shipping {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__total-title {
+    color: $grey;
+    text-transform: uppercase;
+  }
+
+  &__total-price {
+    color: $black;
+    font-weight: bold;
+  }
 }
