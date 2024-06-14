@@ -7,7 +7,7 @@ export default function Summary({ cartData }) {
   const [total, setTotal] = useState(0);
   const [grandTotal, setGrandTotal] = useState(0);
   const [shipping, setShipping] = useState(50);
-  const [vat, setvat] = useState();
+  const [vat, setvat] = useState(0);
   const cart_id = localStorage.getItem("cart_id");
 
   function handleImageUrl() {
@@ -51,78 +51,126 @@ export default function Summary({ cartData }) {
     return removeEventListener;
   }, []);
 
+  // get the total amounts in numbers
+  function formatTotal() {
+    let totalAllItems = 0;
+    let priceExShipping = 0;
+
+    // add up each number with price
+    cartData.forEach((item) => {
+      totalAllItems += item.price;
+      priceExShipping += item.price;
+    });
+
+    let vatAmount = 0.2 * priceExShipping;
+    let totalWithShipping = totalAllItems + shipping;
+    let totalWithVat = totalWithShipping + vatAmount;
+    vatAmount = vatAmount.toFixed(2);
+
+    setvat(vatAmount);
+
+    console.log(typeof vatAmount);
+    console.log(totalWithShipping);
+
+    // return the two seperate values as an object
+    return { totalWithVat, priceExShipping };
+  }
+
+  // function to format the total amount including shipping as a string
+  function totalWithShipping(amountsObject) {
+    console.log(amountsObject);
+    let totalWithShipping = amountsObject.totalWithVat.toString();
+    console.log(totalWithShipping);
+    let formattedShippingStr = "";
+
+    if (totalWithShipping.length < 4) {
+      console.log("first");
+      formattedShippingStr = totalWithShipping;
+    } else if (totalWithShipping.length === 4) {
+      console.log("if");
+      formattedShippingStr =
+        totalWithShipping.substring(0, 1) + "," + totalWithShipping.slice(1);
+    } else if (totalWithShipping.length === 5) {
+      formattedShippingStr =
+        totalWithShipping.substring(0, 2) + "," + totalWithShipping.slice(2);
+    } else if (
+      totalWithShipping.length === 6 &&
+      // check if the string doesnt include a "." use ! because includes returns true
+      !totalWithShipping.includes(".")
+    ) {
+      formattedShippingStr =
+        totalWithShipping.substring(0, 3) + "," + totalWithShipping.slice(3);
+    } else if (totalWithShipping.length === 6) {
+      formattedShippingStr =
+        totalWithShipping.substring(0, 1) +
+        "," +
+        totalWithShipping.slice(1) +
+        "0";
+    } else if (
+      totalWithShipping.length === 7 &&
+      !totalWithShipping.includes(".")
+    ) {
+      formattedShippingStr =
+        totalWithShipping.substring(0, 1) +
+        "," +
+        totalWithShipping.substring(1, 4) +
+        "," +
+        totalWithShipping.slice(4);
+    } else if (totalWithShipping.length === 7) {
+      formattedShippingStr =
+        totalWithShipping.substring(0, 2) +
+        "," +
+        totalWithShipping.substring(2, 5) +
+        "." +
+        totalWithShipping.slice(6) +
+        "0";
+    }
+    setGrandTotal(formattedShippingStr);
+  }
+
+  // function to format the total wihthout shipping as a string
+  function formatTotalExShipping(amountsObject) {
+    let totalWithoutShipping = amountsObject.priceExShipping.toString();
+    console.log(totalWithoutShipping);
+    let formattedWithoutShippingStr = "";
+
+    if (totalWithoutShipping.length < 4) {
+      console.log("first");
+      formattedWithoutShippingStr = totalWithoutShipping;
+    } else if (totalWithoutShipping.length === 4) {
+      console.log("if");
+      formattedWithoutShippingStr =
+        totalWithoutShipping.substring(0, 1) +
+        "," +
+        totalWithoutShipping.slice(1);
+    } else if (totalWithoutShipping.length === 5) {
+      formattedWithoutShippingStr =
+        totalWithoutShipping.substring(0, 2) +
+        "," +
+        totalWithoutShipping.slice(2);
+    } else if (totalWithShipping.length === 6) {
+      formattedWithoutShippingStr =
+        totalWithoutShipping.substring(0, 3) +
+        "," +
+        totalWithoutShipping.slice(3);
+    } else if (totalWithoutShipping.length === 7) {
+      formattedWithoutShippingStr =
+        totalWithoutShipping.substring(0, 1) +
+        "," +
+        totalWithoutShipping.substring(1, 4) +
+        "," +
+        totalWithoutShipping.slice(4);
+    }
+
+    console.log(formattedWithoutShippingStr);
+
+    setTotal(formattedWithoutShippingStr);
+  }
+
   useEffect(() => {
-    function formatTotal() {
-      let totalAllItems = 0;
-      let priceExShipping = 0;
-
-      cartData.forEach((item) => {
-        totalAllItems += item.price;
-        priceExShipping += item.price;
-      });
-
-      let totalWithShipping = (totalAllItems += shipping);
-
-      setvat(0.2 * priceExShipping);
-
-      // return the two seperate values as an object
-      return { totalWithShipping, priceExShipping };
-    }
-
-    function formatTotalStr(totalAmount) {
-      let totalAmountStr = totalAmount.totalWithShipping.toString();
-      let amountExShipping = totalAmount.priceExShipping.toString();
-      let formattedTotalStr = "";
-      let formattedTotalExShipping = "";
-
-      console.log(typeof amountExShipping);
-
-      if (totalAmountStr.length < 4) {
-        formattedTotalStr = totalAmountStr;
-        formattedTotalExShipping = amountExShipping;
-      } else if (totalAmountStr.length === 4) {
-        console.log("if");
-        formattedTotalStr =
-          totalAmountStr.substring(0, 1) + "," + totalAmountStr.slice(1);
-
-        formattedTotalExShipping =
-          amountExShipping.substring(0, 1) + "," + amountExShipping.slice(1);
-      } else if (totalAmountStr.length === 5) {
-        formattedTotalStr =
-          totalAmountStr.substring(0, 2) + "," + totalAmountStr.slice(2);
-
-        formattedTotalExShipping =
-          amountExShipping.substring(0, 2) + "," + amountExShipping.slice(2);
-      } else if (totalAmountStr.length === 6) {
-        formattedTotalStr =
-          totalAmountStr.substring(0, 3) + "," + totalAmountStr.slice(3);
-
-        formattedTotalExShipping =
-          amountExShipping.substring(0, 3) + "," + amountExShipping.slice(3);
-      } else if (totalAmountStr.length === 7) {
-        formattedTotalStr =
-          totalAmountStr.substring(0, 1) +
-          "," +
-          totalAmountStr.substring(1, 4) +
-          "," +
-          totalAmountStr.slice(4);
-
-        formattedTotalExShipping =
-          amountExShipping.substring(0, 1) +
-          "," +
-          amountExShipping.substring(1, 4) +
-          "," +
-          amountExShipping.slice(4);
-      }
-
-      console.log(formattedTotalExShipping);
-      setTotal(formattedTotalExShipping);
-      setGrandTotal(formattedTotalStr);
-    }
     const totalNumber = formatTotal();
-    console.log(totalNumber);
-
-    formatTotalStr(totalNumber);
+    totalWithShipping(totalNumber);
+    formatTotalExShipping(totalNumber);
   }, [cartData]);
 
   return (
