@@ -2,7 +2,9 @@ import { useState, useEffect } from "react";
 import "./Summary.scss";
 import SummaryItems from "../SummaryItems/SummaryItems";
 import axios from "axios";
-export default function Summary({ cartData }) {
+
+export default function Summary() {
+  const [cartData, setCartData] = useState([]);
   const [screenSize, setScreenSize] = useState(handleImageUrl());
   const [total, setTotal] = useState(0);
   const [grandTotal, setGrandTotal] = useState(0);
@@ -78,16 +80,13 @@ export default function Summary({ cartData }) {
 
   // function to format the total amount including shipping as a string
   function totalWithShipping(amountsObject) {
-    console.log(amountsObject);
     let totalWithShipping = amountsObject.totalWithVat.toString();
-    console.log(totalWithShipping);
+
     let formattedShippingStr = "";
 
     if (totalWithShipping.length < 4) {
-      console.log("first");
       formattedShippingStr = totalWithShipping;
     } else if (totalWithShipping.length === 4) {
-      console.log("if");
       formattedShippingStr =
         totalWithShipping.substring(0, 1) + "," + totalWithShipping.slice(1);
     } else if (totalWithShipping.length === 5) {
@@ -135,10 +134,8 @@ export default function Summary({ cartData }) {
     let formattedWithoutShippingStr = "";
 
     if (totalWithoutShipping.length < 4) {
-      console.log("first");
       formattedWithoutShippingStr = totalWithoutShipping;
     } else if (totalWithoutShipping.length === 4) {
-      console.log("if");
       formattedWithoutShippingStr =
         totalWithoutShipping.substring(0, 1) +
         "," +
@@ -162,15 +159,27 @@ export default function Summary({ cartData }) {
         totalWithoutShipping.slice(4);
     }
 
-    console.log(formattedWithoutShippingStr);
-
     setTotal(formattedWithoutShippingStr);
   }
+
+  useEffect(() => {
+    const getUpdatedCartData = async () => {
+      let response = await axios.get(
+        `http://localhost:8080/cart/getitems/${cart_id}`
+      );
+      let products_data = response.data;
+      console.log(products_data);
+      setCartData(products_data);
+    };
+
+    getUpdatedCartData();
+  }, []);
 
   useEffect(() => {
     const totalNumber = formatTotal();
     totalWithShipping(totalNumber);
     formatTotalExShipping(totalNumber);
+    console.log(cartData.length);
   }, [cartData]);
 
   return (

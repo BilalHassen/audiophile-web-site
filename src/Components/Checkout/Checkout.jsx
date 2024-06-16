@@ -4,9 +4,11 @@ import Footer from "../Footer/Footer";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import Summary from "../Summary/Summary";
+
 export default function Checkout() {
   const cart_id = localStorage.getItem("cart_id");
   const [cartData, setCartData] = useState([]);
+  const [ischeckoutPage, setCheckOutPage] = useState(true);
 
   useEffect(() => {
     const getUpdatedCartData = async () => {
@@ -32,7 +34,7 @@ export default function Checkout() {
         <button className="checkout__direction" onClick={goBack}>
           Go Back
         </button>
-        <div className="checkout__form">
+        <form className="checkout__form">
           <h1 className="checkout__title">checkout</h1>
           <p className="checkout__billing-details-title">billing details</p>
           <div className="checkout__billing-details">
@@ -185,8 +187,8 @@ export default function Checkout() {
               </div>
             </div>
           </div>
-        </div>
-        <Summary cartData={cartData} />
+        </form>
+        <Summary />
       </div>
       <Footer />
     </>

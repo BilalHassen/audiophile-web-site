@@ -11,7 +11,7 @@ export default function Cart({ closeModal, handleCartModal }) {
   const [total, setTotal] = useState(0);
   const [allItems, setAllItems] = useState(0);
   const cart_id = localStorage.getItem("cart_id");
-  const [isCheckout, setIsCheckout] = useState(false);
+  const [isCheckout, setIsCheckout] = useState(true);
 
   // create a reference to the cart__container element
   const cartRef = useRef(null);
@@ -43,6 +43,8 @@ export default function Cart({ closeModal, handleCartModal }) {
       setIsCheckout(false);
     }
   };
+
+  console.log(window.location.pathname === "/checkout");
 
   useEffect(() => {
     isCartEmpty();
@@ -76,8 +78,19 @@ export default function Cart({ closeModal, handleCartModal }) {
         `http://localhost:8080/cart/deleteitems/${cart_id}`
       );
       getCartData();
+      return true;
     } catch (error) {
       console.log("failed to delete items in cart", error);
+    }
+  };
+
+  const redirect = async () => {
+    const clearCart = await deleteAllItems();
+
+    console.log(clearCart);
+    console.log(isCheckout);
+    if (clearCart === true && window.location.pathname === "/checkout") {
+      window.location.href = "/";
     }
   };
 
@@ -85,6 +98,12 @@ export default function Cart({ closeModal, handleCartModal }) {
     getCartData();
     isCartEmpty();
   }, []);
+
+  // useEffect(() => {
+  //   if (cartData.length === 0 && isCheckout === false) {
+  //     redirect();
+  //   }
+  // }, []);
 
   // calculation of the total amount of items when ever the state of cart Data changes
   useEffect(() => {
@@ -117,7 +136,14 @@ export default function Cart({ closeModal, handleCartModal }) {
       <div className="cart__container" ref={cartRef}>
         <div className="cart__text-container">
           <h3 className="cart__count">cart ({allItems})</h3>
-          <button className="cart__remove-button" onClick={deleteAllItems}>
+          <button
+            className="cart__remove-button"
+            onClick={async () => {
+              await deleteAllItems();
+              await redirect();
+              isCartEmpty();
+            }}
+          >
             Remove all
           </button>
         </div>
