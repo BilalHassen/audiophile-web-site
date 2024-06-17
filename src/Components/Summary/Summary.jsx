@@ -3,7 +3,7 @@ import "./Summary.scss";
 import SummaryItems from "../SummaryItems/SummaryItems";
 import axios from "axios";
 
-export default function Summary() {
+export default function Summary({ handleErrorSubmission, orderComplete }) {
   const [cartData, setCartData] = useState([]);
   const [screenSize, setScreenSize] = useState(handleImageUrl());
   const [total, setTotal] = useState(0);
@@ -11,6 +11,8 @@ export default function Summary() {
   const [shipping, setShipping] = useState(50);
   const [vat, setvat] = useState(0);
   const cart_id = localStorage.getItem("cart_id");
+
+  console.log(orderComplete);
 
   function handleImageUrl() {
     let width = window.innerWidth;
@@ -219,7 +221,9 @@ export default function Summary() {
           </div>
         </div>
         <div className="summary__button-container">
-          <button className="summary__button">continue & pay</button>
+          <button onClick={handleErrorSubmission} className="summary__button">
+            continue & pay
+          </button>
         </div>
       </div>
     </>
