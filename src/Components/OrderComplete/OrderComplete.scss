@@ -1,0 +1,214 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+
+body {
+  position: relative;
+}
+
+.order {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  padding-left: 1.6rem;
+  padding-right: 1.6rem;
+  z-index: 10;
+  margin-top: 10rem;
+
+  @include mobile-medium {
+    padding-left: 2.6rem;
+    padding-right: 2.6rem;
+  }
+
+  @include mobile-large {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+
+  @include tablet-small {
+    padding-top: 12.9rem;
+  }
+
+  &__page-container {
+    background-color: $white;
+    border-radius: 4px;
+    padding: 3rem 2rem;
+  }
+
+  &__title {
+    font-size: 2rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding-top: 1.6rem;
+  }
+
+  &__title {
+    display: flex;
+    flex-direction: column;
+    color: $black;
+    margin-bottom: 1.6rem;
+  }
+
+  &__subtitle {
+    color: $black;
+    font-size: 2rem;
+    margin-top: 0;
+  }
+
+  &__para {
+    padding-bottom: 1.6rem;
+    color: $grey;
+    font-size: 1.3rem;
+  }
+
+  &__items-box {
+    background-color: $medium-grey;
+  }
+
+  &__first-item-box {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    justify-content: center;
+    padding-top: 1.6rem;
+    padding-bottom: 1.6rem;
+
+    @include tablet-small {
+      // gap: 4rem;
+    }
+  }
+
+  &__items-box {
+    border-top-right-radius: 4px;
+    border-top-left-radius: 4px;
+  }
+
+  &__item-price {
+    font-size: 1.4rem;
+    color: #979797;
+    margin-top: 0.5rem;
+  }
+
+  &__item-name {
+    font-size: 1.5rem;
+  }
+
+  &__item-quantity {
+    font-size: 1.5rem;
+    color: #979797;
+    padding-bottom: 2rem;
+  }
+
+  &__first-item-img {
+    width: 50px;
+    height: 50px;
+  }
+
+  &__items-total {
+    display: flex;
+    flex-direction: column;
+    background-color: $black;
+    color: $white;
+    gap: 1rem;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+    padding-left: 1.6rem;
+    padding-bottom: 1.6rem;
+    padding-top: 1.6rem;
+
+    @include tablet-small {
+      width: 100%;
+      justify-content: center;
+      padding-left: 2rem;
+      padding-top: 0rem;
+      padding-bottom: 0rem;
+      border-radius: 4px;
+    }
+  }
+
+  &__items-extra {
+    background-color: $medium-grey;
+    border-top: 1px solid #e3e2e2;
+    padding-bottom: 2rem;
+    padding-top: 1rem;
+    text-align: center;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    font-size: 1.2rem;
+  }
+
+  &__boxes-container {
+    background-color: $medium-grey;
+    border-top-right-radius: 4px;
+    border-top-left-radius: 4px;
+
+    @include tablet-small {
+      display: flex;
+      height: 13rem;
+      border-radius: 4px;
+    }
+  }
+
+  @include tablet-small {
+    &__flex-container {
+      width: 160%;
+    }
+  }
+
+  &__total-title {
+    text-transform: uppercase;
+    color: $grey;
+  }
+
+  &__button {
+    background-color: $orange;
+    border: none;
+    height: 4rem;
+    width: 100%;
+    margin-top: 2rem;
+    text-transform: uppercase;
+    color: white;
+    font-size: 1.3rem;
+
+    @include tablet-small {
+      margin-top: 4rem;
+    }
+  }
+}
+
+.order__page-container {
+  @include mobile-large {
+    max-width: 450px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  @include tablet-small {
+    width: 70%; /* Allows the element to take up full width available */
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 4rem;
+    padding-right: 4rem;
+  }
+
+  @include tablet-medium {
+    width: 60%;
+    max-width: 650px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 4rem;
+    padding-right: 4rem;
+  }
+
+  @include tablet-large {
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 4rem;
+    padding-right: 4rem;
+  }
+}

@@ -22,11 +22,10 @@
   }
 
   @include desktop-small {
-    padding-right: 15rem;
-  }
-
-  @include desktop-large {
-    padding-right: 20rem;
+    margin-top: 0rem;
+    padding-left: 3rem;
+    padding-right: 3rem;
+    height: fit-content;
   }
 
   &__item-container {
@@ -113,5 +112,14 @@
     font-size: 1.3rem;
     text-transform: uppercase;
     letter-spacing: 0.1rem;
+  }
+
+  &__title {
+    text-transform: uppercase;
+    font-size: 1.5rem;
+
+    @include tablet-small {
+      font-size: 1.8rem;
+    }
   }
 }

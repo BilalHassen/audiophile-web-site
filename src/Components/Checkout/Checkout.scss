@@ -31,6 +31,7 @@
   @include desktop-small {
     padding-left: 15rem;
     padding-right: 15rem;
+    gap: 2rem;
   }
 
   @include desktop-large {
@@ -38,9 +39,17 @@
     padding-right: 20rem;
   }
 
+  @include desktop-small {
+    &__wrapper {
+      display: flex;
+      gap: 2rem;
+    }
+  }
+
   &__direction {
     border: none;
     color: $grey;
+    background-color: #f2f2f2;
     font-size: 1.2rem;
     padding-bottom: 1.6rem;
     padding-top: 2rem;

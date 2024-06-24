@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import "./Summary.scss";
 import SummaryItems from "../SummaryItems/SummaryItems";
 import axios from "axios";
+import OrderComplete from "../OrderComplete/OrderComplete";
 
 export default function Summary({ handleErrorSubmission, orderComplete }) {
   const [cartData, setCartData] = useState([]);
@@ -225,6 +226,10 @@ export default function Summary({ handleErrorSubmission, orderComplete }) {
             continue & pay
           </button>
         </div>
+
+        {orderComplete ? (
+          <OrderComplete grandTotal={grandTotal} cartData={cartData} />
+        ) : null}
       </div>
     </>
   );
