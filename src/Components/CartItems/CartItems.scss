@@ -2,26 +2,6 @@
 @use "../../styles/partials/variables" as *;
 
 .cart {
-  padding-left: 1.6rem;
-  padding-right: 1.6rem;
-  padding-top: 4rem;
-
-  @include tablet-small {
-    padding-right: 3.5rem;
-  }
-
-  @include tablet-medium {
-    padding-right: 4.5rem;
-  }
-
-  @include desktop-small {
-    padding-right: 15rem;
-  }
-
-  @include desktop-large {
-    padding-right: 20rem;
-  }
-
   &__container {
     padding-top: 2rem;
     align-items: center;

@@ -1,18 +1,18 @@
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import "./Cart.scss";
+import "../Header/Header.scss";
 import { useEffect, useState, useRef } from "react";
 import axios from "axios";
 import CartItems from "../CartItems/CartItems";
 import emptyCart from "../../assets/cart/empty-cart.png";
+import Checkout from "../Checkout/Checkout";
 
 export default function Cart({ closeModal, handleCartModal }) {
   const [cartData, setCartData] = useState([]);
   const [total, setTotal] = useState(0);
   const [allItems, setAllItems] = useState(0);
   const cart_id = localStorage.getItem("cart_id");
-  console.log(cart_id);
-
-  console.log(cartData.length);
+  const [isCheckout, setIsCheckout] = useState(true);
 
   // create a reference to the cart__container element
   const cartRef = useRef(null);
@@ -31,6 +31,25 @@ export default function Cart({ closeModal, handleCartModal }) {
       document.removeEventListener("click", handleClick);
     };
   }, []);
+
+  function goBack() {
+    window.history.back();
+  }
+
+  const isCartEmpty = () => {
+    if (cartData.length > 0) {
+      setIsCheckout(true);
+    }
+    if (cartData.length === 0) {
+      setIsCheckout(false);
+    }
+  };
+
+  console.log(window.location.pathname === "/checkout");
+
+  useEffect(() => {
+    isCartEmpty();
+  }, [cartData]);
 
   // get cart data add from the product cards// original cart data
   const getCartData = async () => {
@@ -60,21 +79,38 @@ export default function Cart({ closeModal, handleCartModal }) {
         `http://localhost:8080/cart/deleteitems/${cart_id}`
       );
       getCartData();
+      return true;
     } catch (error) {
       console.log("failed to delete items in cart", error);
     }
   };
 
+  const redirect = async () => {
+    const clearCart = await deleteAllItems();
+
+    console.log(clearCart);
+    console.log(isCheckout);
+    if (clearCart === true && window.location.pathname === "/checkout") {
+      window.location.href = "/";
+    }
+  };
+
   useEffect(() => {
     getCartData();
+    isCartEmpty();
   }, []);
+
+  // useEffect(() => {
+  //   if (cartData.length === 0 && isCheckout === false) {
+  //     redirect();
+  //   }
+  // }, []);
 
   // calculation of the total amount of items when ever the state of cart Data changes
   useEffect(() => {
     let totalAmount = 0;
     let totalCartItems = 0;
     for (let i = 0; i < cartData.length; i++) {
-      console.log(cartData[i].quantity);
       totalCartItems = totalCartItems += cartData[i].quantity;
       totalAmount = totalAmount += cartData[i].price;
     }
@@ -101,7 +137,14 @@ export default function Cart({ closeModal, handleCartModal }) {
       <div className="cart__container" ref={cartRef}>
         <div className="cart__text-container">
           <h3 className="cart__count">cart ({allItems})</h3>
-          <button className="cart__remove-button" onClick={deleteAllItems}>
+          <button
+            className="cart__remove-button"
+            onClick={async () => {
+              await deleteAllItems();
+              await redirect();
+              isCartEmpty();
+            }}
+          >
             Remove all
           </button>
         </div>
@@ -143,7 +186,15 @@ export default function Cart({ closeModal, handleCartModal }) {
           <p className="cart__total">total</p>
           <p className="cart__total-amount">${formatTotal(total)}</p>
         </div>
-        <div className="cart__checkout-button">checkout</div>
+        {isCheckout ? (
+          <Link to="/checkout">
+            <div className="cart__checkout-button" onClick={isCartEmpty}>
+              checkout
+            </div>
+          </Link>
+        ) : (
+          <div className="cart__checkout-button">checkout</div>
+        )}
       </div>
     </div>
   );

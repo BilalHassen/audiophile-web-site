@@ -12,14 +12,12 @@ export default function HeadPhonesPage() {
       let response = await axios.get(
         "http://localhost:8080/products/headphones"
       );
-      console.log(response.data);
+
       setHeadphonesData(response.data);
     };
 
     fetchData();
   }, []);
-
-  console.log(headphonesData);
 
   return (
     <>

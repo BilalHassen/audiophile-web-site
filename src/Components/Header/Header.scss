@@ -10,6 +10,8 @@
   padding-bottom: 3rem;
   align-items: center;
   justify-content: space-between;
+  z-index: 99;
+  position: relative;
 
   @include mobile-medium {
     padding-left: 2.6rem;

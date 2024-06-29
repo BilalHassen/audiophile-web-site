@@ -16,11 +16,11 @@ export default function SpeakersCard({
   const [tablet, setTablet] = useState(false);
   const [desktop, setDesktop] = useState(false);
 
-  if (newProduct) {
-    console.log(newProduct);
-  } else {
-    console.log(false);
-  }
+  // if (newProduct) {
+  //   console.log(newProduct);
+  // } else {
+  //   console.log(false);
+  // }
 
   const handleScreenSize = () => {
     const currentWidth = window.innerWidth;

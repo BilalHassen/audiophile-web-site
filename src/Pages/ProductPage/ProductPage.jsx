@@ -5,6 +5,7 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 import ProductCard from "../../Components/ProductCard/ProductCard";
 import Header from "../../Components/Header/Header";
+import Cart from "../../Components/Cart/Cart";
 
 export default function ProductPage() {
   const [productData, setProductData] = useState([]);
@@ -18,7 +19,6 @@ export default function ProductPage() {
       try {
         let response = await axios.get(apiUrl);
         let data = response.data;
-        console.log(data);
         setProductData([data]);
       } catch (error) {
         console.log(error);

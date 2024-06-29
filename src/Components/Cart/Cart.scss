@@ -1,25 +1,23 @@
 @use "../../styles/partials/mixins" as *;
 @use "../../styles/partials/variables" as *;
+@use "../../Components/Header/Header.scss" as *;
 
 body {
   position: relative;
 }
-
 .cart {
-  width: 100%;
-  position: absolute;
-  top: 2.5%;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0rem;
   right: 0;
   bottom: 0;
   left: 0;
   background-color: rgba(0, 0, 0, 0.7);
   padding-left: 1.6rem;
   padding-right: 1.6rem;
-  z-index: 10;
-
-  @include tablet-small {
-    top: 3%;
-  }
+  z-index: 1;
+  padding-top: 10rem;
 
   &__empty {
     padding-top: 4rem;
@@ -45,28 +43,5 @@ body {
   &__container {
     background-color: white;
     border-radius: 4px;
-
-    @include tablet-small {
-      margin-left: 35rem;
-    }
-
-    @include tablet-medium {
-      margin-left: 60rem;
-    }
-    @include tablet-large {
-      margin-left: 86rem;
-    }
-
-    @include desktop-small {
-      margin-left: 83rem;
-    }
-
-    @include desktop-medium {
-      margin-left: 90rem;
-    }
-
-    @include desktop-large {
-      margin-left: 130rem;
-    }
   }
 }
