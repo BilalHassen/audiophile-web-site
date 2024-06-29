@@ -7,6 +7,8 @@ import HeaderNav from "../HeaderNav/HeaderNav";
 import "./Header.scss";
 import { Link } from "react-router-dom";
 import Cart from "../Cart/Cart";
+import logo from "../../assets/shared/desktop/logo.svg";
+
 export default function Header() {
   const [isActive, setIsActive] = useState(false);
   const [isTablet, setTablet] = useState(false);
@@ -67,7 +69,7 @@ export default function Header() {
               className="header__icon"
               onClick={handleNavDisplay}
             />
-            <h1 className="header__title">audiophile</h1>
+            <img className="header__title" src={logo} alt="logo"></img>
           </div>
         ) : (
           <>
@@ -78,7 +80,7 @@ export default function Header() {
                 handleNavDisplay();
               }}
             />
-            <h1 className="header__title">audiophile</h1>
+            <img className="header__title" src={logo} alt="logo"></img>
           </>
         )}
         {isDesktop ? <HeaderNav /> : null}

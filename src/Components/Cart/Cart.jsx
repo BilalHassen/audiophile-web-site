@@ -1,5 +1,6 @@
 import { useParams, Link } from "react-router-dom";
 import "./Cart.scss";
+import "../Header/Header.scss";
 import { useEffect, useState, useRef } from "react";
 import axios from "axios";
 import CartItems from "../CartItems/CartItems";

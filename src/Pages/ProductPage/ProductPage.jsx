@@ -5,6 +5,7 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 import ProductCard from "../../Components/ProductCard/ProductCard";
 import Header from "../../Components/Header/Header";
+import Cart from "../../Components/Cart/Cart";
 
 export default function ProductPage() {
   const [productData, setProductData] = useState([]);
