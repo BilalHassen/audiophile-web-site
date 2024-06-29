@@ -9,7 +9,7 @@ body {
   width: 100vw;
   height: 100vh;
   position: fixed;
-  top: 0;
+  top: 0rem;
   right: 0;
   bottom: 0;
   left: 0;
@@ -17,7 +17,7 @@ body {
   padding-left: 1.6rem;
   padding-right: 1.6rem;
   z-index: 10;
-  margin-top: 10rem;
+  padding-top: 10.3rem;
 
   @include mobile-medium {
     padding-left: 2.6rem;
@@ -31,6 +31,14 @@ body {
 
   @include tablet-small {
     padding-top: 12.9rem;
+  }
+
+  @include desktop-small {
+    padding-top: 16rem;
+  }
+
+  @include desktop-large {
+    padding-top: 18rem;
   }
 
   &__page-container {
@@ -76,6 +84,8 @@ body {
     justify-content: center;
     padding-top: 1.6rem;
     padding-bottom: 1.6rem;
+    padding-left: 1.6rem;
+    padding-right: 1.6rem;
 
     @include tablet-small {
       // gap: 4rem;
@@ -182,32 +192,13 @@ body {
 
 .order__page-container {
   @include mobile-large {
-    max-width: 450px;
+    max-width: 500px;
     margin-left: auto;
     margin-right: auto;
   }
 
   @include tablet-small {
-    width: 70%; /* Allows the element to take up full width available */
-    max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
-    padding-left: 4rem;
-    padding-right: 4rem;
-  }
-
-  @include tablet-medium {
-    width: 60%;
-    max-width: 650px;
-    margin-left: auto;
-    margin-right: auto;
-    padding-left: 4rem;
-    padding-right: 4rem;
-  }
-
-  @include tablet-large {
-    margin-left: auto;
-    margin-right: auto;
+    max-width: 626px;
     padding-left: 4rem;
     padding-right: 4rem;
   }

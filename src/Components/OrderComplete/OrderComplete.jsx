@@ -1,11 +1,12 @@
 import "./OrderComplete.scss";
 import OrderConfirmation from "../../assets/checkout/icon-order-confirmation.svg";
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 export default function OrderComplete({ cartData, grandTotal }) {
   const [quantity, setQuantity] = useState(0);
   const [items, setItems] = useState("");
 
-  console.log(cartData[0]);
+  const navigate = useNavigate();
 
   useEffect(() => {
     if (cartData.length > 1) {
@@ -16,6 +17,10 @@ export default function OrderComplete({ cartData, grandTotal }) {
       setItems("item");
     }
   }, []);
+
+  function goHome() {
+    navigate("/");
+  }
 
   return (
     <>
@@ -63,7 +68,9 @@ export default function OrderComplete({ cartData, grandTotal }) {
             </div>
           </div>
           <div className="order__button-container">
-            <button className="order__button">back to home</button>
+            <button onClick={goHome} className="order__button">
+              back to home
+            </button>
           </div>
         </div>
       </section>
