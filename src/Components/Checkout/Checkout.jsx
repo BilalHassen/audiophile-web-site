@@ -326,6 +326,9 @@ export default function Checkout() {
                         placeholder="23851226"
                         className="checkout__e-money-number"
                       />
+                      <p className="checkout__error-paragraph">
+                        {errors ? errors.eMoney : null}
+                      </p>
                     </div>
                     <div className="checkout__e-money-pin-box">
                       <label
@@ -343,6 +346,9 @@ export default function Checkout() {
                         placeholder="9021"
                         className="checkout__e-money-pin"
                       />
+                      <p className="checkout__error-paragraph">
+                        {errors ? errors.eMoneyPin : null}
+                      </p>
                     </div>
                   </>
                 )}
