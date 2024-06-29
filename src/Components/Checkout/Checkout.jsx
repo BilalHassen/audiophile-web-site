@@ -35,26 +35,27 @@ export default function Checkout() {
       ...prevState,
       [name]: value,
     }));
-
-    const formErrors = validateForm(values);
-
-    if (Object.keys(formErrors).length > 0) {
-      setErrors(formErrors);
-    }
   };
 
+  // this function will be triggered when the pay button is clicked in the summary component
   const handleErrorSubmission = () => {
+    // store the object returned from validateFrom in formErrors
     const formErrors = validateForm(values);
 
+    // check if the formErrors object has a length greater that 0 indicating an error
     if (Object.keys(formErrors).length > 0) {
+      // update setErrors object
       setErrors(formErrors);
     } else {
+      // if the length is 0 set errors to be empty object indicating no errors
       setErrors({});
       setOrderComplete(true);
     }
   };
 
   console.log(errors);
+  // function checks if any of the form fields are empty or dont meet conditions
+  // and adds a key value pair to the errors object
   const validateForm = (formValues) => {
     // object to store error values
     let errors = {};

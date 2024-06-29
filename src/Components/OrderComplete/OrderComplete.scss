@@ -46,8 +46,6 @@ body {
     background-color: $white;
     border-radius: 4px;
     padding: 3rem 2rem;
-    overflow: auto; /* Enable scrolling within the container if content overflows */
-    scroll-behavior: smooth; /* Optional: Smooth scrolling */
   }
 
   &__title {
