@@ -81,6 +81,8 @@ export default function Summary({ handleErrorSubmission, orderComplete }) {
     return { totalWithVat, priceExShipping };
   }
 
+  console.log(grandTotal.length);
+
   // function to format the total amount including shipping as a string
   function totalWithShipping(amountsObject) {
     let totalWithShipping = amountsObject.totalWithVat.toString();
@@ -94,14 +96,14 @@ export default function Summary({ handleErrorSubmission, orderComplete }) {
         totalWithShipping.substring(0, 1) + "," + totalWithShipping.slice(1);
     } else if (totalWithShipping.length === 5) {
       formattedShippingStr =
-        totalWithShipping.substring(0, 2) + "," + totalWithShipping.slice(2);
+        totalWithShipping.substring(0, 3) + totalWithShipping.slice(3);
     } else if (
       totalWithShipping.length === 6 &&
       // check if the string doesnt include a "." use ! because includes returns true
       !totalWithShipping.includes(".")
     ) {
       formattedShippingStr =
-        totalWithShipping.substring(0, 3) + "," + totalWithShipping.slice(3);
+        totalWithShipping.substring(0, 4) + "," + totalWithShipping.slice(3);
     } else if (totalWithShipping.length === 6) {
       formattedShippingStr =
         totalWithShipping.substring(0, 1) +
@@ -127,6 +129,7 @@ export default function Summary({ handleErrorSubmission, orderComplete }) {
         totalWithShipping.slice(6) +
         "0";
     }
+
     setGrandTotal(formattedShippingStr);
   }
 

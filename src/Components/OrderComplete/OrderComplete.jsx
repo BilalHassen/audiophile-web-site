@@ -2,9 +2,12 @@ import "./OrderComplete.scss";
 import OrderConfirmation from "../../assets/checkout/icon-order-confirmation.svg";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { useRef } from "react";
+import axios from "axios";
 export default function OrderComplete({ cartData, grandTotal }) {
   const [quantity, setQuantity] = useState(0);
   const [items, setItems] = useState("");
+  const cart_id = localStorage.getItem("cart_id");
 
   const navigate = useNavigate();
 
@@ -18,7 +21,18 @@ export default function OrderComplete({ cartData, grandTotal }) {
     }
   }, []);
 
+  const deleteAllItems = async () => {
+    try {
+      let response = await axios.delete(
+        `http://localhost:8080/cart/deleteitems/${cart_id}`
+      );
+    } catch (error) {
+      console.log("failed to delete items in cart", error);
+    }
+  };
+
   function goHome() {
+    deleteAllItems();
     navigate("/");
   }
 

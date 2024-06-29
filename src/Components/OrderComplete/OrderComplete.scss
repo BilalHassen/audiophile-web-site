@@ -1,7 +1,7 @@
 @use "../../styles/partials/mixins" as *;
 @use "../../styles/partials/variables" as *;
 
-.body {
+body {
   position: relative;
 }
 
@@ -9,14 +9,15 @@
   width: 100vw;
   height: 100vh;
   position: fixed;
-  top: 0;
+  top: 0rem;
   right: 0;
   bottom: 0;
   left: 0;
   background-color: rgba(0, 0, 0, 0.7);
   padding-left: 1.6rem;
   padding-right: 1.6rem;
-  z-index: 2;
+  z-index: 1;
+  overflow-y: auto;
   padding-top: 10.3rem;
 
   @include mobile-medium {
@@ -45,6 +46,8 @@
     background-color: $white;
     border-radius: 4px;
     padding: 3rem 2rem;
+    overflow: auto; /* Enable scrolling within the container if content overflows */
+    scroll-behavior: smooth; /* Optional: Smooth scrolling */
   }
 
   &__title {
