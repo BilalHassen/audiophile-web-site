@@ -2,8 +2,6 @@
 @use "../../styles/partials/variables" as *;
 
 .midContentSpeaker {
-  margin-left: 1.6rem;
-  margin-right: 1.6rem;
   border-radius: 4px;
   background-image: url(../../assets/home/mobile/image-speaker-zx7.jpg);
   background-size: 100% 35rem;
@@ -18,35 +16,37 @@
   align-items: center;
   text-align: start;
   padding-right: 5.5rem;
+  // max-width: 290px;
+  // margin: 0 auto;
 
   @include mobile-medium {
     padding-right: 6.5rem;
+    // max-width: 330px;
   }
 
   @include mobile-large {
-    margin-left: 3rem;
-    margin-right: 3rem;
+    // min-width: 350px;
+    // max-width: 380px;
+    // margin: 0 auto;
   }
 
   @include tablet-small {
     background-image: url(../../assets/home/tablet/image-speaker-zx7.jpg);
     align-items: start;
     padding-left: 8rem;
-    padding-right: 0rem;
-    margin-left: 3.5rem;
-    margin-right: 3.5rem;
+    // max-width: 723px;
   }
 
   @include tablet-medium {
     padding-left: 12rem;
+    margin: 0 auto;
+    // max-width: 954px;
   }
 
   @include tablet-large {
     background-size: 100% 40rem;
     height: 40rem;
     padding-left: 16rem;
-    margin-left: 8rem;
-    margin-right: 8rem;
   }
 
   @include desktop-small {
@@ -58,16 +58,16 @@
     margin-right: 12rem;
     background-size: 100% 45rem;
     height: 45rem;
+    margin: 0 auto;
+    // max-width: 1143px;
 
     @include desktop-medium {
-      margin-left: 14rem;
-      margin-right: 14rem;
       padding-left: 12rem;
     }
 
     @include desktop-large {
-      margin-left: 18rem;
-      margin-right: 18rem;
+      // max-width: 1520px;
+      // margin: 0 auto;
     }
   }
 

@@ -53,7 +53,7 @@
     }
 
     @include mobile-large {
-      height: 55rem;
+      min-height: 55rem;
     }
 
     @include tablet-small {

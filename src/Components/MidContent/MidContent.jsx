@@ -30,46 +30,48 @@ export default function MidContent() {
 
   return (
     <>
-      {isDeskTop ? (
-        <section className="midContent">
-          <div className="midContent__wrapper">
-            <div className="midContent__image-wrapper">
-              <img className="midContent__speaker" src={speakers}></img>
-            </div>
-            <div className="midContent__container">
-              <h1 className="midContent__title">
-                zx9 <br></br>speaker
-              </h1>
-              <p className="midContent__para">
-                Upgrade to premium speakers that are phenomenally built to
-                deliver truly remarkable sound
-              </p>
-              <button className="midContent__button">see product</button>
-            </div>
-          </div>
-        </section>
-      ) : (
-        <>
+      <div className="midContent-wrapper">
+        {isDeskTop ? (
           <section className="midContent">
             <div className="midContent__wrapper">
               <div className="midContent__image-wrapper">
                 <img className="midContent__speaker" src={speakers}></img>
               </div>
-
-              <h1 className="midContent__title">
-                zx9 <br></br>speaker
-              </h1>
-              <p className="midContent__para">
-                Upgrade to premium speakers that are phenomenally built to
-                deliver truly remarkable sound
-              </p>
-              <button className="midContent__button">see product</button>
+              <div className="midContent__container">
+                <h1 className="midContent__title">
+                  zx9 <br></br>speaker
+                </h1>
+                <p className="midContent__para">
+                  Upgrade to premium speakers that are phenomenally built to
+                  deliver truly remarkable sound
+                </p>
+                <button className="midContent__button">see product</button>
+              </div>
             </div>
           </section>
-        </>
-      )}
-      <MidContentSpeaker />
-      <MidContentHeadphones />
+        ) : (
+          <>
+            <section className="midContent">
+              <div className="midContent__wrapper">
+                <div className="midContent__image-wrapper">
+                  <img className="midContent__speaker" src={speakers}></img>
+                </div>
+
+                <h1 className="midContent__title">
+                  zx9 <br></br>speaker
+                </h1>
+                <p className="midContent__para">
+                  Upgrade to premium speakers that are phenomenally built to
+                  deliver truly remarkable sound
+                </p>
+                <button className="midContent__button">see product</button>
+              </div>
+            </section>
+          </>
+        )}
+        <MidContentSpeaker />
+        <MidContentHeadphones />
+      </div>
     </>
   );
 }

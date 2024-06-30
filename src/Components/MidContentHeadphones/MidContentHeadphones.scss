@@ -4,46 +4,52 @@
 .midContentHeadphones {
   border-radius: 4px;
   height: 100%;
-  padding: 1.6rem;
+  padding-top: 3rem;
   display: flex;
   flex-direction: column;
   gap: 2rem;
   padding-bottom: 4rem;
+  // max-width: 290px;
+  // margin: 0 auto;
+
+  @include mobile-medium {
+    // max-width: 330px;
+  }
 
   @include mobile-large {
-    padding-left: 3rem;
-    padding-right: 3rem;
+    // padding-right: 1rem;
+    // padding-left: 1rem;
+    // max-width: 380px;
   }
 
   @include tablet-small {
     display: flex;
     flex-direction: row;
-    width: 100%;
-    padding-left: 3.5rem;
-    padding-right: 3.5rem;
-    padding-top: 8rem;
+    padding-top: 6rem;
+
+    // max-width: 800px;
   }
 
-  @include tablet-large {
-    padding-left: 8rem;
-    padding-right: 8rem;
-  }
+  // @include tablet-medium {
+  //   max-width: 1018px;
+  // }
 
-  @include desktop-small {
-    padding-left: 12rem;
-    padding-right: 12rem;
-    gap: 4rem;
-  }
+  // @include tablet-large {
+  //   max-width: 1180px;
+  // }
 
-  @include desktop-medium {
-    padding-left: 14rem;
-    padding-right: 14rem;
-  }
+  // @include desktop-small {
+  //   gap: 4rem;
+  //   max-width: 1215px;
+  // }
 
-  @include desktop-large {
-    padding-left: 18rem;
-    padding-right: 18rem;
-  }
+  // @include desktop-medium {
+  //   max-width: 1217px;
+  // }
+
+  // @include desktop-large {
+  //   max-width: 1590px;
+  // }
 
   &__img-container {
     background-image: url(../../assets/home/mobile/image-earphones-yx1.jpg);
