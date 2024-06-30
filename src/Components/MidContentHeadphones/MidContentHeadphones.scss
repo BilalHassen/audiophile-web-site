@@ -9,47 +9,12 @@
   flex-direction: column;
   gap: 2rem;
   padding-bottom: 4rem;
-  // max-width: 290px;
-  // margin: 0 auto;
-
-  @include mobile-medium {
-    // max-width: 330px;
-  }
-
-  @include mobile-large {
-    // padding-right: 1rem;
-    // padding-left: 1rem;
-    // max-width: 380px;
-  }
 
   @include tablet-small {
     display: flex;
     flex-direction: row;
     padding-top: 6rem;
-
-    // max-width: 800px;
   }
-
-  // @include tablet-medium {
-  //   max-width: 1018px;
-  // }
-
-  // @include tablet-large {
-  //   max-width: 1180px;
-  // }
-
-  // @include desktop-small {
-  //   gap: 4rem;
-  //   max-width: 1215px;
-  // }
-
-  // @include desktop-medium {
-  //   max-width: 1217px;
-  // }
-
-  // @include desktop-large {
-  //   max-width: 1590px;
-  // }
 
   &__img-container {
     background-image: url(../../assets/home/mobile/image-earphones-yx1.jpg);

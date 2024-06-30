@@ -16,31 +16,20 @@
   align-items: center;
   text-align: start;
   padding-right: 5.5rem;
-  // max-width: 290px;
-  // margin: 0 auto;
 
   @include mobile-medium {
     padding-right: 6.5rem;
-    // max-width: 330px;
-  }
-
-  @include mobile-large {
-    // min-width: 350px;
-    // max-width: 380px;
-    // margin: 0 auto;
   }
 
   @include tablet-small {
     background-image: url(../../assets/home/tablet/image-speaker-zx7.jpg);
     align-items: start;
     padding-left: 8rem;
-    // max-width: 723px;
   }
 
   @include tablet-medium {
     padding-left: 12rem;
     margin: 0 auto;
-    // max-width: 954px;
   }
 
   @include tablet-large {
@@ -59,15 +48,9 @@
     background-size: 100% 45rem;
     height: 45rem;
     margin: 0 auto;
-    // max-width: 1143px;
 
     @include desktop-medium {
       padding-left: 12rem;
-    }
-
-    @include desktop-large {
-      // max-width: 1520px;
-      // margin: 0 auto;
     }
   }
 
