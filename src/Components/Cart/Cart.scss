@@ -5,11 +5,12 @@
 body {
   position: relative;
 }
+
 .cart {
-  width: 100vw;
   height: 100vh;
+  width: 100vw;
   position: fixed;
-  top: 0rem;
+  top: 0;
   right: 0;
   bottom: 0;
   left: 0;
@@ -18,6 +19,28 @@ body {
   padding-right: 1.6rem;
   z-index: 1;
   padding-top: 10rem;
+
+  @include mobile-large {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+
+  @include tablet-small {
+    padding-left: 35rem;
+  }
+  @include tablet-medium {
+    padding-left: 60rem;
+  }
+  @include tablet-medium {
+    padding-left: 83rem;
+  }
+
+  @include desktop-medium {
+    padding-left: 89rem;
+  }
+  @include desktop-large {
+    padding-left: 127rem;
+  }
 
   &__empty {
     padding-top: 4rem;
@@ -36,6 +59,7 @@ body {
     padding-bottom: 1.6rem;
     padding-top: 1.6rem;
   }
+
   &__empty-text {
     font-size: 1.4rem;
   }
@@ -43,5 +67,25 @@ body {
   &__container {
     background-color: white;
     border-radius: 4px;
+    max-width: 375px;
+    margin: 0 auto;
+
+    @include mobile-medium {
+      max-width: 475px;
+    }
+
+    @include mobile-large {
+      max-width: 550px;
+    }
+
+    @include tablet-small {
+      width: 400px;
+      margin: 0;
+      height: fit-content;
+    }
+
+    @include desktop-large {
+      width: 450px;
+    }
   }
 }
