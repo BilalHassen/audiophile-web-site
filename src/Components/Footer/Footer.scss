@@ -5,7 +5,7 @@
   background-color: #101010;
   color: $white;
   margin-top: 0rem;
-  padding: 1.6rem 1.6rem 4rem 1.6rem;
+  padding: 1.6rem 1.6rem 2rem 1.6rem;
   gap: 4rem;
   display: flex;
   flex-direction: column;
@@ -15,28 +15,55 @@
     align-items: start;
   }
 
-  @include mobile-large {
-    padding: 1.6rem 3rem 4rem 3rem;
-  }
+  &__wrapper {
+    // padding-left: 1.6rem;
+    // padding-right: 1.6rem;
+    padding-top: 6rem;
 
-  @include tablet-small {
-    padding: 1.6rem 3.5rem 4rem 3.5rem;
-  }
+    padding-top: 1.6rem;
+    max-width: 340px;
+    margin: 0 auto;
 
-  @include tablet-large {
-    padding: 1.6rem 8rem 4rem 8rem;
-  }
+    @include mobile-medium {
+      padding-left: 2.6rem;
+      padding-right: 2.6rem;
+      max-width: 400px;
+    }
 
-  @include desktop-small {
-    padding: 4rem 12rem 4rem 12rem;
-  }
+    @include mobile-large {
+      padding: 3rem;
+      max-width: 500px;
+    }
 
-  @include desktop-medium {
-    padding: 4rem 14rem 4rem 14rem;
-  }
+    @include tablet-small {
+      padding-left: 3.5rem;
+      padding-right: 3.5rem;
+      max-width: 800px;
+    }
 
-  @include desktop-large {
-    padding: 6rem 18rem 6rem 18rem;
+    @include tablet-medium {
+      padding-left: 4.5rem;
+      padding-right: 4.5rem;
+      max-width: 1100px;
+    }
+
+    @include tablet-large {
+      padding-left: 6rem;
+      padding-right: 6rem;
+      max-width: 1300px;
+    }
+
+    @include desktop-small {
+      padding-left: 15rem;
+      padding-right: 15rem;
+      max-width: 1600px;
+    }
+
+    @include desktop-large {
+      padding-left: 20rem;
+      padding-right: 20rem;
+      max-width: 2000px;
+    }
   }
 
   &__divider {
@@ -45,9 +72,13 @@
     border: none;
     display: block;
     position: relative;
-    bottom: 16.1px;
+    bottom: 32px;
     height: 0.4rem;
-    width: 40%;
+    max-width: 100px;
+
+    @include mobile-large {
+      bottom: 46px;
+    }
 
     @include tablet-small {
       width: 15%;
@@ -55,13 +86,11 @@
     }
 
     @include desktop-small {
-      bottom: 40px;
-      width: 8%;
+      bottom: 46px;
     }
 
     @include desktop-large {
-      bottom: 60px;
-      width: 8%;
+      bottom: 46px;
     }
   }
 
@@ -70,6 +99,7 @@
     align-items: center;
     flex-direction: column;
     gap: 3rem;
+    padding-bottom: 4rem;
 
     @include tablet-small {
       align-items: start;
@@ -81,6 +111,7 @@
       width: 100%;
       justify-content: space-between;
       align-items: center;
+      padding-bottom: 4rem;
     }
   }
 
@@ -93,7 +124,7 @@
   &__nav {
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+    gap: 3rem;
     align-items: center;
 
     @include tablet-small {
