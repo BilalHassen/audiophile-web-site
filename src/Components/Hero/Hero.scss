@@ -17,6 +17,7 @@
     &__divider {
       display: none; /* Hide divider on tablet */
     }
+    margin-bottom: 6rem;
   }
 
   @include desktop-small {

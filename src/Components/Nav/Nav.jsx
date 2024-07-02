@@ -9,13 +9,18 @@ import { useState, useEffect } from "react";
 import "./Nav.scss";
 import { Link } from "react-router-dom";
 
-export default function Nav(handleCartModalinChild) {
+export default function Nav({ handleCartModalinChild, activeClass }) {
   const [isDesktop, setDesktop] = useState();
+
+  console.log(activeClass);
+  if (activeClass) {
+    console.log("true");
+  }
 
   return (
     <>
-      <div className="nav__wrapper">
-        <nav className="nav">
+      <div className={activeClass ? "nav__wrapper" : null}>
+        <nav className={activeClass ? "nav" : "midNav"}>
           <ul className="nav__list-container">
             <li className="nav__list-item">
               <img className="nav__list-img" src={headphones}></img>
