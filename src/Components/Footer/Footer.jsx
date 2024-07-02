@@ -3,6 +3,8 @@ import logo from "../../assets/shared/desktop/logo.svg";
 import facebookIcon from "../../assets/shared/desktop/icon-facebook.svg";
 import instagramIcon from "../../assets/shared/desktop/icon-instagram.svg";
 import twitterIcon from "../../assets/shared/desktop/icon-twitter.svg";
+import { HashLink as Link } from "react-router-hash-link";
+
 export default function Footer() {
   return (
     <>
@@ -10,12 +12,22 @@ export default function Footer() {
         <div className="footer__wrapper">
           <hr className="footer__divider"></hr>
           <div className="footer__logo-container">
-            <img className="footer__logo" src={logo} alt={"footer logo"}></img>
+            <Link to="/#top">
+              <img className="footer__logo" src={logo} alt="footer logo" />
+            </Link>
             <ul className="footer__nav">
-              <li className="footer__nav-item">home</li>
-              <li className="footer__nav-item">headphones</li>
-              <li className="footer__nav-item">speaker</li>
-              <li className="footer__nav-item">earphones</li>
+              <Link to="/#top">
+                <li className="footer__nav-item">home</li>
+              </Link>
+              <Link to="/headphones#top">
+                <li className="footer__nav-item">headphones</li>
+              </Link>
+              <Link to="/speakers#top">
+                <li className="footer__nav-item">speaker</li>
+              </Link>
+              <Link to="/earphones#top">
+                <li className="footer__nav-item">earphones</li>
+              </Link>
             </ul>
           </div>
           <div className="footer__info-txt">
@@ -31,13 +43,25 @@ export default function Footer() {
               </p>
               <ul className="footer__icons-container">
                 <li className="footer__icons">
-                  <img className="footer__icon" src={facebookIcon}></img>
+                  <img
+                    className="footer__icon"
+                    src={facebookIcon}
+                    alt="Facebook"
+                  />
                 </li>
                 <li className="footer__icons">
-                  <img className="footer__icon-twitter" src={twitterIcon}></img>
+                  <img
+                    className="footer__icon-twitter"
+                    src={twitterIcon}
+                    alt="Twitter"
+                  />
                 </li>
                 <li className="footer__icons">
-                  <img className="footer__icon" src={instagramIcon}></img>
+                  <img
+                    className="footer__icon"
+                    src={instagramIcon}
+                    alt="Instagram"
+                  />
                 </li>
               </ul>
             </div>
