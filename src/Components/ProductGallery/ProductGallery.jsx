@@ -88,7 +88,7 @@ export default function ProductGallery({ imageData }) {
         ) : null}
       </div>
       {isMobile ? (
-        <div className="product__img-container">
+        <div className="container">
           <img
             className="product__gallery-img large"
             src={galleryThird.url_mobile}
@@ -97,7 +97,7 @@ export default function ProductGallery({ imageData }) {
         </div>
       ) : null}
       {isTablet ? (
-        <div className="product__img-container">
+        <div className="container">
           <img
             className="product__gallery-img large"
             src={galleryThird.url_tablet}
@@ -106,9 +106,9 @@ export default function ProductGallery({ imageData }) {
         </div>
       ) : null}
       {isDesktop ? (
-        <div className="product__img-container">
+        <div className="container">
           <img
-            className="product__gallery-img large"
+            className="large"
             src={galleryThird.url_desktop}
             alt="Desktop Image"
           />
