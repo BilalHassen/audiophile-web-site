@@ -465,10 +465,14 @@
 .main {
   @include tablet-small {
     width: 100%;
-    height: 120%;
+    min-height: 500px;
   }
 
-  @include tablet-medium {
-    height: 110%;
+  @include tablet-large {
+    min-height: 600px;
+  }
+
+  @include desktop-large {
+    min-height: 700px;
   }
 }
