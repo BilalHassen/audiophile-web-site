@@ -94,12 +94,16 @@
     height: 30rem;
     border-radius: 4px;
 
+    @include tablet-small {
+      height: 356.59px;
+    }
+
     @include tablet-medium {
-      height: 450px;
+      height: 477.16px;
     }
 
     @include desktop-small {
-      height: 90%;
+      height: 500px;
     }
   }
 
