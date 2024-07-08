@@ -95,9 +95,9 @@ export default function Header() {
           src={cartIcon}
           alt="cart-icon"
         ></img>
-        {isOpen ? <Cart handleCartModal={handleCartModal} /> : null}
       </section>
-      {isActive ? <Nav activeClass="active-class" /> : ""}
+      {isOpen && <Cart handleCartModal={handleCartModal} />}
+      {isActive && <Nav activeClass="active-class" />}
     </>
   );
 }
