@@ -86,6 +86,7 @@
 
     @include desktop-small {
       // height: 100%;
+      width: 100%;
     }
   }
 
@@ -103,7 +104,7 @@
     }
 
     @include desktop-small {
-      height: 500px;
+      height: 100%;
     }
   }
 
@@ -198,6 +199,7 @@
 
     @include desktop-small {
       width: 40%;
+      height: 5rem;
     }
   }
 }
@@ -216,6 +218,7 @@
   @include desktop-small {
     display: flex;
     gap: 10rem;
+    max-height: 400px;
   }
 }
 
