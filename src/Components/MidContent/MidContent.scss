@@ -207,26 +207,14 @@
     background-color: $black;
     color: white;
     text-transform: uppercase;
-    height: 5rem;
-    width: 60%;
+    height: 4.8rem;
+    width: 100%;
     border: none;
     @include button-text;
+  }
 
-    @include mobile-medium {
-      height: 5rem;
-    }
-
-    @include tablet-small {
-      width: 30%;
-    }
-
-    @include tablet-large {
-      width: 20%;
-    }
-
-    @include desktop-small {
-      width: 40%;
-    }
+  &__button-link {
+    @include customButton;
   }
 
   &__container {

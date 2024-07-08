@@ -5,6 +5,7 @@ import MidContentSpeaker from "../../Components/MidContentSpeaker/MidContentSpea
 import MidContentHeadphones from "../MidContentHeadphones/MidContentHeadphones";
 import "./MidContent.scss";
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 export default function MidContent() {
   const [width, setWidth] = useState(window.innerWidth);
   const [isDeskTop, setDesktop] = useState(false);
@@ -45,7 +46,9 @@ export default function MidContent() {
                   Upgrade to premium speakers that are phenomenally built to
                   deliver truly remarkable sound
                 </p>
-                <button className="midContent__button">see product</button>
+                <Link to="/products/6" className="midContent__button-link">
+                  <button className="midContent__button">see product</button>
+                </Link>
               </div>
             </div>
           </section>
@@ -64,7 +67,9 @@ export default function MidContent() {
                   Upgrade to premium speakers that are phenomenally built to
                   deliver truly remarkable sound
                 </p>
-                <button className="midContent__button">see product</button>
+                <Link to="/products/6" className="midContent__button-link">
+                  <button className="midContent__button">see product</button>
+                </Link>
               </div>
             </section>
           </>
