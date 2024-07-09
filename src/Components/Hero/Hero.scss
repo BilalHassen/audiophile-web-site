@@ -243,21 +243,7 @@
     border: none;
     // treat the button as a block level element
     display: block;
-    width: 40%;
-    height: 5rem;
-
-    @include tablet-small {
-      width: 25%;
-      height: 5rem;
-    }
-
-    @include tablet-medium {
-      width: 20%;
-    }
-
-    @include desktop-small {
-      width: 30%;
-    }
+    @include customButton;
   }
 
   &__button-text {

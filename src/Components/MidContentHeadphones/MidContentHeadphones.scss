@@ -74,8 +74,7 @@
   &__button {
     background-color: transparent;
     border: 1.5px solid black;
-    width: 64%;
-    height: 4rem;
+    @include customButton;
 
     @include tablet-small {
       height: 5rem;

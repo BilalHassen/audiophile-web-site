@@ -96,7 +96,7 @@ export default function Summary({ handleErrorSubmission, orderComplete }) {
         totalWithShipping.substring(0, 1) + "," + totalWithShipping.slice(1);
     } else if (totalWithShipping.length === 5) {
       formattedShippingStr =
-        totalWithShipping.substring(0, 3) + totalWithShipping.slice(3);
+        totalWithShipping.substring(0, 2) + "," + totalWithShipping.slice(2);
     } else if (
       totalWithShipping.length === 6 &&
       // check if the string doesnt include a "." use ! because includes returns true

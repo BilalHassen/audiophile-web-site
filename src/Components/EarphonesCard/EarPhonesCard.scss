@@ -176,10 +176,10 @@
     background-color: $orange;
     border: none;
     justify-content: center;
-    height: 4.5rem;
+
     font-size: 1.3rem;
     color: white;
-    width: 60%;
+    @include customButton;
     text-transform: uppercase;
     letter-spacing: 0.1rem;
 
