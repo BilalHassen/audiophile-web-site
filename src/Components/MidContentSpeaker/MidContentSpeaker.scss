@@ -77,10 +77,17 @@
     border: 1.5px solid black;
     @include customButton;
     margin-top: 2rem;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
 
     @include tablet-small {
       margin-top: 3rem;
     }
+  }
+
+  &__button:hover {
+    background-color: #000000;
+    color: white;
   }
 
   &__button-txt {

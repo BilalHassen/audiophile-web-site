@@ -75,9 +75,15 @@
     background-color: transparent;
     border: 1.5px solid black;
     @include customButton;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
 
     @include tablet-small {
       height: 5rem;
     }
+  }
+  &__button:hover {
+    background-color: #000000;
+    color: white;
   }
 }
