@@ -70,9 +70,10 @@ export default function Summary({ handleErrorSubmission, orderComplete }) {
     let vatAmount = 0.2 * priceExShipping;
     let totalWithShipping = totalAllItems + shipping;
     let totalWithVat = totalWithShipping + vatAmount;
-    vatAmount = vatAmount.toFixed(2);
 
-    setvat(vatAmount);
+    let formattedVat = formatVatStr(vatAmount);
+
+    setvat(formattedVat);
 
     console.log(typeof vatAmount);
     console.log(totalWithShipping);
@@ -81,12 +82,33 @@ export default function Summary({ handleErrorSubmission, orderComplete }) {
     return { totalWithVat, priceExShipping };
   }
 
-  console.log(grandTotal.length);
+  console.log(vat);
+
+  function formatVatStr(vat) {
+    let vatStr = vat.toString();
+    let formattedVatStr = "";
+    console.log(vatStr.length);
+    if (vatStr.length > 3 && vatStr.length < 5) {
+      formattedVatStr = vatStr.substring(0, 1) + "," + vatStr.slice(1);
+    } else if (vatStr.length === 5) {
+      formattedVatStr = vatStr.substring(0, 2) + "," + vatStr.slice(2);
+    } else if (vatStr.length === 6) {
+      formattedVatStr = vatStr.substring(0, 3) + "," + vatStr.slice(3);
+    } else if (vatStr.length === 7) {
+      formattedVatStr =
+        vatStr.substring(0, 1) + "," + vatStr.slice(4) + "," + vatStr.slice(4);
+    } else if (vatStr.length === 8) {
+      formattedVatStr =
+        vatStr.substring(0, 2) + "," + vatStr.slice(5) + "," + vatStr.slice(5);
+    }
+
+    return formattedVatStr;
+  }
 
   // function to format the total amount including shipping as a string
   function totalWithShipping(amountsObject) {
     let totalWithShipping = amountsObject.totalWithVat.toString();
-
+    console.log(totalWithShipping);
     let formattedShippingStr = "";
 
     if (totalWithShipping.length < 4) {
@@ -103,7 +125,7 @@ export default function Summary({ handleErrorSubmission, orderComplete }) {
       !totalWithShipping.includes(".")
     ) {
       formattedShippingStr =
-        totalWithShipping.substring(0, 4) + "," + totalWithShipping.slice(3);
+        totalWithShipping.substring(0, 3) + "," + totalWithShipping.slice(3);
     } else if (totalWithShipping.length === 6) {
       formattedShippingStr =
         totalWithShipping.substring(0, 1) +
