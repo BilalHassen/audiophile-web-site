@@ -122,6 +122,11 @@ body {
     gap: 1rem;
     align-items: center;
     padding-bottom: 1rem;
+    cursor: pointer;
+  }
+
+  &__text:hover {
+    color: $button-hover;
   }
 
   &__orange-icon {
