@@ -1,9 +1,14 @@
 import { useEffect, useState, useTransition } from "react";
-import axios from "axios";
+import axios, { all } from "axios";
 import "./RelatedProducts.scss";
+import { Link } from "react-router-dom";
 
-export default function RelatedProducts({ productId }) {
+export default function RelatedProducts({ productId, handleRelatedProduct }) {
+  console.log(productId);
+
   const baseUrl = `http://localhost:8080/products/relatedproducts/${productId}`;
+
+  const productsUrl = `http://localhost:8080/products/all`;
 
   const [productData, setProductData] = useState([]);
   const [screenSize, setScreenSize] = useState(handleImageUrl());
@@ -20,7 +25,9 @@ export default function RelatedProducts({ productId }) {
     };
 
     getRelatedPorductData();
-  }, []);
+  }, [productId]);
+
+  // useEffect(() => {}, [productId]);
 
   function handleImageUrl() {
     let width = window.innerWidth;
@@ -66,8 +73,9 @@ export default function RelatedProducts({ productId }) {
   return (
     <>
       {productData.slice(0, 3).map((data) => {
+        console.log("line 76:", data.related_id[0].id);
         return (
-          <div className="product__related-card">
+          <div className="product__related-card" onClick={handleRelatedProduct}>
             <div
               className="product__related-img-container"
               style={{
@@ -81,9 +89,11 @@ export default function RelatedProducts({ productId }) {
               }}
             ></div>
             <h3 className="product__related-name">{data.name}</h3>
-            <div className="product__related-button-container">
-              <button className="product__related-button">see product</button>
-            </div>
+            <Link to={`/products/${data.related_id[0].id}`}>
+              <div className="product__related-button-container">
+                <button className="product__related-button">see product</button>
+              </div>
+            </Link>
           </div>
         );
       })}

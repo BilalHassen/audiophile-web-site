@@ -1,13 +1,15 @@
 import { useState, useEffect } from "react";
 import "./ProductGallery.scss";
 
-export default function ProductGallery({ imageData }) {
+export default function ProductGallery({ imageData, id }) {
   const [galleryFirst, setGalleryFirst] = useState(imageData[0]);
   const [gallerySecond, setGallerySecond] = useState(imageData[1]);
   const [galleryThird, setGalleryThird] = useState(imageData[2]);
   const [isMobile, setMobile] = useState(false);
   const [isTablet, setTablet] = useState(false);
   const [isDesktop, setDesktop] = useState(false);
+
+  console.log(id);
 
   const handleImageUrl = () => {
     const currentWidth = window.innerWidth;
@@ -28,6 +30,13 @@ export default function ProductGallery({ imageData }) {
 
     return removeListener;
   }, []);
+
+  useEffect(() => {
+    // Handle logic when id changes, if needed
+    setGalleryFirst(imageData[0]);
+    setGallerySecond(imageData[1]);
+    setGalleryThird(imageData[2]);
+  }, [imageData]);
 
   return (
     <>

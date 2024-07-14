@@ -19,6 +19,7 @@ export default function ProductCard({
   urlTablet,
   urlDesktop,
   imageData,
+  handleRelatedProduct,
 }) {
   const cartUrl = `http://localhost:8080/cart/additem/${id}`;
 
@@ -88,6 +89,10 @@ export default function ProductCard({
     }
   }
 
+  useEffect(() => {
+    console.log(id);
+  }, [id]);
+
   return (
     <>
       <div className="product__card">
@@ -136,7 +141,11 @@ export default function ProductCard({
             <div className="product__includes-wrapper">
               {includes.map((data, index) => (
                 <div className="product__includes-container">
-                  <ProductIncludes quantity={data.quantity} item={data.item} />
+                  <ProductIncludes
+                    quantity={data.quantity}
+                    item={data.item}
+                    id={id}
+                  />
                 </div>
               ))}
             </div>
@@ -144,12 +153,15 @@ export default function ProductCard({
         </div>
 
         <div className="product__gallery">
-          <ProductGallery imageData={imageData} />
+          <ProductGallery imageData={imageData} id={id} />
         </div>
 
         <h3 className="product__related-title">you may also like</h3>
         <div className="product__related">
-          <RelatedProducts productId={id} />
+          <RelatedProducts
+            productId={id}
+            handleRelatedProduct={handleRelatedProduct}
+          />
         </div>
       </div>
       <AudiophileDescription />

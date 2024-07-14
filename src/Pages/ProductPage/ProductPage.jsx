@@ -11,22 +11,31 @@ export default function ProductPage() {
   const [productData, setProductData] = useState([]);
 
   const { id } = useParams();
+  console.log(id);
 
   const apiUrl = `http://localhost:8080/products/${id}`;
 
-  useEffect(() => {
-    const getProductData = async () => {
-      try {
-        let response = await axios.get(apiUrl);
-        let data = response.data;
-        setProductData([data]);
-      } catch (error) {
-        console.log(error);
-      }
-    };
+  const getProductData = async () => {
+    try {
+      let response = await axios.get(apiUrl);
+      let data = response.data;
+      setProductData([data]);
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
+  useEffect(() => {
     getProductData();
   }, []);
+
+  const handleRelatedProduct = () => {
+    getProductData();
+  };
+
+  useEffect(() => {
+    handleRelatedProduct();
+  }, [id]);
 
   function goBack() {
     window.history.back();
@@ -49,6 +58,7 @@ export default function ProductPage() {
             <ProductCard
               key={index}
               id={id}
+              handleRelatedProduct={handleRelatedProduct}
               name={defaultData.name}
               description={defaultData.description}
               features={defaultData.features}
