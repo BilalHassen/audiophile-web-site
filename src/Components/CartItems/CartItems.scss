@@ -179,5 +179,11 @@
     font-size: 1.3rem;
     text-transform: uppercase;
     letter-spacing: 0.1rem;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+  }
+
+  &__checkout-button:hover {
+    background-color: $button-hover;
   }
 }

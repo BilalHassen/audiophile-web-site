@@ -243,11 +243,17 @@
     padding-right: 1rem;
     text-transform: uppercase;
     letter-spacing: 0.1rem;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
 
     @include desktop-large {
       height: 6rem;
       font-size: 1.4rem;
     }
+  }
+
+  &__button:hover {
+    background-color: $button-hover;
   }
 
   &__delete,

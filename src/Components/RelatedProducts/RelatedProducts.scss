@@ -111,5 +111,11 @@
     margin-top: 2rem;
     text-transform: uppercase;
     letter-spacing: 0.1rem;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+  }
+
+  &__related-button:hover {
+    background-color: $button-hover;
   }
 }
