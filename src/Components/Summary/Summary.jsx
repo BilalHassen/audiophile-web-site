@@ -13,8 +13,6 @@ export default function Summary({ handleErrorSubmission, orderComplete }) {
   const [vat, setvat] = useState(0);
   const cart_id = localStorage.getItem("cart_id");
 
-  console.log(orderComplete);
-
   function handleImageUrl() {
     let width = window.innerWidth;
 
@@ -75,19 +73,14 @@ export default function Summary({ handleErrorSubmission, orderComplete }) {
 
     setvat(formattedVat);
 
-    console.log(typeof vatAmount);
-    console.log(totalWithShipping);
-
     // return the two seperate values as an object
     return { totalWithVat, priceExShipping };
   }
 
-  console.log(vat);
-
   function formatVatStr(vat) {
     let vatStr = vat.toString();
     let formattedVatStr = "";
-    console.log(vatStr.length);
+
     if (vatStr.length > 3 && vatStr.length < 5) {
       formattedVatStr = vatStr.substring(0, 1) + "," + vatStr.slice(1);
     } else if (vatStr.length === 5) {
@@ -108,7 +101,7 @@ export default function Summary({ handleErrorSubmission, orderComplete }) {
   // function to format the total amount including shipping as a string
   function totalWithShipping(amountsObject) {
     let totalWithShipping = amountsObject.totalWithVat.toString();
-    console.log(totalWithShipping);
+
     let formattedShippingStr = "";
 
     if (totalWithShipping.length < 4) {
@@ -158,7 +151,7 @@ export default function Summary({ handleErrorSubmission, orderComplete }) {
   // function to format the total wihthout shipping as a string
   function formatTotalExShipping(amountsObject) {
     let totalWithoutShipping = amountsObject.priceExShipping.toString();
-    console.log(totalWithoutShipping);
+
     let formattedWithoutShippingStr = "";
 
     if (totalWithoutShipping.length < 4) {
@@ -196,7 +189,7 @@ export default function Summary({ handleErrorSubmission, orderComplete }) {
         `http://localhost:8080/cart/getitems/${cart_id}`
       );
       let products_data = response.data;
-      console.log(products_data);
+
       setCartData(products_data);
     };
 
@@ -207,7 +200,6 @@ export default function Summary({ handleErrorSubmission, orderComplete }) {
     const totalNumber = formatTotal();
     totalWithShipping(totalNumber);
     formatTotalExShipping(totalNumber);
-    console.log(cartData.length);
   }, [cartData]);
 
   return (
