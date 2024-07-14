@@ -244,6 +244,12 @@
     // treat the button as a block level element
     display: block;
     @include customButton;
+    transition: background-color 0.3s ease; /* Smooth transition for the hover effect */
+    cursor: pointer;
+  }
+
+  &__button:hover {
+    background-color: $button-hover;
   }
 
   &__button-text {
