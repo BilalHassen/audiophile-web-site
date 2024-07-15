@@ -121,6 +121,11 @@
     background-color: $button-hover;
   }
 
+  &__item-quantity {
+    font-size: 1.5rem;
+    color: $grey;
+  }
+
   &__title {
     text-transform: uppercase;
     font-size: 1.5rem;
