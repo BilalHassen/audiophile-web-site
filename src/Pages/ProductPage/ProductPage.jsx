@@ -11,7 +11,6 @@ export default function ProductPage() {
   const [productData, setProductData] = useState([]);
 
   const { id } = useParams();
-  console.log(id);
 
   const apiUrl = `http://localhost:8080/products/${id}`;
 

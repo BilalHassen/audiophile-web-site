@@ -6,7 +6,6 @@ import MidContent from "../../Components/MidContent/MidContent";
 import Footer from "../../Components/Footer/Footer";
 import "./HomePage.scss";
 import Cart from "../../Components/Cart/Cart";
-
 import { useState } from "react";
 
 export default function Home() {
