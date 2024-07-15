@@ -24,6 +24,10 @@
       color: $orange;
     }
 
+    @include desktop-small {
+      font-size: 1.6rem;
+    }
+
     @include desktop-large {
       font-size: 18px;
     }

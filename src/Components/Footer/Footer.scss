@@ -139,6 +139,14 @@
     font-weight: 900;
     transition: color 0.3s ease-in-out;
     cursor: pointer;
+
+    @include desktop-small {
+      font-size: 1.6rem;
+    }
+
+    @include desktop-large {
+      font-size: 1.8rem;
+    }
   }
 
   &__nav-item:hover {
