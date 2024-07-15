@@ -89,10 +89,6 @@ export default function ProductCard({
     }
   }
 
-  useEffect(() => {
-    console.log(id);
-  }, [id]);
-
   return (
     <>
       <div className="product__card">
