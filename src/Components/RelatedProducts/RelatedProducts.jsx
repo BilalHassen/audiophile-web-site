@@ -73,7 +73,11 @@ export default function RelatedProducts({ productId, handleRelatedProduct }) {
     <>
       {productData.slice(0, 3).map((data) => {
         return (
-          <div className="product__related-card" onClick={handleRelatedProduct}>
+          <div
+            className="product__related-card"
+            key={data.related_id[0].id}
+            onClick={handleRelatedProduct}
+          >
             <div
               className="product__related-img-container"
               style={{
