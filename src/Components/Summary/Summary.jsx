@@ -10,10 +10,8 @@ export default function Summary({ handleErrorSubmission, orderComplete }) {
   const [total, setTotal] = useState(0);
   const [grandTotal, setGrandTotal] = useState(0);
   const [shipping, setShipping] = useState(50);
-  const [vat, setvat] = useState(0);
+  const [vat, setVat] = useState(0);
   const cart_id = localStorage.getItem("cart_id");
-
-  console.log(orderComplete);
 
   function handleImageUrl() {
     let width = window.innerWidth;
@@ -31,37 +29,26 @@ export default function Summary({ handleErrorSubmission, orderComplete }) {
     }
   }
 
-  // update the screensize state with the returned value from handleImageUrl
   const handleScreenSize = () => {
-    // update screenSize variable with value returned from handleImageUrl
     setScreenSize(handleImageUrl());
   };
 
   useEffect(() => {
-    // update screen size when component mounts
     handleScreenSize();
 
     const resize = () => {
       handleScreenSize();
     };
 
-    // add event listener to window
     window.addEventListener("resize", resize);
 
-    // clean up function
-    const removeEventListener = () => {
-      return window.removeEventListener("resize", resize);
-    };
-
-    return removeEventListener;
+    return () => window.removeEventListener("resize", resize);
   }, []);
 
-  // get the total amounts in numbers
   function formatTotal() {
     let totalAllItems = 0;
     let priceExShipping = 0;
 
-    // add up each number with price
     cartData.forEach((item) => {
       totalAllItems += item.price;
       priceExShipping += item.price;
@@ -70,102 +57,28 @@ export default function Summary({ handleErrorSubmission, orderComplete }) {
     let vatAmount = 0.2 * priceExShipping;
     let totalWithShipping = totalAllItems + shipping;
     let totalWithVat = totalWithShipping + vatAmount;
-    vatAmount = vatAmount.toFixed(2);
 
-    setvat(vatAmount);
+    setVat(formatNumber(vatAmount.toFixed(2)));
 
-    console.log(typeof vatAmount);
-    console.log(totalWithShipping);
-
-    // return the two seperate values as an object
     return { totalWithVat, priceExShipping };
   }
 
-  console.log(grandTotal.length);
-
-  // function to format the total amount including shipping as a string
-  function totalWithShipping(amountsObject) {
-    let totalWithShipping = amountsObject.totalWithVat.toString();
-
-    let formattedShippingStr = "";
-
-    if (totalWithShipping.length < 4) {
-      formattedShippingStr = totalWithShipping;
-    } else if (totalWithShipping.length === 4) {
-      formattedShippingStr =
-        totalWithShipping.substring(0, 1) + "," + totalWithShipping.slice(1);
-    } else if (totalWithShipping.length === 5) {
-      formattedShippingStr =
-        totalWithShipping.substring(0, 3) + totalWithShipping.slice(3);
-    } else if (
-      totalWithShipping.length === 6 &&
-      // check if the string doesnt include a "." use ! because includes returns true
-      !totalWithShipping.includes(".")
-    ) {
-      formattedShippingStr =
-        totalWithShipping.substring(0, 4) + "," + totalWithShipping.slice(3);
-    } else if (totalWithShipping.length === 6) {
-      formattedShippingStr =
-        totalWithShipping.substring(0, 1) +
-        "," +
-        totalWithShipping.slice(1) +
-        "0";
-    } else if (
-      totalWithShipping.length === 7 &&
-      !totalWithShipping.includes(".")
-    ) {
-      formattedShippingStr =
-        totalWithShipping.substring(0, 1) +
-        "," +
-        totalWithShipping.substring(1, 4) +
-        "," +
-        totalWithShipping.slice(4);
-    } else if (totalWithShipping.length === 7) {
-      formattedShippingStr =
-        totalWithShipping.substring(0, 2) +
-        "," +
-        totalWithShipping.substring(2, 5) +
-        "." +
-        totalWithShipping.slice(6) +
-        "0";
-    }
-
-    setGrandTotal(formattedShippingStr);
+  function formatNumber(number) {
+    return new Intl.NumberFormat("en-US", {
+      style: "decimal",
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 2,
+    }).format(number);
   }
 
-  // function to format the total wihthout shipping as a string
+  function totalWithShipping(amountsObject) {
+    let totalWithShipping = amountsObject.totalWithVat;
+    setGrandTotal(formatNumber(totalWithShipping));
+  }
+
   function formatTotalExShipping(amountsObject) {
-    let totalWithoutShipping = amountsObject.priceExShipping.toString();
-    console.log(totalWithoutShipping);
-    let formattedWithoutShippingStr = "";
-
-    if (totalWithoutShipping.length < 4) {
-      formattedWithoutShippingStr = totalWithoutShipping;
-    } else if (totalWithoutShipping.length === 4) {
-      formattedWithoutShippingStr =
-        totalWithoutShipping.substring(0, 1) +
-        "," +
-        totalWithoutShipping.slice(1);
-    } else if (totalWithoutShipping.length === 5) {
-      formattedWithoutShippingStr =
-        totalWithoutShipping.substring(0, 2) +
-        "," +
-        totalWithoutShipping.slice(2);
-    } else if (totalWithShipping.length === 6) {
-      formattedWithoutShippingStr =
-        totalWithoutShipping.substring(0, 3) +
-        "," +
-        totalWithoutShipping.slice(3);
-    } else if (totalWithoutShipping.length === 7) {
-      formattedWithoutShippingStr =
-        totalWithoutShipping.substring(0, 1) +
-        "," +
-        totalWithoutShipping.substring(1, 4) +
-        "," +
-        totalWithoutShipping.slice(4);
-    }
-
-    setTotal(formattedWithoutShippingStr);
+    let totalWithoutShipping = amountsObject.priceExShipping;
+    setTotal(formatNumber(totalWithoutShipping));
   }
 
   useEffect(() => {
@@ -174,7 +87,7 @@ export default function Summary({ handleErrorSubmission, orderComplete }) {
         `http://localhost:8080/cart/getitems/${cart_id}`
       );
       let products_data = response.data;
-      console.log(products_data);
+
       setCartData(products_data);
     };
 
@@ -185,7 +98,6 @@ export default function Summary({ handleErrorSubmission, orderComplete }) {
     const totalNumber = formatTotal();
     totalWithShipping(totalNumber);
     formatTotalExShipping(totalNumber);
-    console.log(cartData.length);
   }, [cartData]);
 
   return (

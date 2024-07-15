@@ -1,0 +1,234 @@
+body {
+  position: relative;
+  height: 100%; /* Ensure body takes up full viewport height */
+  margin: 0; /* Remove default margin */
+}
+
+.nav__wrapper {
+  background-color: rgba(0, 0, 0, 0.7);
+  position: absolute;
+  width: 100vw;
+  height: 100%; /* Height set to 100% of the viewport height */
+  top: 0; /* Position at the top of the viewport */
+  left: 0;
+  z-index: 97;
+  box-sizing: border-box;
+  padding-top: 9rem;
+}
+
+.nav {
+  padding-left: 1.6rem;
+  padding-right: 1.6rem;
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+  background-color: #ffffff;
+  width: 100%;
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+}
+@media (min-width: 1366px) {
+  .nav {
+    display: none;
+  }
+}
+@media (min-width: 375px) {
+  .nav {
+    padding-left: 2.6rem;
+    padding-right: 2.6rem;
+  }
+}
+@media (min-width: 414px) {
+  .nav {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+}
+@media (min-width: 768px) {
+  .nav {
+    padding-left: 3.5rem;
+    padding-right: 3.5rem;
+    padding-top: 8rem;
+    padding-bottom: 5rem;
+  }
+}
+@media (min-width: 1024px) {
+  .nav {
+    padding-left: 4.5rem;
+    padding-right: 4.5rem;
+  }
+}
+@media (min-width: 1280px) {
+  .nav {
+    padding-left: 6rem;
+    padding-right: 6rem;
+  }
+}
+.nav__list-container {
+  display: flex;
+  flex-direction: column;
+  gap: 6rem;
+  max-width: 290px;
+  margin: 0 auto;
+  padding-top: 4rem;
+}
+@media (min-width: 375px) {
+  .nav__list-container {
+    max-width: 400px;
+  }
+}
+@media (min-width: 414px) {
+  .nav__list-container {
+    max-width: 500px;
+  }
+}
+@media (min-width: 768px) {
+  .nav__list-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    max-width: 800px;
+    padding-top: 0;
+    gap: 1rem;
+  }
+}
+@media (min-width: 1024px) {
+  .nav__list-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    max-width: 1100px;
+    padding-top: 0;
+    gap: 2rem;
+  }
+}
+@media (min-width: 1280px) {
+  .nav__list-container {
+    max-width: 1300px;
+    gap: 3rem;
+  }
+}
+@media (min-width: 1920px) {
+  .nav__list-container {
+    max-width: 2000px;
+  }
+}
+.nav__list-item {
+  border-radius: 4px;
+  background-color: #fafafa;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 6.5rem;
+  position: relative;
+}
+@media (min-width: 768px) {
+  .nav__list-item {
+    width: 100%;
+  }
+}
+.nav__shop-container {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  padding-bottom: 1rem;
+  cursor: pointer;
+}
+.nav__text:hover {
+  color: #fbaf85;
+}
+.nav__orange-icon {
+  height: 10px;
+  width: 10px;
+}
+.nav__list-img {
+  height: 100px;
+  width: 100px;
+  margin-bottom: 1rem;
+  position: absolute;
+  bottom: 5rem;
+}
+.nav__list-title {
+  padding-bottom: 1rem;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+.nav__text {
+  text-transform: uppercase;
+  color: grey;
+  font-size: 1.3rem;
+  letter-spacing: 0.1rem;
+  font-weight: 700;
+}
+
+.midNav {
+  padding-left: 1.6rem;
+  padding-right: 1.6rem;
+  padding-top: 6rem;
+  background-color: #ffffff;
+  padding-top: 1.6rem;
+  max-width: 340px;
+  margin: 0 auto;
+}
+@media (min-width: 375px) {
+  .midNav {
+    padding-left: 2.6rem;
+    padding-right: 2.6rem;
+    max-width: 400px;
+  }
+}
+@media (min-width: 414px) {
+  .midNav {
+    padding: 3rem;
+    max-width: 500px;
+  }
+}
+@media (min-width: 768px) {
+  .midNav {
+    padding-left: 3.5rem;
+    padding-right: 3.5rem;
+    max-width: 800px;
+  }
+}
+@media (min-width: 1024px) {
+  .midNav {
+    padding-left: 4.5rem;
+    padding-right: 4.5rem;
+    max-width: 1100px;
+  }
+}
+@media (min-width: 1280px) {
+  .midNav {
+    padding-left: 6rem;
+    padding-right: 6rem;
+    max-width: 1300px;
+  }
+}
+@media (min-width: 1366px) {
+  .midNav {
+    padding-left: 15rem;
+    padding-right: 15rem;
+    max-width: 1600px;
+  }
+}
+@media (min-width: 1920px) {
+  .midNav {
+    padding-left: 20rem;
+    padding-right: 20rem;
+    max-width: 2000px;
+  }
+}
+
+.midList-container__list-item {
+  border-radius: 4px;
+  background-color: #fafafa;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 6.5rem;
+  position: relative;
+}
+@media (min-width: 768px) {
+  .midList-container__list-item {
+    width: 100%;
+  }
+}/*# sourceMappingURL=Nav.css.map */

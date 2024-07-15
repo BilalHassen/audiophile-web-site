@@ -47,7 +47,7 @@ export default function Header() {
   }, []);
 
   const handleNavDisplay = () => {
-    setIsActive(!isActive);
+    setIsActive((isActive) => !isActive);
   };
 
   const handleCartModal = (e) => {
@@ -69,7 +69,9 @@ export default function Header() {
               className="header__icon"
               onClick={handleNavDisplay}
             />
-            <img className="header__title" src={logo} alt="logo"></img>
+            <Link to="/">
+              <img className="header__title" src={logo} alt="logo"></img>
+            </Link>
           </div>
         ) : (
           <>
@@ -80,7 +82,9 @@ export default function Header() {
                 handleNavDisplay();
               }}
             />
-            <img className="header__title" src={logo} alt="logo"></img>
+            <Link to="/">
+              <img className="header__title" src={logo} alt="logo"></img>
+            </Link>
           </>
         )}
         {isDesktop ? <HeaderNav /> : null}
@@ -91,9 +95,9 @@ export default function Header() {
           src={cartIcon}
           alt="cart-icon"
         ></img>
-        {isOpen ? <Cart handleCartModal={handleCartModal} /> : null}
       </section>
-      {isActive ? <Nav /> : ""}
+      {isOpen && <Cart handleCartModal={handleCartModal} />}
+      {isActive && <Nav activeClass="active-class" />}
     </>
   );
 }

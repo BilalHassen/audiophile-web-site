@@ -1,0 +1,136 @@
+.summary {
+  padding-left: 1.6rem;
+  padding-right: 1.6rem;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  background-color: #ffffff;
+  margin-top: 4rem;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+@media (min-width: 768px) {
+  .summary {
+    padding-right: 3.5rem;
+  }
+}
+@media (min-width: 1024px) {
+  .summary {
+    padding-right: 4.5rem;
+  }
+}
+@media (min-width: 1366px) {
+  .summary {
+    margin-top: 0rem;
+    padding-left: 3rem;
+    padding-right: 3rem;
+    height: -moz-fit-content;
+    height: fit-content;
+  }
+}
+.summary__item-container {
+  display: flex;
+  gap: 1.5rem;
+}
+@media (min-width: 414px) {
+  .summary__item-container {
+    gap: 2rem;
+  }
+}
+@media (min-width: 768px) {
+  .summary__item-container {
+    gap: 2rem;
+  }
+}
+.summary__name-price-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.summary__image-container {
+  width: 6rem;
+  height: 6rem;
+  background-size: cover;
+  border-radius: 4px;
+}
+@media (min-width: 768px) {
+  .summary__image-container {
+    background-position: center;
+    height: 8.5rem;
+    width: 8.5rem;
+  }
+}
+.summary__item-price {
+  font-size: 1rem;
+  color: #808080;
+}
+@media (min-width: 768px) {
+  .summary__item-price {
+    font-size: 1.2rem;
+  }
+}
+@media (min-width: 1024px) {
+  .summary__item-price {
+    font-size: 1.4rem;
+  }
+}
+.summary__dynamic-wrapper {
+  display: flex;
+  align-items: center;
+  width: 70%;
+}
+@media (min-width: 414px) {
+  .summary__dynamic-wrapper {
+    gap: 2rem;
+    width: 80%;
+  }
+}
+@media (min-width: 768px) {
+  .summary__dynamic-wrapper {
+    gap: 2rem;
+    width: 80%;
+  }
+}
+.summary__item-name {
+  font-size: 1rem;
+}
+@media (min-width: 768px) {
+  .summary__item-name {
+    font-size: 1.1rem;
+    width: 100%;
+  }
+}
+@media (min-width: 1024px) {
+  .summary__item-name {
+    font-size: 1.5rem;
+    padding-bottom: 0.5rem;
+  }
+}
+.summary__button {
+  background-color: #d87d4a;
+  justify-content: center;
+  border: none;
+  width: 100%;
+  color: white;
+  height: 4rem;
+  display: flex;
+  align-items: center;
+  font-size: 1.3rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+}
+.summary__button:hover {
+  background-color: #fbaf85;
+}
+.summary__title {
+  text-transform: uppercase;
+  font-size: 1.5rem;
+}
+@media (min-width: 768px) {
+  .summary__title {
+    font-size: 1.8rem;
+  }
+}/*# sourceMappingURL=SummaryItems.css.map */

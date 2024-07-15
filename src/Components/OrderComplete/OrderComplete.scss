@@ -166,7 +166,7 @@ body {
 
   @include tablet-small {
     &__flex-container {
-      width: 160%;
+      width: 180%;
     }
   }
 
@@ -184,10 +184,16 @@ body {
     text-transform: uppercase;
     color: white;
     font-size: 1.3rem;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
 
     @include tablet-small {
       margin-top: 4rem;
     }
+  }
+
+  &__button:hover {
+    background-color: $button-hover;
   }
 }
 

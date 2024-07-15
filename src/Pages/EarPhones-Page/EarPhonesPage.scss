@@ -1,0 +1,49 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+
+.earphones {
+  margin: 0 auto;
+  max-width: 340px;
+
+  @include mobile-medium {
+    padding-left: 2.6rem;
+    padding-right: 2.6rem;
+    max-width: 400px;
+  }
+
+  @include mobile-large {
+    padding: 3rem;
+    max-width: 500px;
+  }
+
+  @include tablet-small {
+    padding-left: 3.5rem;
+    padding-right: 3.5rem;
+    padding-top: 12rem;
+    max-width: 800px;
+  }
+
+  @include tablet-medium {
+    padding-left: 4.5rem;
+    padding-right: 4.5rem;
+    max-width: 1100px;
+  }
+
+  @include tablet-large {
+    padding-left: 6rem;
+    padding-right: 6rem;
+    max-width: 1300px;
+  }
+
+  @include desktop-small {
+    padding-left: 15rem;
+    padding-right: 15rem;
+    max-width: 1600px;
+  }
+
+  @include desktop-large {
+    padding-left: 20rem;
+    padding-right: 20rem;
+    max-width: 2000px;
+  }
+}

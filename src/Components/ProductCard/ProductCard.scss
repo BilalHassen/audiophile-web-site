@@ -6,40 +6,85 @@
   padding-right: 1.6rem;
   padding-bottom: 15rem;
 
+  margin: 0 auto;
+  max-width: 340px;
+
   @include mobile-medium {
-    padding-left: 2.5rem;
-    padding-right: 2.5rem;
+    padding-left: 2.6rem;
+    padding-right: 2.6rem;
+    max-width: 400px;
   }
 
   @include mobile-large {
-    padding-left: 3rem;
-    padding-right: 3rem;
+    padding: 3rem;
+    max-width: 500px;
   }
 
   @include tablet-small {
     padding-left: 3.5rem;
     padding-right: 3.5rem;
+    padding-top: 12rem;
+    max-width: 800px;
   }
 
   @include tablet-medium {
-    padding-left: 5rem;
-    padding-right: 5rem;
+    padding-left: 4.5rem;
+    padding-right: 4.5rem;
+    max-width: 1100px;
   }
 
   @include tablet-large {
-    padding-left: 8rem;
-    padding-right: 8rem;
+    padding-left: 6rem;
+    padding-right: 6rem;
+    max-width: 1300px;
   }
 
   @include desktop-small {
-    padding-left: 12rem;
-    padding-right: 12rem;
+    padding-left: 15rem;
+    padding-right: 15rem;
+    max-width: 1600px;
   }
 
   @include desktop-large {
-    padding-left: 18rem;
-    padding-right: 18rem;
+    padding-left: 20rem;
+    padding-right: 20rem;
+    max-width: 2000px;
   }
+
+  // @include mobile-medium {
+  //   padding-left: 2.5rem;
+  //   padding-right: 2.5rem;
+  // }
+
+  // @include mobile-large {
+  //   padding-left: 3rem;
+  //   padding-right: 3rem;
+  // }
+
+  // @include tablet-small {
+  //   padding-left: 3.5rem;
+  //   padding-right: 3.5rem;
+  // }
+
+  // @include tablet-medium {
+  //   padding-left: 5rem;
+  //   padding-right: 5rem;
+  // }
+
+  // @include tablet-large {
+  //   padding-left: 8rem;
+  //   padding-right: 8rem;
+  // }
+
+  // @include desktop-small {
+  //   padding-left: 12rem;
+  //   padding-right: 12rem;
+  // }
+
+  // @include desktop-large {
+  //   padding-left: 18rem;
+  //   padding-right: 18rem;
+  // }
 }
 
 .product {
@@ -198,11 +243,17 @@
     padding-right: 1rem;
     text-transform: uppercase;
     letter-spacing: 0.1rem;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
 
     @include desktop-large {
       height: 6rem;
       font-size: 1.4rem;
     }
+  }
+
+  &__button:hover {
+    background-color: $button-hover;
   }
 
   &__delete,
@@ -329,50 +380,6 @@
     }
   }
 
-  &__gallery {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-
-    @include tablet-small {
-      display: flex;
-      flex-direction: row;
-      padding-top: 2rem;
-    }
-
-    @include tablet-medium {
-      gap: 4rem;
-      padding-top: 4rem;
-    }
-  }
-
-  // image container
-  &__img-container {
-    @include tablet-medium {
-      width: 100%;
-    }
-  }
-
-  &__gallery-img {
-    width: 100%;
-    border-radius: 4px;
-
-    @include tablet-large {
-      height: 30rem;
-    }
-  }
-
-  &__gallery-larger-container {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-    height: 100%;
-
-    @include tablet-large {
-      width: 70%;
-    }
-  }
-
   &__includes-container {
     display: flex;
     flex-direction: column;
@@ -427,28 +434,6 @@
   }
 }
 
-// styling for 3rd image in product gallery
-
-@include tablet-small {
-  .large {
-    height: 99.5%;
-    @include tablet-medium {
-      height: 84.9%;
-    }
-    @include tablet-large {
-      height: 99.5%;
-    }
-
-    @include desktop-medium {
-      height: 97.5%;
-    }
-
-    @include desktop-large {
-      height: 74.5%;
-    }
-  }
-}
-
 .product__direction {
   border: none;
   font-size: 1.5rem;
@@ -469,14 +454,22 @@
     padding-left: 3.5rem;
   }
 
+  @include tablet-medium {
+    padding-left: 4.5rem;
+  }
+
+  @include tablet-large {
+    padding-left: 6rem;
+  }
+
   @include desktop-small {
-    padding-left: 12rem;
+    padding-left: 15rem;
     padding-top: 8rem;
     padding-bottom: 6rem;
   }
 
   @include desktop-large {
-    padding-left: 18rem;
+    padding-left: 20rem;
     font-size: 2rem;
   }
 }
@@ -486,10 +479,14 @@
 .main {
   @include tablet-small {
     width: 100%;
-    height: 120%;
+    min-height: 500px;
   }
 
-  @include tablet-medium {
-    height: 110%;
+  @include tablet-large {
+    min-height: 600px;
+  }
+
+  @include desktop-large {
+    min-height: 700px;
   }
 }

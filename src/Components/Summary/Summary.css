@@ -1,0 +1,17 @@
+.summary__calculations {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.summary__total, .summary__shipping, .summary__vat, .summary__grand-total {
+  display: flex;
+  justify-content: space-between;
+}
+.summary__total-title {
+  color: #808080;
+  text-transform: uppercase;
+}
+.summary__total-price {
+  color: #191919;
+  font-weight: bold;
+}/*# sourceMappingURL=Summary.css.map */

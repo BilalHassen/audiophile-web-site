@@ -17,6 +17,7 @@
     &__divider {
       display: none; /* Hide divider on tablet */
     }
+    margin-bottom: 6rem;
   }
 
   @include desktop-small {
@@ -53,7 +54,7 @@
     }
 
     @include mobile-large {
-      height: 55rem;
+      min-height: 55rem;
     }
 
     @include tablet-small {
@@ -242,21 +243,13 @@
     border: none;
     // treat the button as a block level element
     display: block;
-    width: 40%;
-    height: 5rem;
+    @include customButton;
+    transition: background-color 0.3s ease; /* Smooth transition for the hover effect */
+    cursor: pointer;
+  }
 
-    @include tablet-small {
-      width: 25%;
-      height: 5rem;
-    }
-
-    @include tablet-medium {
-      width: 20%;
-    }
-
-    @include desktop-small {
-      width: 30%;
-    }
+  &__button:hover {
+    background-color: $button-hover;
   }
 
   &__button-text {

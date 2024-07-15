@@ -32,10 +32,6 @@ export default function Cart({ closeModal, handleCartModal }) {
     };
   }, []);
 
-  function goBack() {
-    window.history.back();
-  }
-
   const isCartEmpty = () => {
     if (cartData.length > 0) {
       setIsCheckout(true);
@@ -44,8 +40,6 @@ export default function Cart({ closeModal, handleCartModal }) {
       setIsCheckout(false);
     }
   };
-
-  console.log(window.location.pathname === "/checkout");
 
   useEffect(() => {
     isCartEmpty();
@@ -100,13 +94,6 @@ export default function Cart({ closeModal, handleCartModal }) {
     isCartEmpty();
   }, []);
 
-  // useEffect(() => {
-  //   if (cartData.length === 0 && isCheckout === false) {
-  //     redirect();
-  //   }
-  // }, []);
-
-  // calculation of the total amount of items when ever the state of cart Data changes
   useEffect(() => {
     let totalAmount = 0;
     let totalCartItems = 0;
@@ -119,16 +106,12 @@ export default function Cart({ closeModal, handleCartModal }) {
   }, [cartData]);
 
   // function to format the total amoutn with the comma at the correct place
-  function formatTotal(total) {
-    let totalStr = total.toString();
-
-    if (totalStr.length <= 4 && totalStr.length > 3) {
-      return totalStr[0] + "," + totalStr.slice(1);
-    } else if (totalStr.length >= 5) {
-      return totalStr[0] + totalStr[1] + "," + totalStr.slice(2);
-    }
-
-    return totalStr;
+  function formatNumber(number) {
+    return new Intl.NumberFormat("en-US", {
+      style: "decimal",
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 2,
+    }).format(number);
   }
 
   return (
@@ -184,7 +167,7 @@ export default function Cart({ closeModal, handleCartModal }) {
         )}
         <div className="cart__text-container-2">
           <p className="cart__total">total</p>
-          <p className="cart__total-amount">${formatTotal(total)}</p>
+          <p className="cart__total-amount">${formatNumber(total)}</p>
         </div>
         {isCheckout ? (
           <Link to="/checkout">

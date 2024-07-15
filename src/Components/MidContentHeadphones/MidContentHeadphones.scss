@@ -4,45 +4,16 @@
 .midContentHeadphones {
   border-radius: 4px;
   height: 100%;
-  padding: 1.6rem;
+  padding-top: 3rem;
   display: flex;
   flex-direction: column;
   gap: 2rem;
   padding-bottom: 4rem;
 
-  @include mobile-large {
-    padding-left: 3rem;
-    padding-right: 3rem;
-  }
-
   @include tablet-small {
     display: flex;
     flex-direction: row;
-    width: 100%;
-    padding-left: 3.5rem;
-    padding-right: 3.5rem;
-    padding-top: 8rem;
-  }
-
-  @include tablet-large {
-    padding-left: 8rem;
-    padding-right: 8rem;
-  }
-
-  @include desktop-small {
-    padding-left: 12rem;
-    padding-right: 12rem;
-    gap: 4rem;
-  }
-
-  @include desktop-medium {
-    padding-left: 14rem;
-    padding-right: 14rem;
-  }
-
-  @include desktop-large {
-    padding-left: 18rem;
-    padding-right: 18rem;
+    padding-top: 6rem;
   }
 
   &__img-container {
@@ -103,11 +74,16 @@
   &__button {
     background-color: transparent;
     border: 1.5px solid black;
-    width: 64%;
-    height: 4rem;
+    @include customButton;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
 
     @include tablet-small {
       height: 5rem;
     }
+  }
+  &__button:hover {
+    background-color: #000000;
+    color: white;
   }
 }

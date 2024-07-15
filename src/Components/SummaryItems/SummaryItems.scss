@@ -15,6 +15,7 @@
 
   @include tablet-small {
     padding-right: 3.5rem;
+    padding-left: 3.5rem;
   }
 
   @include tablet-medium {
@@ -84,7 +85,7 @@
 
     @include tablet-small {
       gap: 2rem;
-      width: 80%;
+      width: 100%;
     }
   }
 
@@ -112,6 +113,17 @@
     font-size: 1.3rem;
     text-transform: uppercase;
     letter-spacing: 0.1rem;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+  }
+
+  &__button:hover {
+    background-color: $button-hover;
+  }
+
+  &__item-quantity {
+    font-size: 1.5rem;
+    color: $grey;
   }
 
   &__title {

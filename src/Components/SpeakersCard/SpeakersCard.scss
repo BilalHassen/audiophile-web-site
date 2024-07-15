@@ -78,6 +78,17 @@
     width: 100%;
     height: 30rem;
     border-radius: 4px;
+    @include tablet-small {
+      height: 356.59px;
+    }
+
+    @include tablet-medium {
+      height: 477.16px;
+    }
+
+    @include desktop-small {
+      height: 500px;
+    }
   }
   &__card-title {
     text-align: center;
@@ -152,30 +163,12 @@
     background-color: $orange;
     border: none;
     justify-content: center;
-    height: 4.5rem;
+
     font-size: 1.3rem;
     color: white;
-    width: 60%;
+    @include customButton;
     text-transform: uppercase;
     letter-spacing: 0.1rem;
-
-    @include mobile-large {
-      width: 50%;
-    }
-
-    @include tablet-small {
-      width: 25%;
-      height: 5rem;
-    }
-
-    @include tablet-medium {
-      width: 20%;
-      height: 5rem;
-    }
-
-    @include desktop-small {
-      width: 30%;
-    }
   }
 }
 

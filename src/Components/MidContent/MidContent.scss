@@ -1,34 +1,14 @@
 @use "../../styles/partials/mixins" as *;
 @use "../../styles/partials/variables" as *;
 .midContent {
-  padding: 1.6rem;
-
-  @include mobile-large {
-    padding: 3rem;
-  }
+  padding-bottom: 3rem;
 
   @include tablet-small {
-    padding-left: 3.5rem;
-    padding-right: 3.5rem;
-  }
-
-  @include tablet-large {
-    padding: 8rem;
-  }
-
-  @include desktop-small {
-    padding-left: 12rem;
-    padding-right: 12rem;
+    padding-bottom: 4rem;
   }
 
   @include desktop-medium {
-    padding-left: 14rem;
-    padding-right: 14rem;
-  }
-
-  @include desktop-large {
-    padding-left: 18rem;
-    padding-right: 18rem;
+    padding-bottom: 6rem;
   }
 
   &__wrapper {
@@ -55,7 +35,7 @@
     }
 
     @include mobile-large {
-      background-position: -134px -140px;
+      background-position: -124px -140px;
       gap: 3rem;
       background-size: 170%;
       padding-bottom: 6rem;
@@ -95,7 +75,6 @@
       padding-bottom: 0rem;
       gap: 26rem;
       padding-top: 15rem;
-      width: 100%;
     }
   }
 
@@ -172,10 +151,6 @@
       padding-top: 2rem;
     }
 
-    // @include tablet-medium {
-    //   padding-top: 4rem;
-    // }
-
     @include tablet-large {
       padding-bottom: 2rem;
     }
@@ -232,26 +207,20 @@
     background-color: $black;
     color: white;
     text-transform: uppercase;
-    height: 5rem;
-    width: 60%;
+    height: 4.8rem;
+    width: 100%;
     border: none;
     @include button-text;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+  }
 
-    @include mobile-medium {
-      height: 5rem;
-    }
+  &__button:hover {
+    background-color: $dark-button-hover;
+  }
 
-    @include tablet-small {
-      width: 30%;
-    }
-
-    @include tablet-large {
-      width: 20%;
-    }
-
-    @include desktop-small {
-      width: 40%;
-    }
+  &__button-link {
+    @include customButton;
   }
 
   &__container {
@@ -261,5 +230,54 @@
     padding-bottom: 12rem;
     gap: 4rem;
     width: 50%;
+  }
+}
+
+.midContent-wrapper {
+  padding-left: 1.6rem;
+  padding-right: 1.6rem;
+  padding-top: 1.6rem;
+  max-width: 340px;
+  margin: 0 auto;
+
+  @include mobile-medium {
+    padding-left: 2.6rem;
+    padding-right: 2.6rem;
+    max-width: 400px;
+  }
+
+  @include mobile-large {
+    padding: 3rem;
+    max-width: 500px;
+  }
+
+  @include tablet-small {
+    padding-left: 3.5rem;
+    padding-right: 3.5rem;
+    max-width: 800px;
+  }
+
+  @include tablet-medium {
+    padding-left: 4.5rem;
+    padding-right: 4.5rem;
+    max-width: 1100px;
+  }
+
+  @include tablet-large {
+    padding-left: 6rem;
+    padding-right: 6rem;
+    max-width: 1300px;
+  }
+
+  @include desktop-small {
+    padding-left: 15rem;
+    padding-right: 15rem;
+    max-width: 1600px;
+  }
+
+  @include desktop-large {
+    padding-left: 20rem;
+    padding-right: 20rem;
+    max-width: 2000px;
   }
 }

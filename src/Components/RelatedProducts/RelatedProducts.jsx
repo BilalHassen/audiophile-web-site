@@ -1,8 +1,10 @@
 import { useEffect, useState, useTransition } from "react";
-import axios from "axios";
+import axios, { all } from "axios";
 import "./RelatedProducts.scss";
+import { Link } from "react-router-dom";
+import { HashLink } from "react-router-hash-link";
 
-export default function RelatedProducts({ productId }) {
+export default function RelatedProducts({ productId, handleRelatedProduct }) {
   const baseUrl = `http://localhost:8080/products/relatedproducts/${productId}`;
 
   const [productData, setProductData] = useState([]);
@@ -20,7 +22,7 @@ export default function RelatedProducts({ productId }) {
     };
 
     getRelatedPorductData();
-  }, []);
+  }, [productId]);
 
   function handleImageUrl() {
     let width = window.innerWidth;
@@ -67,7 +69,11 @@ export default function RelatedProducts({ productId }) {
     <>
       {productData.slice(0, 3).map((data) => {
         return (
-          <div className="product__related-card">
+          <div
+            className="product__related-card"
+            key={data.related_id[0].id}
+            onClick={handleRelatedProduct}
+          >
             <div
               className="product__related-img-container"
               style={{
@@ -81,9 +87,11 @@ export default function RelatedProducts({ productId }) {
               }}
             ></div>
             <h3 className="product__related-name">{data.name}</h3>
-            <div className="product__related-button-container">
-              <button className="product__related-button">see product</button>
-            </div>
+            <HashLink smooth to={`/products/${data.related_id[0].id}#top`}>
+              <div className="product__related-button-container">
+                <button className="product__related-button">see product</button>
+              </div>
+            </HashLink>
           </div>
         );
       })}

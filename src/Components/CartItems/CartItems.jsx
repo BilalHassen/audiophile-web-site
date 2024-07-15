@@ -109,17 +109,13 @@ export default function CartItems({
     return removeEventListener;
   }, []);
 
-  // function for formatting string with comma
-  // function formatPrice(price) {
-  //   let priceStr = price.toString();
-
-  //   if (priceStr.length >= 4) {
-  //     return priceStr[0] + "," + priceStr.slice(1);
-  //   }
-  //   return priceStr;
-  // }
-
-  // formatPrice(price);
+  function formatNumber(number) {
+    return new Intl.NumberFormat("en-US", {
+      style: "decimal",
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 2,
+    }).format(number);
+  }
 
   return (
     <>
@@ -139,7 +135,7 @@ export default function CartItems({
         <div className="cart__dynamic-wrapper">
           <div className="cart__name-price-container">
             <h4 className="cart__item-name">{item_name}</h4>
-            <p className="cart__item-price">$ {price}</p>
+            <p className="cart__item-price">$ {formatNumber(price)}</p>
           </div>
           <div className="cart__controller-container">
             <button className="cart__delete" onClick={deleteProduct}>

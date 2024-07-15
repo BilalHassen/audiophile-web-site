@@ -3,6 +3,7 @@ import AudiophileDescription from "../../Components/AudiophileDescription/Audiop
 import Footer from "../../Components/Footer/Footer";
 import HeadPhonesCard from "../../Components/HeadPhonesCard/HeadPhonesCard";
 import EarPhonesCard from "../../Components/EarphonesCard/EarPhonesCard";
+import "./EarPhonesPage.scss";
 import axios from "axios";
 import { useEffect, useState } from "react";
 export default function EarPhonesPage() {

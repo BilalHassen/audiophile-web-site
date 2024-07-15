@@ -3,6 +3,7 @@ import AudiophileDescription from "../../Components/AudiophileDescription/Audiop
 import Footer from "../../Components/Footer/Footer";
 import HeadPhonesCard from "../../Components/HeadPhonesCard/HeadPhonesCard";
 import axios from "axios";
+import "./HeadPhonesPage.scss";
 import { useEffect, useState } from "react";
 export default function HeadPhonesPage() {
   const [headphonesData, setHeadphonesData] = useState();

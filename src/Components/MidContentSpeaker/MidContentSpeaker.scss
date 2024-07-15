@@ -2,8 +2,6 @@
 @use "../../styles/partials/variables" as *;
 
 .midContentSpeaker {
-  margin-left: 1.6rem;
-  margin-right: 1.6rem;
   border-radius: 4px;
   background-image: url(../../assets/home/mobile/image-speaker-zx7.jpg);
   background-size: 100% 35rem;
@@ -23,30 +21,21 @@
     padding-right: 6.5rem;
   }
 
-  @include mobile-large {
-    margin-left: 3rem;
-    margin-right: 3rem;
-  }
-
   @include tablet-small {
     background-image: url(../../assets/home/tablet/image-speaker-zx7.jpg);
     align-items: start;
     padding-left: 8rem;
-    padding-right: 0rem;
-    margin-left: 3.5rem;
-    margin-right: 3.5rem;
   }
 
   @include tablet-medium {
     padding-left: 12rem;
+    margin: 0 auto;
   }
 
   @include tablet-large {
     background-size: 100% 40rem;
     height: 40rem;
     padding-left: 16rem;
-    margin-left: 8rem;
-    margin-right: 8rem;
   }
 
   @include desktop-small {
@@ -58,16 +47,10 @@
     margin-right: 12rem;
     background-size: 100% 45rem;
     height: 45rem;
+    margin: 0 auto;
 
     @include desktop-medium {
-      margin-left: 14rem;
-      margin-right: 14rem;
       padding-left: 12rem;
-    }
-
-    @include desktop-large {
-      margin-left: 18rem;
-      margin-right: 18rem;
     }
   }
 
@@ -92,13 +75,19 @@
   &__button {
     background-color: transparent;
     border: 1.5px solid black;
-    width: 80%;
-    height: 5rem;
+    @include customButton;
     margin-top: 2rem;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
 
     @include tablet-small {
       margin-top: 3rem;
     }
+  }
+
+  &__button:hover {
+    background-color: #000000;
+    color: white;
   }
 
   &__button-txt {

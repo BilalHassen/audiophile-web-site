@@ -103,34 +103,19 @@
   }
 
   &__related-button {
-    width: 45%;
     border: none;
     background-color: $orange;
     color: white;
-    height: 4rem;
+    @include customButton;
     font-size: 1rem;
     margin-top: 2rem;
     text-transform: uppercase;
     letter-spacing: 0.1rem;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+  }
 
-    @include tablet-small {
-      width: 55%;
-      height: 3.7rem;
-    }
-
-    @include tablet-medium {
-      font-size: 1.2rem;
-      height: 5rem;
-    }
-
-    @include desktop-small {
-      font-size: 1.4rem;
-    }
-
-    @include desktop-large {
-      font-size: 1.8rem;
-      width: 40%;
-      height: 6rem;
-    }
+  &__related-button:hover {
+    background-color: $button-hover;
   }
 }

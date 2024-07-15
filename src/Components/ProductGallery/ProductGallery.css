@@ -1,0 +1,36 @@
+.product__gallery {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+@media (min-width: 768px) {
+  .product__gallery {
+    flex-direction: row;
+  }
+}
+.product__img-container {
+  height: 100%;
+  width: 100%;
+}
+.product__gallery-img {
+  width: 100%;
+  height: 100%;
+  border-radius: 4px;
+}
+.product__gallery-larger-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  width: 100%;
+}
+
+.large {
+  height: 100%;
+  width: 100%;
+  border-radius: 4px;
+}
+
+.container {
+  width: 100%;
+  border-radius: 4px;
+}/*# sourceMappingURL=ProductGallery.css.map */
