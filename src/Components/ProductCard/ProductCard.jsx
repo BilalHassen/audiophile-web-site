@@ -105,7 +105,7 @@ export default function ProductCard({
             ) : null}
 
             <h1 className="product__title">{name}</h1>
-            <p className="product__description">{description}.</p>
+            <p className="product__description">{description}</p>
             <p className="product__price">$ {price}</p>
             <div className="product__add-delete">
               <div className="product__controller-container">
