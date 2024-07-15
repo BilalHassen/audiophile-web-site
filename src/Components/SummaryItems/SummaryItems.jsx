@@ -50,6 +50,15 @@ export default function SummaryItems({
 
     return removeEventListener;
   }, []);
+
+  function formatNumber(number) {
+    return new Intl.NumberFormat("en-US", {
+      style: "decimal",
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 2,
+    }).format(number);
+  }
+
   return (
     <>
       <div className="summary__item-container">
@@ -68,7 +77,7 @@ export default function SummaryItems({
         <div className="summary__dynamic-wrapper">
           <div className="summary__name-price-container">
             <h4 className="summary__item-name">{item_name}</h4>
-            <p className="summary__item-price">$ {price}</p>
+            <p className="summary__item-price">${formatNumber(price)}</p>
           </div>
           <div className="summary__item-quantity">x{quantity}</div>
         </div>
