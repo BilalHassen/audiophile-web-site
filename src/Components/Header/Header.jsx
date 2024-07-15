@@ -47,7 +47,7 @@ export default function Header() {
   }, []);
 
   const handleNavDisplay = () => {
-    setIsActive(!isActive);
+    setIsActive((isActive) => !isActive);
   };
 
   const handleCartModal = (e) => {
