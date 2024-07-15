@@ -5,11 +5,7 @@ import { Link } from "react-router-dom";
 import { HashLink } from "react-router-hash-link";
 
 export default function RelatedProducts({ productId, handleRelatedProduct }) {
-  console.log(productId);
-
   const baseUrl = `http://localhost:8080/products/relatedproducts/${productId}`;
-
-  const productsUrl = `http://localhost:8080/products/all`;
 
   const [productData, setProductData] = useState([]);
   const [screenSize, setScreenSize] = useState(handleImageUrl());
