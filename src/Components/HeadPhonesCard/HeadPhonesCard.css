@@ -1,0 +1,233 @@
+.headphones-title {
+  background-color: #191919;
+  text-transform: uppercase;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2.8rem;
+  font-weight: 900;
+  padding-bottom: 3rem;
+}
+@media (min-width: 768px) {
+  .headphones-title {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+    font-size: 3.6rem;
+  }
+}
+@media (min-width: 1366px) {
+  .headphones-title {
+    padding-top: 8rem;
+    padding-bottom: 8rem;
+  }
+}
+
+.headphones {
+  padding-left: 1.6rem;
+  padding-right: 1.6rem;
+  padding-top: 6rem;
+  margin-bottom: 6rem;
+  display: flex;
+  flex-direction: column;
+  gap: 8rem;
+}
+@media (min-width: 414px) {
+  .headphones {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+}
+@media (min-width: 768px) {
+  .headphones {
+    padding-top: 20rem;
+  }
+}
+@media (min-width: 1024px) {
+  .headphones {
+    padding-left: 3.5rem;
+    padding-right: 3.5rem;
+  }
+}
+@media (min-width: 1280px) {
+  .headphones {
+    padding-left: 8rem;
+    padding-right: 8rem;
+  }
+}
+@media (min-width: 1366px) {
+  .headphones {
+    gap: 10rem;
+  }
+}
+@media (min-width: 1366px) {
+  .headphones {
+    padding-left: 12rem;
+    padding-right: 12rem;
+    padding-top: 15rem;
+  }
+}
+.headphones__new-product {
+  font-size: 2rem;
+  text-align: center;
+  color: #d87d4a;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5rem;
+  font-size: 1.4rem;
+}
+@media (min-width: 1024px) {
+  .headphones__new-product {
+    font-size: 1.6rem;
+  }
+}
+@media (min-width: 1366px) {
+  .headphones__new-product {
+    text-align: start;
+  }
+}
+.headphones__image-container {
+  width: 100%;
+}
+@media (min-width: 1366px) {
+  .headphones__image-container {
+    width: 100%;
+  }
+}
+.headphones__img {
+  width: 100%;
+  height: 30rem;
+  border-radius: 4px;
+}
+@media (min-width: 768px) {
+  .headphones__img {
+    height: 356.59px;
+  }
+}
+@media (min-width: 1024px) {
+  .headphones__img {
+    height: 477.16px;
+  }
+}
+@media (min-width: 1366px) {
+  .headphones__img {
+    height: 100%;
+  }
+}
+.headphones__card-title {
+  text-align: center;
+  font-size: 2.8rem;
+  text-transform: uppercase;
+}
+@media (min-width: 768px) {
+  .headphones__card-title {
+    padding-left: 20rem;
+    padding-right: 20rem;
+  }
+}
+@media (min-width: 1366px) {
+  .headphones__card-title {
+    text-align: start;
+    padding: 0;
+    padding-bottom: 2rem;
+    font-size: 4rem;
+  }
+}
+.headphones__para {
+  font-size: 1.4rem;
+  text-align: center;
+  color: grey;
+  padding-top: 2rem;
+}
+@media (min-width: 414px) {
+  .headphones__para {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+@media (min-width: 768px) {
+  .headphones__para {
+    padding-left: 9rem;
+    padding-right: 9rem;
+  }
+}
+@media (min-width: 1024px) {
+  .headphones__para {
+    padding-left: 20rem;
+    padding-right: 20rem;
+    font-size: 1.6rem;
+  }
+}
+@media (min-width: 1280px) {
+  .headphones__para {
+    padding-left: 28rem;
+    padding-right: 28rem;
+  }
+}
+@media (min-width: 1366px) {
+  .headphones__para {
+    padding: 0;
+    text-align: start;
+    font-size: 1.5rem;
+  }
+}
+.headphones__button-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 3rem;
+}
+@media (min-width: 1366px) {
+  .headphones__button-container {
+    justify-content: flex-start;
+  }
+}
+.headphones__button {
+  background-color: #d87d4a;
+  border: none;
+  justify-content: center;
+  font-size: 1.3rem;
+  color: white;
+  width: 168px;
+  height: 4.8rem;
+  /* Additional button styles can be added here */
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+}
+
+.break {
+  padding-left: 6rem;
+  padding-right: 6rem;
+}
+@media (min-width: 1366px) {
+  .break {
+    padding: 0;
+    padding-bottom: 2rem;
+  }
+}
+
+@media (min-width: 1366px) {
+  .headphones__card {
+    display: flex;
+    gap: 10rem;
+    max-height: 400px;
+  }
+}
+
+@media (min-width: 1366px) {
+  .headphones__text-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-bottom: 6rem;
+    width: 90%;
+  }
+}
+
+@media (min-width: 1366px) {
+  .reverse {
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 10rem;
+  }
+}/*# sourceMappingURL=HeadPhonesCard.css.map */

@@ -1,0 +1,53 @@
+.headphones {
+  margin: 0 auto;
+  max-width: 340px;
+}
+@media (min-width: 375px) {
+  .headphones {
+    padding-left: 2.6rem;
+    padding-right: 2.6rem;
+    max-width: 400px;
+  }
+}
+@media (min-width: 414px) {
+  .headphones {
+    padding: 3rem;
+    max-width: 500px;
+  }
+}
+@media (min-width: 768px) {
+  .headphones {
+    padding-left: 3.5rem;
+    padding-right: 3.5rem;
+    padding-top: 12rem;
+    max-width: 800px;
+  }
+}
+@media (min-width: 1024px) {
+  .headphones {
+    padding-left: 4.5rem;
+    padding-right: 4.5rem;
+    max-width: 1100px;
+  }
+}
+@media (min-width: 1280px) {
+  .headphones {
+    padding-left: 6rem;
+    padding-right: 6rem;
+    max-width: 1300px;
+  }
+}
+@media (min-width: 1366px) {
+  .headphones {
+    padding-left: 15rem;
+    padding-right: 15rem;
+    max-width: 1600px;
+  }
+}
+@media (min-width: 1920px) {
+  .headphones {
+    padding-left: 20rem;
+    padding-right: 20rem;
+    max-width: 2000px;
+  }
+}/*# sourceMappingURL=HeadPhonesPage.css.map */

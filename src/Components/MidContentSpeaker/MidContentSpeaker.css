@@ -1,0 +1,108 @@
+.midContentSpeaker {
+  border-radius: 4px;
+  background-image: url(../../assets/home/mobile/image-speaker-zx7.jpg);
+  background-size: 100% 35rem;
+  background-repeat: no-repeat;
+  border-radius: 4px;
+  display: inline-block;
+  max-width: 100%;
+  min-height: 35rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: start;
+  padding-right: 5.5rem;
+}
+@media (min-width: 375px) {
+  .midContentSpeaker {
+    padding-right: 6.5rem;
+  }
+}
+@media (min-width: 768px) {
+  .midContentSpeaker {
+    background-image: url(../../assets/home/tablet/image-speaker-zx7.jpg);
+    align-items: start;
+    padding-left: 8rem;
+  }
+}
+@media (min-width: 1024px) {
+  .midContentSpeaker {
+    padding-left: 12rem;
+    margin: 0 auto;
+  }
+}
+@media (min-width: 1280px) {
+  .midContentSpeaker {
+    background-size: 100% 40rem;
+    height: 40rem;
+    padding-left: 16rem;
+  }
+}
+@media (min-width: 1366px) {
+  .midContentSpeaker {
+    background-image: url(../../assets/home/desktop/image-speaker-zx7.jpg);
+    align-items: start;
+    padding-left: 8rem;
+    padding-right: 0rem;
+    margin-left: 12rem;
+    margin-right: 12rem;
+    background-size: 100% 45rem;
+    height: 45rem;
+    margin: 0 auto;
+  }
+}
+@media (min-width: 1366px) and (min-width: 1440px) {
+  .midContentSpeaker {
+    padding-left: 12rem;
+  }
+}
+.midContentSpeaker__title {
+  text-transform: uppercase;
+  font-weight: bolder;
+  font-size: 2.8rem;
+}
+@media (min-width: 1024px) {
+  .midContentSpeaker__title {
+    font-size: 3.6rem;
+  }
+}
+@media (min-width: 1280px) {
+  .midContentSpeaker__title {
+    font-size: 3.8rem;
+  }
+}
+@media (min-width: 1366px) {
+  .midContentSpeaker__title {
+    font-size: 4.6rem;
+  }
+}
+.midContentSpeaker__button {
+  background-color: transparent;
+  border: 1.5px solid black;
+  width: 168px;
+  height: 4.8rem;
+  /* Additional button styles can be added here */
+  margin-top: 2rem;
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+}
+@media (min-width: 768px) {
+  .midContentSpeaker__button {
+    margin-top: 3rem;
+  }
+}
+.midContentSpeaker__button:hover {
+  background-color: #000000;
+  color: white;
+}
+.midContentSpeaker__button-txt {
+  text-transform: uppercase;
+  font-size: 1.3rem;
+  letter-spacing: 1px;
+}
+@media (min-width: 1024px) {
+  .midContentSpeaker__button-txt {
+    font-size: 1.6rem;
+  }
+}/*# sourceMappingURL=MidContentSpeaker.css.map */

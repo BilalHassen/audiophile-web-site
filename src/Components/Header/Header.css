@@ -1,0 +1,87 @@
+.header {
+  background-color: #191919;
+  display: flex;
+  padding-left: 1.6rem;
+  padding-right: 1.6rem;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 99;
+  position: relative;
+}
+@media (min-width: 375px) {
+  .header {
+    padding-left: 2.6rem;
+    padding-right: 2.6rem;
+  }
+}
+@media (min-width: 414px) {
+  .header {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+}
+@media (min-width: 768px) {
+  .header {
+    padding-left: 3.5rem;
+    padding-right: 3.5rem;
+  }
+}
+@media (min-width: 1024px) {
+  .header {
+    padding-left: 4.5rem;
+    padding-right: 4.5rem;
+  }
+}
+@media (min-width: 1280px) {
+  .header {
+    padding-left: 6rem;
+    padding-right: 6rem;
+  }
+}
+@media (min-width: 768px) {
+  .header__tablet-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+  }
+}
+@media (min-width: 1366px) {
+  .header {
+    padding-left: 15rem;
+    padding-right: 15rem;
+    padding-bottom: 3rem;
+    padding-top: 3rem;
+  }
+}
+@media (min-width: 1920px) {
+  .header {
+    padding-left: 20rem;
+    padding-right: 20rem;
+    padding-bottom: 4rem;
+    padding-top: 4rem;
+  }
+}
+.header__icon {
+  font-size: 20px;
+  color: white;
+}
+@media (min-width: 1366px) {
+  .header__icon {
+    display: none;
+  }
+}
+.header__title {
+  color: white;
+  font-size: 2rem;
+  font-weight: 900;
+}
+@media (min-width: 1366px) {
+  .header__title {
+    font-size: 3.2rem;
+  }
+}
+.header__cart-icon {
+  font-size: 20px;
+}/*# sourceMappingURL=Header.css.map */
