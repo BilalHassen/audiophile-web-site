@@ -6,8 +6,6 @@ export default function ProductIncludes({ quantity, item, id }) {
 
   useEffect(() => {
     // This effect will run whenever quantity or item changes
-    console.log("Quantity:", quantity);
-    console.log("Item:", item);
   }, [id]); // Include quantity and item in the dependency array
 
   return (
