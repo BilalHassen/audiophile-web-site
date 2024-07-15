@@ -454,14 +454,22 @@
     padding-left: 3.5rem;
   }
 
+  @include tablet-medium {
+    padding-left: 4.5rem;
+  }
+
+  @include tablet-large {
+    padding-left: 6rem;
+  }
+
   @include desktop-small {
-    padding-left: 12rem;
+    padding-left: 15rem;
     padding-top: 8rem;
     padding-bottom: 6rem;
   }
 
   @include desktop-large {
-    padding-left: 18rem;
+    padding-left: 20rem;
     font-size: 2rem;
   }
 }
