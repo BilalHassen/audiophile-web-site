@@ -1,0 +1,97 @@
+@mixin mobile-small {
+  @media (min-width: 320px) {
+    @content;
+  }
+}
+
+@mixin mobile-medium {
+  @media (min-width: 375px) {
+    @content;
+  }
+}
+
+@mixin mobile-large {
+  @media (min-width: 414px) {
+    @content;
+  }
+}
+
+// tablets
+@mixin tablet-small {
+  @media (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin tablet-medium {
+  @media (min-width: 1024px) {
+    @content;
+  }
+}
+
+@mixin tablet-large {
+  @media (min-width: 1280px) {
+    @content;
+  }
+}
+
+//desktop
+@mixin desktop-small {
+  @media (min-width: 1366px) {
+    @content;
+  }
+}
+
+@mixin desktop-medium {
+  @media (min-width: 1440px) {
+    @content;
+  }
+}
+
+@mixin desktop-large {
+  @media (min-width: 1920px) {
+    @content;
+  }
+}
+
+// mobile  text
+@mixin m-h1 {
+  font-size: 3.6rem;
+  line-height: 40px;
+  letter-spacing: 0.129rem;
+}
+
+@mixin m-h2 {
+  font-weight: 2.8rem;
+  letter-spacing: 0.2rem;
+  font-weight: bold;
+}
+
+@mixin p-1 {
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-weight: 500;
+}
+
+@mixin p-1-b {
+  font-size: 1.5rem;
+  line-height: 2.5rem;
+  font-weight: bold;
+}
+
+@mixin button-text {
+  font-size: 1.3rem;
+  letter-spacing: 0.1rem;
+}
+
+@mixin flex-gap($gap: 4rem) {
+  display: flex;
+  flex-direction: column;
+  gap: $gap;
+}
+
+@mixin customButton {
+  width: 168px;
+  height: 4.8rem;
+  /* Additional button styles can be added here */
+}

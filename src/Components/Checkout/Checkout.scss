@@ -1,0 +1,260 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+
+.checkout {
+  padding-top: 2rem;
+  padding-left: 1.6rem;
+  padding-right: 1.6rem;
+  background-color: #f2f2f2;
+  padding-bottom: 8rem;
+
+  @include mobile-medium {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+
+  @include tablet-small {
+    padding-left: 3.5rem;
+    padding-right: 3.5rem;
+  }
+
+  @include tablet-medium {
+    padding-left: 4.5rem;
+    padding-right: 4.5rem;
+  }
+
+  @include tablet-medium {
+    padding-left: 6rem;
+    padding-right: 6rem;
+  }
+
+  @include desktop-small {
+    padding-left: 15rem;
+    padding-right: 15rem;
+    gap: 2rem;
+  }
+
+  @include desktop-large {
+    padding-left: 20rem;
+    padding-right: 20rem;
+  }
+
+  @include desktop-small {
+    &__wrapper {
+      display: flex;
+      gap: 2rem;
+    }
+  }
+
+  &__direction {
+    border: none;
+    color: $grey;
+    background-color: #f2f2f2;
+    font-size: 1.2rem;
+    padding-bottom: 1.6rem;
+    padding-top: 2rem;
+
+    @include tablet-small {
+      font-size: 1.5rem;
+    }
+  }
+
+  &__title {
+    text-transform: uppercase;
+    font-size: 2.8rem;
+    padding-bottom: 3rem;
+  }
+
+  &__form {
+    background-color: #ffffff;
+    border-radius: 4px;
+    padding: 2rem;
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+
+    @include mobile-large {
+      padding-left: 3rem;
+      padding-right: 3rem;
+    }
+
+    @include tablet-medium {
+      padding-left: 4rem;
+      padding-right: 4rem;
+      padding-bottom: 5rem;
+      padding-top: 5rem;
+    }
+
+    @include desktop-small {
+      padding-left: 5rem;
+      padding-right: 5rem;
+      padding-bottom: 6rem;
+      padding-top: 6rem;
+    }
+
+    @include desktop-large {
+      padding-left: 8rem;
+      padding-right: 8rem;
+    }
+  }
+
+  &__billing-details-title,
+  &__shipping-title,
+  &__payment-title {
+    font-size: 1.5rem;
+    color: $orange;
+    text-transform: uppercase;
+    padding-bottom: 1.6rem;
+
+    @include tablet-small {
+      padding-bottom: 1rem;
+    }
+  }
+
+  &__billing-details,
+  &__shipping-info {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    padding-bottom: 2rem;
+  }
+
+  &__billing-details {
+    @include tablet-small {
+      width: 100%;
+      flex-direction: row;
+      flex-wrap: wrap;
+      gap: 2rem;
+    }
+  }
+
+  &__shipping-info {
+    @include tablet-small {
+      flex-direction: row;
+      flex-wrap: wrap;
+      gap: 2rem;
+    }
+  }
+
+  &__number-input {
+    @include tablet-small {
+      width: 48.5%;
+    }
+  }
+
+  &__name-box,
+  &__email-box,
+  &__number-box,
+  &__address-box,
+  &__zip-box,
+  &__city-box,
+  &__country-box,
+  &__e-money-box,
+  &__e-money-pin-box {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    @include tablet-small {
+      flex: 1 1 calc(50% - 1rem);
+    }
+    @include desktop-small {
+      flex: 1 1 calc(50% - 2rem);
+    }
+  }
+
+  &__name,
+  &__email,
+  &__phone-number,
+  &__address,
+  &__zip,
+  &__city,
+  &__country {
+    font-size: 1.2rem;
+  }
+
+  input {
+    font-size: 1.4rem;
+    border-radius: 4px;
+    border: 1px solid $input-color;
+    height: 4rem;
+    padding-left: 1rem;
+
+    &::placeholder {
+      color: $black;
+    }
+  }
+
+  &__payment-method-info {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  &__input-radio {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    border-radius: 4px;
+    border: 1px solid $input-color;
+    padding-left: 1rem;
+  }
+
+  &__e-money-radio,
+  &__cash-radio {
+    margin: 0;
+  }
+
+  &__e-money-input,
+  &__cash-input {
+    flex-grow: 1;
+  }
+
+  &__payment-details {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  &__radio-wrapper {
+    @include tablet-small {
+      display: flex;
+      flex-direction: column;
+      margin-left: auto;
+      width: 49%;
+    }
+  }
+
+  &__payment-method-info {
+    @include tablet-small {
+      display: flex;
+      flex-direction: row;
+    }
+
+    @include tablet-large {
+      gap: 2rem;
+    }
+  }
+
+  &__payment-text {
+    padding-top: 1.6rem;
+    padding-bottom: 1rem;
+    font-size: 1.2rem;
+  }
+
+  &__e-money-input,
+  &__cash-input {
+    font-size: 1.2rem;
+    @include tablet-small {
+      font-size: 1.4rem;
+    }
+  }
+
+  &__error-paragraph {
+    color: red;
+    font-size: 1.2rem;
+  }
+
+  &__direction {
+    padding-bottom: 4rem;
+  }
+}

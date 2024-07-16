@@ -1,0 +1,89 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+
+.midContentHeadphones {
+  border-radius: 4px;
+  height: 100%;
+  padding-top: 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding-bottom: 4rem;
+
+  @include tablet-small {
+    display: flex;
+    flex-direction: row;
+    padding-top: 6rem;
+  }
+
+  &__img-container {
+    background-image: url(../../assets/home/mobile/image-earphones-yx1.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 4px;
+    height: 18rem;
+
+    @include tablet-small {
+      background-image: url(../../assets/home/tablet/image-earphones-yx1.jpg);
+      width: 50%;
+      height: 30rem;
+    }
+
+    @include desktop-large {
+      height: 40rem;
+    }
+  }
+
+  &__text-box {
+    height: 18rem;
+    background-color: #f1f1f1;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+    padding-left: 1.6rem;
+    padding-right: 1.6rem;
+    gap: 2rem;
+    border-radius: 4px;
+
+    @include tablet-small {
+      width: 50%;
+      height: 30rem;
+      padding-left: 5rem;
+    }
+
+    @include desktop-large {
+      height: 40rem;
+    }
+  }
+
+  &__button-txt {
+    @include tablet-small {
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      font-weight: bolder;
+    }
+  }
+
+  &__title {
+    font-size: 2.6rem;
+    text-transform: uppercase;
+  }
+
+  &__button {
+    background-color: transparent;
+    border: 1.5px solid black;
+    @include customButton;
+    transition: background-color 0.3s ease-in-out;
+    cursor: pointer;
+
+    @include tablet-small {
+      height: 5rem;
+    }
+  }
+  &__button:hover {
+    background-color: #000000;
+    color: white;
+  }
+}

@@ -1,0 +1,89 @@
+.midContentHeadphones {
+  border-radius: 4px;
+  height: 100%;
+  padding-top: 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding-bottom: 4rem;
+}
+@media (min-width: 768px) {
+  .midContentHeadphones {
+    display: flex;
+    flex-direction: row;
+    padding-top: 6rem;
+  }
+}
+.midContentHeadphones__img-container {
+  background-image: url(../../assets/home/mobile/image-earphones-yx1.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 4px;
+  height: 18rem;
+}
+@media (min-width: 768px) {
+  .midContentHeadphones__img-container {
+    background-image: url(../../assets/home/tablet/image-earphones-yx1.jpg);
+    width: 50%;
+    height: 30rem;
+  }
+}
+@media (min-width: 1920px) {
+  .midContentHeadphones__img-container {
+    height: 40rem;
+  }
+}
+.midContentHeadphones__text-box {
+  height: 18rem;
+  background-color: #f1f1f1;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
+  padding-left: 1.6rem;
+  padding-right: 1.6rem;
+  gap: 2rem;
+  border-radius: 4px;
+}
+@media (min-width: 768px) {
+  .midContentHeadphones__text-box {
+    width: 50%;
+    height: 30rem;
+    padding-left: 5rem;
+  }
+}
+@media (min-width: 1920px) {
+  .midContentHeadphones__text-box {
+    height: 40rem;
+  }
+}
+@media (min-width: 768px) {
+  .midContentHeadphones__button-txt {
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-weight: bolder;
+  }
+}
+.midContentHeadphones__title {
+  font-size: 2.6rem;
+  text-transform: uppercase;
+}
+.midContentHeadphones__button {
+  background-color: transparent;
+  border: 1.5px solid black;
+  width: 168px;
+  height: 4.8rem;
+  /* Additional button styles can be added here */
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+}
+@media (min-width: 768px) {
+  .midContentHeadphones__button {
+    height: 5rem;
+  }
+}
+.midContentHeadphones__button:hover {
+  background-color: #000000;
+  color: white;
+}/*# sourceMappingURL=MidContentHeadphones.css.map */

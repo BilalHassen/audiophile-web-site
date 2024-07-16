@@ -1,0 +1,102 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+
+.midContentSpeaker {
+  border-radius: 4px;
+  background-image: url(../../assets/home/mobile/image-speaker-zx7.jpg);
+  background-size: 100% 35rem;
+  background-repeat: no-repeat;
+  border-radius: 4px;
+  display: inline-block;
+  max-width: 100%;
+  min-height: 35rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: start;
+  padding-right: 5.5rem;
+
+  @include mobile-medium {
+    padding-right: 6.5rem;
+  }
+
+  @include tablet-small {
+    background-image: url(../../assets/home/tablet/image-speaker-zx7.jpg);
+    align-items: start;
+    padding-left: 8rem;
+  }
+
+  @include tablet-medium {
+    padding-left: 12rem;
+    margin: 0 auto;
+  }
+
+  @include tablet-large {
+    background-size: 100% 40rem;
+    height: 40rem;
+    padding-left: 16rem;
+  }
+
+  @include desktop-small {
+    background-image: url(../../assets/home/desktop/image-speaker-zx7.jpg);
+    align-items: start;
+    padding-left: 8rem;
+    padding-right: 0rem;
+    margin-left: 12rem;
+    margin-right: 12rem;
+    background-size: 100% 45rem;
+    height: 45rem;
+    margin: 0 auto;
+
+    @include desktop-medium {
+      padding-left: 12rem;
+    }
+  }
+
+  &__title {
+    text-transform: uppercase;
+    font-weight: bolder;
+    font-size: 2.8rem;
+
+    @include tablet-medium {
+      font-size: 3.6rem;
+    }
+
+    @include tablet-large {
+      font-size: 3.8rem;
+    }
+
+    @include desktop-small {
+      font-size: 4.6rem;
+    }
+  }
+
+  &__button {
+    background-color: transparent;
+    border: 1.5px solid black;
+    @include customButton;
+    margin-top: 2rem;
+    transition: background-color 0.3s ease-in-out;
+    cursor: pointer;
+
+    @include tablet-small {
+      margin-top: 3rem;
+    }
+  }
+
+  &__button:hover {
+    background-color: #000000;
+    color: white;
+  }
+
+  &__button-txt {
+    text-transform: uppercase;
+    font-size: 1.3rem;
+    letter-spacing: 1px;
+
+    @include tablet-medium {
+      font-size: 1.6rem;
+    }
+  }
+}

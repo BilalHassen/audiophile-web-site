@@ -1,0 +1,185 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+
+.audiophileDescription-wrapper {
+  margin: 0 auto;
+  max-width: 340px;
+
+  @include mobile-medium {
+    padding-left: 2.6rem;
+    padding-right: 2.6rem;
+    max-width: 400px;
+  }
+
+  @include mobile-large {
+    padding: 3rem;
+    max-width: 500px;
+  }
+
+  @include tablet-small {
+    padding-left: 3.5rem;
+    padding-right: 3.5rem;
+    max-width: 800px;
+  }
+
+  @include tablet-medium {
+    padding-left: 4.5rem;
+    padding-right: 4.5rem;
+    max-width: 1100px;
+  }
+
+  @include tablet-large {
+    padding-left: 6rem;
+    padding-right: 6rem;
+    max-width: 1300px;
+  }
+
+  @include desktop-small {
+    padding-left: 15rem;
+    padding-right: 15rem;
+    max-width: 1600px;
+  }
+
+  @include desktop-large {
+    padding-left: 20rem;
+    padding-right: 20rem;
+    max-width: 2000px;
+  }
+}
+
+.audiophileDescription {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 10rem;
+  gap: 2rem;
+
+  @include desktop-small {
+    flex-direction: row-reverse;
+    gap: 8rem;
+    padding-bottom: 18rem;
+    padding-top: 18rem;
+  }
+
+  &__img-container {
+    background-image: url(../../assets/shared/mobile/image-best-gear.jpg);
+    height: 30rem;
+    background-size: cover;
+    border-radius: 4px;
+
+    @include tablet-small {
+      background-image: url(../../assets/shared/tablet/image-best-gear.jpg);
+    }
+
+    @include tablet-medium {
+      height: 40rem;
+    }
+
+    @include tablet-large {
+      height: 50rem;
+    }
+
+    @include desktop-small {
+      background-image: url(../../assets/shared/desktop/image-best-gear.jpg);
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      height: 50rem;
+      border-radius: 4px;
+      width: 50%;
+    }
+  }
+
+  &__title {
+    font-size: 2.8rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    text-align: center;
+    @include tablet-small {
+      padding-left: 5.5rem;
+      padding-right: 5.5rem;
+      padding-top: 4rem;
+      font-size: 4rem;
+    }
+
+    @include desktop-small {
+      text-align: start;
+      padding: 0rem 0rem 2rem 0rem;
+    }
+  }
+
+  &__para {
+    text-align: center;
+    line-height: 2.5rem;
+
+    @include tablet-small {
+      padding-left: 7rem;
+      padding-right: 7rem;
+      padding-top: 2rem;
+    }
+
+    @include tablet-medium {
+      font-size: 2rem;
+      line-height: 3rem;
+      padding-left: 13rem;
+      padding-right: 13rem;
+    }
+
+    @include desktop-small {
+      font-size: 1.5rem;
+      line-height: 2.5rem;
+      padding: 0rem;
+      text-align: start;
+    }
+
+    @include desktop-large {
+      font-size: 2.5rem;
+      line-height: 4rem;
+    }
+  }
+
+  @include desktop-small {
+    &__text-box {
+      width: 50%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+  }
+}
+
+span {
+  color: $orange;
+  font-size: 2.8rem;
+  font-weight: 900;
+
+  @include tablet-small {
+    font-size: 4rem;
+  }
+
+  @include desktop-medium {
+    font-size: 4rem;
+  }
+}
+
+@include mobile-small {
+  br {
+    display: none;
+
+    @include tablet-small {
+      display: block;
+    }
+
+    @include desktop-small {
+      display: none;
+    }
+  }
+}
+
+.audiophileDescription__br-desktop {
+  @include mobile-small {
+    display: none;
+  }
+  @include desktop-small {
+    display: block;
+  }
+}

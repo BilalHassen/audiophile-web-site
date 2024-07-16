@@ -1,0 +1,137 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+
+.summary {
+  padding-left: 1.6rem;
+  padding-right: 1.6rem;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  background-color: $white;
+  margin-top: 4rem;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+
+  @include tablet-small {
+    padding-right: 3.5rem;
+    padding-left: 3.5rem;
+  }
+
+  @include tablet-medium {
+    padding-right: 4.5rem;
+  }
+
+  @include desktop-small {
+    margin-top: 0rem;
+    padding-left: 3rem;
+    padding-right: 3rem;
+    height: fit-content;
+  }
+
+  &__item-container {
+    display: flex;
+    gap: 1.5rem;
+
+    @include mobile-large {
+      gap: 2rem;
+    }
+
+    @include tablet-small {
+      gap: 2rem;
+    }
+  }
+
+  &__name-price-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  &__image-container {
+    width: 6rem;
+    height: 6rem;
+    background-size: cover;
+    border-radius: 4px;
+
+    @include tablet-small {
+      background-position: center;
+      height: 8.5rem;
+      width: 8.5rem;
+    }
+  }
+
+  &__item-price {
+    font-size: 1rem;
+    color: $grey;
+
+    @include tablet-small {
+      font-size: 1.2rem;
+    }
+    @include tablet-medium {
+      font-size: 1.4rem;
+    }
+  }
+
+  &__dynamic-wrapper {
+    display: flex;
+    align-items: center;
+    width: 70%;
+
+    @include mobile-large {
+      gap: 2rem;
+      width: 80%;
+    }
+
+    @include tablet-small {
+      gap: 2rem;
+      width: 100%;
+    }
+  }
+
+  &__item-name {
+    font-size: 1rem;
+    @include tablet-small {
+      font-size: 1.1rem;
+      width: 100%;
+    }
+    @include tablet-medium {
+      font-size: 1.5rem;
+      padding-bottom: 0.5rem;
+    }
+  }
+
+  &__button {
+    background-color: $orange;
+    justify-content: center;
+    border: none;
+    width: 100%;
+    color: white;
+    height: 4rem;
+    display: flex;
+    align-items: center;
+    font-size: 1.3rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+  }
+
+  &__button:hover {
+    background-color: $button-hover;
+  }
+
+  &__item-quantity {
+    font-size: 1.5rem;
+    color: $grey;
+  }
+
+  &__title {
+    text-transform: uppercase;
+    font-size: 1.5rem;
+
+    @include tablet-small {
+      font-size: 1.8rem;
+    }
+  }
+}

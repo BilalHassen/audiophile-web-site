@@ -1,0 +1,488 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+
+.product__card {
+  padding-left: 1.6rem;
+  padding-right: 1.6rem;
+  padding-bottom: 15rem;
+
+  margin: 0 auto;
+  max-width: 340px;
+
+  @include mobile-medium {
+    padding-left: 2.6rem;
+    padding-right: 2.6rem;
+    max-width: 400px;
+  }
+
+  @include mobile-large {
+    padding: 3rem;
+    max-width: 500px;
+  }
+
+  @include tablet-small {
+    padding-left: 3.5rem;
+    padding-right: 3.5rem;
+
+    max-width: 800px;
+  }
+
+  @include tablet-medium {
+    padding-left: 4.5rem;
+    padding-right: 4.5rem;
+    max-width: 1100px;
+  }
+
+  @include tablet-large {
+    padding-left: 6rem;
+    padding-right: 6rem;
+    max-width: 1300px;
+  }
+
+  @include desktop-small {
+    padding-left: 15rem;
+    padding-right: 15rem;
+    max-width: 1600px;
+  }
+
+  @include desktop-large {
+    padding-left: 20rem;
+    padding-right: 20rem;
+    max-width: 2000px;
+  }
+
+  // @include mobile-medium {
+  //   padding-left: 2.5rem;
+  //   padding-right: 2.5rem;
+  // }
+
+  // @include mobile-large {
+  //   padding-left: 3rem;
+  //   padding-right: 3rem;
+  // }
+
+  // @include tablet-small {
+  //   padding-left: 3.5rem;
+  //   padding-right: 3.5rem;
+  // }
+
+  // @include tablet-medium {
+  //   padding-left: 5rem;
+  //   padding-right: 5rem;
+  // }
+
+  // @include tablet-large {
+  //   padding-left: 8rem;
+  //   padding-right: 8rem;
+  // }
+
+  // @include desktop-small {
+  //   padding-left: 12rem;
+  //   padding-right: 12rem;
+  // }
+
+  // @include desktop-large {
+  //   padding-left: 18rem;
+  //   padding-right: 18rem;
+  // }
+}
+
+.product {
+  &__img-container {
+    width: 100%;
+
+    @include tablet-small {
+    }
+  }
+
+  @include tablet-small {
+    &__flex-container {
+      display: flex;
+      gap: 6rem;
+      width: 100%;
+      @include tablet-medium {
+        gap: 8rem;
+      }
+      @include desktop-small {
+        gap: 14rem;
+      }
+    }
+  }
+
+  &__details-wrapper {
+    width: 100%;
+
+    @include tablet-small {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    @include tablet-medium {
+      width: 100%;
+    }
+  }
+
+  &__img {
+    width: 100%;
+    height: 30rem;
+    border-radius: 4px;
+  }
+
+  &__new-product {
+    padding-top: 1.6rem;
+    padding-bottom: 1.6rem;
+    color: $orange;
+    text-transform: uppercase;
+    font-size: 1.4rem;
+    letter-spacing: 1rem;
+
+    @include tablet-small {
+      padding-top: 4rem;
+    }
+
+    @include tablet-large {
+      font-size: 2rem;
+      padding-bottom: 3rem;
+    }
+
+    @include desktop-large {
+      font-size: 3rem;
+    }
+  }
+
+  &__title {
+    padding-bottom: 2rem;
+    font-size: 3rem;
+    text-transform: uppercase;
+
+    @include tablet-small {
+      padding-bottom: 3rem;
+    }
+
+    @include tablet-small {
+      width: 89%;
+    }
+
+    @include tablet-large {
+      width: 80%;
+      font-size: 4rem;
+      line-height: 5rem;
+    }
+
+    @include desktop-large {
+      font-size: 5rem;
+      line-height: 6rem;
+    }
+  }
+
+  &__description {
+    font-size: 1.4rem;
+    color: #808080;
+    padding-bottom: 1.6rem;
+    line-height: 2rem;
+
+    @include tablet-small {
+      padding-bottom: 2.5rem;
+      width: 100%;
+    }
+
+    @include tablet-large {
+      font-size: 1.6rem;
+      width: 89%;
+      line-height: 3rem;
+    }
+
+    @include desktop-large {
+      font-size: 2.4rem;
+      line-height: 3.5rem;
+      width: 98%;
+    }
+  }
+
+  &__price {
+    font-size: 1.29rem;
+    padding-bottom: 2rem;
+
+    @include tablet-small {
+      padding-bottom: 2.5rem;
+      font-size: 1.8rem;
+    }
+
+    @include desktop-large {
+      font-size: 3rem;
+      padding-top: 2rem;
+      padding-bottom: 4rem;
+    }
+  }
+
+  &__controller-container {
+    display: flex;
+    width: 35%;
+  }
+
+  &__add-delete {
+    display: flex;
+    gap: 1.5rem;
+
+    @include tablet-small {
+      width: 70%;
+    }
+  }
+
+  &__button {
+    background-color: $orange;
+    background-color: $orange;
+    border: none;
+    justify-content: center;
+    height: 3.5rem;
+    font-size: 1rem;
+    width: 45%;
+    color: white;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+
+    @include desktop-large {
+      height: 6rem;
+      font-size: 1.4rem;
+    }
+  }
+
+  &__button:hover {
+    background-color: $button-hover;
+  }
+
+  &__delete,
+  &__add {
+    border: none;
+    background-color: $light-grey;
+    width: 100%;
+
+    @include desktop-large {
+      height: 6rem;
+      font-size: 2rem;
+    }
+  }
+
+  &__number {
+    display: flex;
+    align-items: center;
+    background-color: $light-grey;
+    font-size: 1rem;
+
+    @include desktop-large {
+      height: 6rem;
+      font-size: 2rem;
+    }
+  }
+
+  &__features-title {
+    font-size: 2.4rem;
+    margin-top: 8rem;
+    padding-bottom: 4rem;
+    text-transform: uppercase;
+    font-weight: 700;
+
+    @include tablet-small {
+      font-size: 3rem;
+    }
+
+    @include tablet-medium {
+    }
+
+    @include desktop-small {
+      font-size: 3.2rem;
+      margin: 0;
+    }
+
+    @include desktop-small {
+      font-size: 4rem;
+    }
+  }
+
+  &__features-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+    color: $grey;
+
+    @include tablet-large {
+      padding-bottom: 8rem;
+    }
+  }
+
+  &__features {
+    line-height: 2.5rem;
+
+    @include tablet-medium {
+      font-size: 1.8rem;
+      line-height: 3rem;
+    }
+
+    @include desktop-large {
+      font-size: 2rem;
+    }
+  }
+
+  &__quantity-title {
+    padding-top: 7rem;
+    font-size: 2.4rem;
+    text-transform: uppercase;
+    padding-bottom: 2rem;
+    font-weight: 700;
+
+    @include tablet-small {
+      font-size: 3.2rem;
+    }
+
+    @include desktop-small {
+      padding: 0rem;
+    }
+
+    @include desktop-large {
+      font-size: 4rem;
+    }
+  }
+
+  &__includes-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 1.6rem;
+    padding-bottom: 8rem;
+
+    @include desktop-small {
+      padding-bottom: 0rem;
+    }
+  }
+
+  &__includes-container {
+    display: flex;
+    gap: 2rem;
+  }
+
+  &__quantity {
+    color: $orange;
+    font-size: 1.5rem;
+  }
+
+  &__item {
+    font-size: 1.5rem;
+    color: $grey;
+
+    @include tablet-large {
+      font-size: 2rem;
+    }
+  }
+
+  &__includes-container {
+    display: flex;
+    flex-direction: column;
+
+    @include tablet-small {
+      flex-direction: row;
+      gap: 20rem;
+      align-items: baseline;
+    }
+
+    @include desktop-small {
+      flex-direction: column;
+      gap: 0rem;
+    }
+  }
+
+  &__inthebox {
+    display: flex;
+    gap: 2rem;
+  }
+
+  // container to display feature and box items on desktop display
+  @include desktop-small {
+    &__features-flex-container {
+      display: flex;
+      gap: 10rem;
+      align-items: top;
+      margin-top: 16rem;
+      margin-bottom: 8rem;
+
+      @include desktop-large {
+        gap: 18rem;
+      }
+    }
+
+    &__features-wrapper {
+      width: 60%;
+      @include desktop-large {
+        width: 55%;
+      }
+    }
+
+    &__includes-wrapper {
+      padding-bottom: 5rem;
+    }
+
+    &__quantity-title {
+      padding-bottom: 4rem;
+    }
+  }
+}
+
+.product__direction {
+  border: none;
+  font-size: 1.5rem;
+  background-color: white;
+  padding: 1.6rem 2rem 0rem;
+  color: $grey;
+
+  @include mobile-medium {
+    padding-left: 2.5rem;
+  }
+
+  @include mobile-large {
+    padding-left: 3rem;
+  }
+
+  @include tablet-small {
+    padding-top: 4rem;
+    padding-left: 3.5rem;
+  }
+
+  @include tablet-medium {
+    padding-left: 4.5rem;
+  }
+
+  @include tablet-large {
+    padding-left: 6rem;
+  }
+
+  @include desktop-small {
+    padding-left: 15rem;
+    padding-top: 8rem;
+    padding-bottom: 4rem;
+  }
+
+  @include desktop-large {
+    padding-left: 20rem;
+    font-size: 2rem;
+  }
+}
+
+// styling for main product image
+
+.main {
+  @include tablet-small {
+    width: 100%;
+    min-height: 500px;
+  }
+
+  @include tablet-large {
+    min-height: 600px;
+  }
+
+  @include desktop-large {
+    min-height: 700px;
+  }
+}

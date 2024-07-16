@@ -1,0 +1,236 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+
+.footer {
+  background-color: #101010;
+  color: $white;
+  margin-top: 0rem;
+  padding: 1.6rem 1.6rem 2rem 1.6rem;
+  gap: 4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  @include tablet-small {
+    align-items: start;
+  }
+
+  &__wrapper {
+    // padding-left: 1.6rem;
+    // padding-right: 1.6rem;
+    padding-top: 6rem;
+
+    padding-top: 1.6rem;
+    max-width: 340px;
+    margin: 0 auto;
+
+    @include mobile-medium {
+      padding-left: 2.6rem;
+      padding-right: 2.6rem;
+      max-width: 400px;
+    }
+
+    @include mobile-large {
+      padding: 3rem;
+      max-width: 500px;
+    }
+
+    @include tablet-small {
+      padding-left: 3.5rem;
+      padding-right: 3.5rem;
+      max-width: 800px;
+    }
+
+    @include tablet-medium {
+      padding-left: 4.5rem;
+      padding-right: 4.5rem;
+      max-width: 1100px;
+    }
+
+    @include tablet-large {
+      padding-left: 6rem;
+      padding-right: 6rem;
+      max-width: 1300px;
+    }
+
+    @include desktop-small {
+      padding-left: 15rem;
+      padding-right: 15rem;
+      max-width: 1600px;
+    }
+
+    @include desktop-large {
+      padding-left: 20rem;
+      padding-right: 20rem;
+      max-width: 2000px;
+    }
+  }
+
+  &__divider {
+    margin: 0 auto;
+    background-color: $orange;
+    border: none;
+    display: block;
+    position: relative;
+    bottom: 32px;
+    height: 0.4rem;
+    max-width: 100px;
+
+    @include mobile-large {
+      bottom: 46px;
+    }
+
+    @include tablet-small {
+      width: 15%;
+      margin-left: 0rem;
+    }
+
+    @include desktop-small {
+      bottom: 46px;
+    }
+
+    @include desktop-large {
+      bottom: 46px;
+    }
+  }
+
+  &__logo-container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 3rem;
+    padding-bottom: 4rem;
+
+    @include tablet-small {
+      align-items: start;
+    }
+
+    @include desktop-small {
+      display: flex;
+      flex-direction: row;
+      width: 100%;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 4rem;
+    }
+  }
+
+  //   &__logo {
+  //     @include tablet-small {
+  //       height: 3rem;
+  //     }
+  //   }
+
+  &__nav {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    align-items: center;
+
+    @include tablet-small {
+      flex-direction: row;
+      gap: 2rem;
+    }
+  }
+
+  &__nav-item {
+    text-transform: uppercase;
+    font-size: 1.3rem;
+    font-weight: 900;
+    transition: color 0.3s ease-in-out;
+    cursor: pointer;
+
+    @include desktop-small {
+      font-size: 1.6rem;
+    }
+
+    @include desktop-large {
+      font-size: 1.8rem;
+    }
+  }
+
+  &__nav-item:hover {
+    color: $orange;
+  }
+
+  &__info-txt {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 4rem;
+
+    @include tablet-small {
+      align-items: start;
+      gap: 8rem;
+    }
+
+    @include tablet-medium {
+      align-items: start;
+    }
+
+    @include desktop-small {
+      align-items: start;
+      gap: 5rem;
+    }
+  }
+
+  &__para {
+    line-height: 2.5rem;
+    font-size: 1.5rem;
+    text-align: center;
+    color: grey;
+
+    @include tablet-small {
+      text-align: start;
+      width: 100%;
+    }
+
+    @include tablet-medium {
+      text-align: start;
+      width: 64%;
+    }
+
+    @include desktop-small {
+      width: 49.5%;
+    }
+  }
+
+  &__copyright {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+
+    @include tablet-small {
+      flex-direction: row;
+      justify-content: space-between;
+      width: 100%;
+      align-items: center;
+    }
+  }
+
+  &__copyright-text {
+    color: grey;
+  }
+
+  &__icons-container {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+
+    @include desktop-small {
+      position: relative;
+      bottom: 55px;
+    }
+  }
+
+  &__icon:hover {
+    cursor: pointer;
+    filter: (100%);
+  }
+
+  &__icon-twitter {
+    height: 24px;
+    width: 24px;
+    cursor: pointer;
+  }
+}

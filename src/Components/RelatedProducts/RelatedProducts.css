@@ -1,0 +1,123 @@
+.product__related {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+}
+@media (min-width: 768px) {
+  .product__related {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 1rem;
+  }
+}
+@media (min-width: 1024px) {
+  .product__related {
+    gap: 2rem;
+  }
+}
+@media (min-width: 1280px) {
+  .product__related {
+    gap: 3rem;
+  }
+}
+@media (min-width: 768px) {
+  .product__related-card {
+    width: 100%;
+  }
+}
+.product__related-title {
+  text-transform: uppercase;
+  text-align: center;
+  padding-top: 10rem;
+  font-size: 2rem;
+  padding-bottom: 4rem;
+  letter-spacing: 0.1rem;
+}
+@media (min-width: 768px) {
+  .product__related-title {
+    font-size: 3rem;
+  }
+}
+@media (min-width: 1920px) {
+  .product__related-title {
+    font-size: 4rem;
+    padding-bottom: 8rem;
+  }
+}
+.product__related-name {
+  font-size: 2rem;
+  text-align: center;
+  padding-top: 2rem;
+  letter-spacing: 0.2rem;
+}
+@media (min-width: 768px) {
+  .product__related-name {
+    font-size: 2.4rem;
+    padding-top: 4rem;
+    padding-bottom: 0.5rem;
+  }
+}
+@media (min-width: 1024px) {
+  .product__related-name {
+    font-size: 3rem;
+  }
+}
+.product__related-img-container {
+  width: 100%;
+  height: 100px;
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-color: #f1f1f1;
+  border-radius: 4px;
+}
+@media (min-width: 768px) {
+  .product__related-img-container {
+    height: 35rem;
+    background-size: 110%;
+  }
+}
+@media (min-width: 1024px) {
+  .product__related-img-container {
+    height: 45rem;
+  }
+}
+@media (min-width: 1280px) {
+  .product__related-img-container {
+    height: 55rem;
+  }
+}
+@media (min-width: 1366px) {
+  .product__related-img-container {
+    height: 40rem;
+    background-size: 100%;
+  }
+}
+@media (min-width: 1920px) {
+  .product__related-img-container {
+    height: 50rem;
+    background-size: 90%;
+  }
+}
+.product__related-button-container {
+  display: flex;
+  justify-content: center;
+}
+.product__related-button {
+  border: none;
+  background-color: #d87d4a;
+  color: white;
+  width: 168px;
+  height: 4.8rem;
+  /* Additional button styles can be added here */
+  font-size: 1rem;
+  margin-top: 2rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+}
+.product__related-button:hover {
+  background-color: #fbaf85;
+}/*# sourceMappingURL=RelatedProducts.css.map */

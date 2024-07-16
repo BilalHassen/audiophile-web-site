@@ -1,0 +1,84 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+
+.header {
+  background-color: #191919;
+  display: flex;
+  padding-left: 1.6rem;
+  padding-right: 1.6rem;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 99;
+  position: relative;
+
+  @include mobile-medium {
+    padding-left: 2.6rem;
+    padding-right: 2.6rem;
+  }
+
+  @include mobile-large {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+
+  @include tablet-small {
+    padding-left: 3.5rem;
+    padding-right: 3.5rem;
+  }
+
+  @include tablet-medium {
+    padding-left: 4.5rem;
+    padding-right: 4.5rem;
+  }
+  @include tablet-large {
+    padding-left: 6rem;
+    padding-right: 6rem;
+  }
+
+  @include tablet-small {
+    &__tablet-wrapper {
+      display: flex;
+      align-items: center;
+      gap: 3rem;
+    }
+  }
+
+  @include desktop-small {
+    padding-left: 15rem;
+    padding-right: 15rem;
+    padding-bottom: 3rem;
+    padding-top: 3rem;
+  }
+
+  @include desktop-large {
+    padding-left: 20rem;
+    padding-right: 20rem;
+    padding-bottom: 4rem;
+    padding-top: 4rem;
+  }
+
+  &__icon {
+    font-size: 20px;
+    color: white;
+
+    @include desktop-small {
+      display: none;
+    }
+  }
+
+  &__title {
+    color: white;
+    font-size: 2rem;
+    font-weight: 900;
+
+    @include desktop-small {
+      font-size: 3.2rem;
+    }
+  }
+
+  &__cart-icon {
+    font-size: 20px;
+  }
+}
