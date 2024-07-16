@@ -75,7 +75,7 @@
     background-color: transparent;
     border: 1.5px solid black;
     @include customButton;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease-in-out;
     cursor: pointer;
 
     @include tablet-small {

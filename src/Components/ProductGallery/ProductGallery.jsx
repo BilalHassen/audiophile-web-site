@@ -99,7 +99,7 @@ export default function ProductGallery({ imageData, id }) {
       {isMobile ? (
         <div className="container">
           <img
-            className="product__gallery-img large"
+            className=" large"
             src={galleryThird.url_mobile}
             alt="Mobile Image"
           />
@@ -108,7 +108,7 @@ export default function ProductGallery({ imageData, id }) {
       {isTablet ? (
         <div className="container">
           <img
-            className="product__gallery-img large"
+            className="large"
             src={galleryThird.url_tablet}
             alt="Tablet Image"
           />
