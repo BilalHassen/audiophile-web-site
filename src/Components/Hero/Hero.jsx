@@ -17,7 +17,7 @@ export default function Hero() {
             </div>
             <div className="hero__product-description">
               <p className="hero__description-text">
-                Experience natrual, lifelike audio and exceptional build quality
+                Experience natural, lifelike audio and exceptional build quality
                 made for the passionate music enthusiast
               </p>
             </div>
