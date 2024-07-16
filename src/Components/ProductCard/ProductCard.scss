@@ -23,7 +23,7 @@
   @include tablet-small {
     padding-left: 3.5rem;
     padding-right: 3.5rem;
-    padding-top: 12rem;
+
     max-width: 800px;
   }
 
@@ -281,24 +281,22 @@
   }
 
   &__features-title {
-    padding-top: 8rem;
     font-size: 2.4rem;
+    margin-top: 8rem;
+    padding-bottom: 4rem;
     text-transform: uppercase;
-    padding-bottom: 1.6rem;
     font-weight: 700;
 
     @include tablet-small {
-      margin-top: 15rem;
       font-size: 3rem;
     }
 
     @include tablet-medium {
-      margin-top: 10rem;
-      padding-bottom: 4rem;
     }
 
     @include desktop-small {
       font-size: 3.2rem;
+      margin: 0;
     }
 
     @include desktop-small {
@@ -406,7 +404,9 @@
     &__features-flex-container {
       display: flex;
       gap: 10rem;
-      align-items: center;
+      align-items: top;
+      margin-top: 16rem;
+      margin-bottom: 8rem;
 
       @include desktop-large {
         gap: 18rem;
@@ -426,10 +426,6 @@
 
     &__quantity-title {
       padding-bottom: 4rem;
-
-      @include desktop-large {
-        padding-top: 6.5rem;
-      }
     }
   }
 }
@@ -438,7 +434,7 @@
   border: none;
   font-size: 1.5rem;
   background-color: white;
-  padding: 1.6rem 2rem 3rem;
+  padding: 1.6rem 2rem 0rem;
   color: $grey;
 
   @include mobile-medium {
@@ -465,7 +461,7 @@
   @include desktop-small {
     padding-left: 15rem;
     padding-top: 8rem;
-    padding-bottom: 6rem;
+    padding-bottom: 4rem;
   }
 
   @include desktop-large {
