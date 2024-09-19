@@ -116,17 +116,37 @@ export default function Checkout() {
   };
 
   useEffect(() => {
+    // Define an asynchronous function to fetch updated cart data
     const getUpdatedCartData = async () => {
-      let response = await axios.get(
-        `http://localhost:8080/cart/getitems/${cart_id}`
-      );
-      let products_data = response.data;
-      console.log(products_data);
-      setCartData(products_data);
+      try {
+        // Make a GET request to the server to fetch cart items
+        const response = await axios.get(
+          `http://localhost:8080/cart/getitems/${cart_id}`
+        );
+
+        // Check if the response status is 200 (OK)
+        if (response.status === 200) {
+          // Extract data from the response
+          const products_data = response.data;
+          console.log(products_data); // Log the fetched data for debugging
+          // Update the state with the fetched cart data
+          setCartData(products_data);
+        } else {
+          // Log an error if the response status is not OK
+          console.error(
+            "Unexpected response status from getUpdatedCartData:",
+            response
+          );
+        }
+      } catch (error) {
+        // Log any errors encountered during the API call
+        console.error("Error fetching updated cart data:", error.message);
+      }
     };
 
+    // Call the function to fetch the updated cart data
     getUpdatedCartData();
-  }, []);
+  }, []); // The empty dependency array means this effect runs once when the component mounts
 
   function goBack() {
     window.history.back();
