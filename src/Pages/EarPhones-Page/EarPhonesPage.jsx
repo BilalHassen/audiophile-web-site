@@ -14,10 +14,14 @@ export default function EarPhonesPage() {
   const getEarphonesData = async () => {
     try {
       const response = await axios.get(apiURL);
-      const data = response.data;
-      setEarPhonesData(data);
+      if (response.status === 200 && Array.isArray(response.data)) {
+        const data = response.data;
+        setEarPhonesData(data);
+      } else {
+        console.error("Error fetching ear phones data:", error.message);
+      }
     } catch {
-      console.log("error fetching data", error);
+      console.log("Error fetching data", error);
     }
   };
 
