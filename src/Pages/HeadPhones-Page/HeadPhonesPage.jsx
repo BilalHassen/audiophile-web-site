@@ -20,7 +20,7 @@ export default function HeadPhonesPage() {
           console.error("Unexpected response format or status", response);
         }
       } catch (error) {
-        console.error("Error fetching speakers data:", error.message);
+        console.error("Error fetching headphones data:", error.message);
       }
     };
 
