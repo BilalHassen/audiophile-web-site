@@ -17,10 +17,20 @@ export default function ProductPage() {
   const getProductData = async () => {
     try {
       let response = await axios.get(apiUrl);
-      let data = response.data;
-      setProductData([data]);
+      if (
+        response.status === 200 &&
+        typeof response.data === "object" &&
+        !Array.isArray(response.data) &&
+        response.data !== null
+      ) {
+        console.log(response.data);
+        let data = response.data;
+        setProductData([data]);
+      } else {
+        console.error("Unexpected response format or status", response);
+      }
     } catch (error) {
-      console.log(error);
+      console.error("Error fetching cart data:", error.message);
     }
   };
 
