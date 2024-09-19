@@ -136,7 +136,7 @@ export default function ProductCard({
             <h3 className="product__quantity-title">In the box</h3>
             <div className="product__includes-wrapper">
               {includes.map((data, index) => (
-                <div className="product__includes-container">
+                <div className="product__includes-container" key={id}>
                   <ProductIncludes
                     quantity={data.quantity}
                     item={data.item}

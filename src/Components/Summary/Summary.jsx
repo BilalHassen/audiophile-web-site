@@ -81,18 +81,32 @@ export default function Summary({ handleErrorSubmission, orderComplete }) {
     setTotal(formatNumber(totalWithoutShipping));
   }
 
+  // Fetch cart data from the server
   useEffect(() => {
     const getUpdatedCartData = async () => {
-      let response = await axios.get(
-        `http://localhost:8080/cart/getitems/${cart_id}`
-      );
-      let products_data = response.data;
+      try {
+        // Make a GET request to fetch cart items
+        const response = await axios.get(
+          `http://localhost:8080/cart/getitems/${cart_id}`
+        );
 
-      setCartData(products_data);
+        // Check if the response status is OK
+        if (response.status === 200) {
+          const products_data = response.data;
+          setCartData(products_data); // Update state with fetched data
+        } else {
+          console.error(
+            "Unexpected response status from getUpdatedCartData:",
+            response
+          );
+        }
+      } catch (error) {
+        console.error("Error fetching updated cart data:", error.message);
+      }
     };
 
-    getUpdatedCartData();
-  }, []);
+    getUpdatedCartData(); // Call the function to fetch cart data
+  }, [cart_id]);
 
   useEffect(() => {
     const totalNumber = formatTotal();

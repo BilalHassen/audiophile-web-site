@@ -14,10 +14,17 @@ export default function SpeakersPage() {
     const getSpeakersData = async () => {
       try {
         let response = await axios.get(apiURL);
-        let speakersData = response.data;
-        setSpeakersData(speakersData);
+        if (response.status === 200 && Array.isArray(response.data)) {
+          let speakersData = response.data;
+          setSpeakersData(speakersData);
+          // check if server responds but the response does not meet
+          // expected format
+        } else {
+          console.error("Error fetching speakers data:", error.message);
+        }
+        // handle the event where the request itself fails
       } catch (error) {
-        console.log("Error fetching data:", error);
+        console.error("Error fetching data:", error);
       }
     };
 

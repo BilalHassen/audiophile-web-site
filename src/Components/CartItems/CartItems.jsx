@@ -29,6 +29,7 @@ export default function CartItems({
     return localId;
   };
 
+  // Function to update the quantity of an item in the cart
   const updateItemsInCart = async (Quantity) => {
     const productCartData = {
       id: parseInt(id),
@@ -38,10 +39,22 @@ export default function CartItems({
     };
 
     try {
-      let response = await axios.put(cartUrl, productCartData);
-      getUpdatedCartData();
+      // Perform a PUT request to update the item in the cart
+      const response = await axios.put(cartUrl, productCartData);
+
+      // Check if the response status is 200 (OK)
+      if (response.status === 200) {
+        // Call the parent component's function to update cart data
+        getUpdatedCartData();
+      } else {
+        console.error(
+          "Unexpected response status from updateItemsInCart:",
+          response
+        );
+      }
     } catch (error) {
-      console.log("error updating cart:", error);
+      // Log any errors encountered during the API call
+      console.error("Error updating cart:", error.message);
     }
   };
 

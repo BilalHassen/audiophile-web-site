@@ -33,58 +33,78 @@ export default function Cart({ closeModal, handleCartModal }) {
   }, []);
 
   const isCartEmpty = () => {
-    if (cartData.length > 0) {
-      setIsCheckout(true);
-    }
-    if (cartData.length === 0) {
-      setIsCheckout(false);
-    }
+    setIsCheckout(cartData.length > 0);
   };
 
   useEffect(() => {
     isCartEmpty();
   }, [cartData]);
 
-  // get cart data add from the product cards// original cart data
+  // Function to get cart data from the server
   const getCartData = async () => {
-    let response = await axios.get(
-      `http://localhost:8080/cart/getitems/${cart_id}`
-    );
-    let products_data = response.data;
-
-    setCartData(products_data);
-  };
-
-  // this will update the state of the cart data
-  // with any data added within the cart
-  const getUpdatedCartData = async () => {
-    let response = await axios.get(
-      `http://localhost:8080/cart/getitems/${cart_id}`
-    );
-    let products_data = response.data;
-    console.log(products_data);
-    setCartData(products_data);
-  };
-
-  // function to delete all items in cart
-  const deleteAllItems = async () => {
     try {
-      let response = await axios.delete(
-        `http://localhost:8080/cart/deleteitems/${cart_id}`
+      const response = await axios.get(
+        `http://localhost:8080/cart/getitems/${cart_id}`
       );
-      getCartData();
-      return true;
+      if (response.status === 200 && Array.isArray(response.data)) {
+        setCartData(response.data);
+      } else {
+        console.error(
+          "Unexpected response format or status from getCartData:",
+          response
+        );
+      }
     } catch (error) {
-      console.log("failed to delete items in cart", error);
+      console.error("Error fetching cart data:", error.message);
     }
   };
 
+  // Function to update the cart data
+  const getUpdatedCartData = async () => {
+    try {
+      const response = await axios.get(
+        `http://localhost:8080/cart/getitems/${cart_id}`
+      );
+      if (response.status === 200 && Array.isArray(response.data)) {
+        setCartData(response.data);
+      } else {
+        console.error(
+          "Unexpected response format or status from getUpdatedCartData:",
+          response
+        );
+      }
+    } catch (error) {
+      console.error("Error fetching updated cart data:", error.message);
+    }
+  };
+
+  // Function to delete all items in the cart
+  const deleteAllItems = async () => {
+    try {
+      const response = await axios.delete(
+        `http://localhost:8080/cart/deleteitems/${cart_id}`
+      );
+      if (response.status === 200) {
+        await getCartData(); // Refresh cart data after deletion
+        return true;
+      } else {
+        console.error(
+          "Unexpected response format or status from deleteAllItems:",
+          response
+        );
+        return false;
+      }
+    } catch (error) {
+      console.error("Failed to delete items in cart:", error.message);
+      return false;
+    }
+  };
+
+  // Redirect to home if the cart is cleared and the current path is '/checkout'
   const redirect = async () => {
     const clearCart = await deleteAllItems();
 
-    console.log(clearCart);
-    console.log(isCheckout);
-    if (clearCart === true && window.location.pathname === "/checkout") {
+    if (clearCart && window.location.pathname === "/checkout") {
       window.location.href = "/";
     }
   };
@@ -98,14 +118,14 @@ export default function Cart({ closeModal, handleCartModal }) {
     let totalAmount = 0;
     let totalCartItems = 0;
     for (let i = 0; i < cartData.length; i++) {
-      totalCartItems = totalCartItems += cartData[i].quantity;
-      totalAmount = totalAmount += cartData[i].price;
+      totalCartItems += cartData[i].quantity;
+      totalAmount += cartData[i].price;
     }
     setAllItems(totalCartItems);
     setTotal(totalAmount);
   }, [cartData]);
 
-  // function to format the total amoutn with the comma at the correct place
+  // Function to format the total amount with commas
   function formatNumber(number) {
     return new Intl.NumberFormat("en-US", {
       style: "decimal",
@@ -116,7 +136,7 @@ export default function Cart({ closeModal, handleCartModal }) {
 
   return (
     <div className="cart">
-      {/*attach the reference to the element */}
+      {/* Attach the reference to the element */}
       <div className="cart__container" ref={cartRef}>
         <div className="cart__text-container">
           <h3 className="cart__count">cart ({allItems})</h3>
@@ -147,10 +167,7 @@ export default function Cart({ closeModal, handleCartModal }) {
           <div className="cart__items-wrapper">
             {cartData.map((items, index) => (
               <CartItems
-                //function for updating cardData state
                 key={items.product_id}
-                // pass the update cart function down child component will call function
-                // allowing the passed props to be updated
                 getUpdatedCartData={getUpdatedCartData}
                 index={index}
                 cart_id={items.cart_id}
