@@ -10,11 +10,18 @@ export default function HeadPhonesPage() {
 
   useEffect(() => {
     const fetchData = async () => {
-      let response = await axios.get(
-        "http://localhost:8080/products/headphones"
-      );
-
-      setHeadphonesData(response.data);
+      try {
+        let response = await axios.get(
+          "http://localhost:8080/products/headphones"
+        );
+        if (response.status === 200 && Array.isArray(response.data)) {
+          setHeadphonesData(response.data);
+        } else {
+          console.error("Unexpected response format or status", response);
+        }
+      } catch (error) {
+        console.error("Error fetching speakers data:", error.message);
+      }
     };
 
     fetchData();
@@ -28,6 +35,7 @@ export default function HeadPhonesPage() {
         {headphonesData &&
           headphonesData.map((data, index) => (
             <HeadPhonesCard
+              key={data.id}
               newProduct={index === 0 ? "New Product" : null}
               thirdClass={index === 2 ? "break" : null}
               secondClass={index === 1 ? "reverse" : null}
