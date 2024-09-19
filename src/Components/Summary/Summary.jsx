@@ -4,65 +4,51 @@ import SummaryItems from "../SummaryItems/SummaryItems";
 import axios from "axios";
 import OrderComplete from "../OrderComplete/OrderComplete";
 
-export default function Summary({ handleErrorSubmission, orderComplete }) {
-  const [cartData, setCartData] = useState([]);
-  const [screenSize, setScreenSize] = useState(handleImageUrl());
-  const [total, setTotal] = useState(0);
-  const [grandTotal, setGrandTotal] = useState(0);
-  const [shipping, setShipping] = useState(50);
-  const [vat, setVat] = useState(0);
-  const cart_id = localStorage.getItem("cart_id");
+// Function to determine screen size based on window width
+function handleImageUrl() {
+  let width = window.innerWidth;
 
-  function handleImageUrl() {
-    let width = window.innerWidth;
-
-    if (width < 768) {
-      return "mobile";
-    }
-
-    if (width >= 768 && width < 1366) {
-      return "tablet";
-    }
-
-    if (width >= 1366) {
-      return "desktop";
-    }
+  if (width < 768) {
+    return "mobile";
   }
 
+  if (width >= 768 && width < 1366) {
+    return "tablet";
+  }
+
+  return "desktop";
+}
+
+export default function Summary({ handleErrorSubmission, orderComplete }) {
+  // State to hold cart items data
+  const [cartData, setCartData] = useState([]);
+  // State to manage screen size for responsive design
+  const [screenSize, setScreenSize] = useState(handleImageUrl());
+  // State to manage shipping cost
+  const [shipping] = useState(50); // Shipping cost is constant
+  // Cart ID fetched from local storage
+  const cart_id = localStorage.getItem("cart_id");
+
+  // Update screen size state when the window is resized
   const handleScreenSize = () => {
     setScreenSize(handleImageUrl());
   };
 
   useEffect(() => {
-    handleScreenSize();
+    handleScreenSize(); // Initial setting of screen size
 
+    // Event listener for resizing window
     const resize = () => {
       handleScreenSize();
     };
 
     window.addEventListener("resize", resize);
 
+    // Cleanup event listener on component unmount
     return () => window.removeEventListener("resize", resize);
   }, []);
 
-  function formatTotal() {
-    let totalAllItems = 0;
-    let priceExShipping = 0;
-
-    cartData.forEach((item) => {
-      totalAllItems += item.price;
-      priceExShipping += item.price;
-    });
-
-    let vatAmount = 0.2 * priceExShipping;
-    let totalWithShipping = totalAllItems + shipping;
-    let totalWithVat = totalWithShipping + vatAmount;
-
-    setVat(formatNumber(vatAmount.toFixed(2)));
-
-    return { totalWithVat, priceExShipping };
-  }
-
+  // Function to format a number with commas
   function formatNumber(number) {
     return new Intl.NumberFormat("en-US", {
       style: "decimal",
@@ -71,14 +57,29 @@ export default function Summary({ handleErrorSubmission, orderComplete }) {
     }).format(number);
   }
 
-  function totalWithShipping(amountsObject) {
-    let totalWithShipping = amountsObject.totalWithVat;
-    setGrandTotal(formatNumber(totalWithShipping));
-  }
+  // Function to calculate totals based on cart data
+  function calculateTotals() {
+    let totalAllItems = 0;
+    let priceExShipping = 0;
 
-  function formatTotalExShipping(amountsObject) {
-    let totalWithoutShipping = amountsObject.priceExShipping;
-    setTotal(formatNumber(totalWithoutShipping));
+    // Sum up prices of all items in the cart
+    cartData.forEach((item) => {
+      totalAllItems += item.price;
+      priceExShipping += item.price;
+    });
+
+    // Calculate VAT (20% of the price excluding shipping)
+    let vatAmount = 0.2 * priceExShipping;
+    let totalWithShipping = totalAllItems + shipping;
+    let totalWithVat = totalWithShipping + vatAmount;
+
+    // Return formatted totals
+    return {
+      totalWithVat: formatNumber(totalWithVat.toFixed(2)),
+      priceExShipping: formatNumber(priceExShipping.toFixed(2)),
+      vat: formatNumber(vatAmount.toFixed(2)),
+      grandTotal: formatNumber(totalWithVat.toFixed(2)),
+    };
   }
 
   // Fetch cart data from the server
@@ -106,60 +107,55 @@ export default function Summary({ handleErrorSubmission, orderComplete }) {
     };
 
     getUpdatedCartData(); // Call the function to fetch cart data
-  }, [cart_id]);
+  }, [cart_id]); // Effect depends on cart_id
 
-  useEffect(() => {
-    const totalNumber = formatTotal();
-    totalWithShipping(totalNumber);
-    formatTotalExShipping(totalNumber);
-  }, [cartData]);
+  // Calculate totals during rendering
+  const { totalWithVat, priceExShipping, vat, grandTotal } = calculateTotals();
 
   return (
-    <>
-      <div className="summary">
-        <h1 className="summary__title">summary</h1>
-        {cartData.map((items, index) => (
-          <SummaryItems
-            key={items.product_id}
-            index={index}
-            cart_id={items.cart_id}
-            id={items.product_id}
-            item_name={items.item_name}
-            quantity={items.quantity}
-            price={items.price}
-            url_mobile={items.url_mobile}
-            url_tablet={items.url_tablet}
-            url_desktop={items.url_desktop}
-          />
-        ))}
-        <div className="summary__calculations">
-          <div className="summary__total">
-            <p className="summary__total-title">total</p>
-            <p className="summary__total-price">$ {total}</p>
-          </div>
-          <div className="summary__shipping">
-            <p className="summary__shipping-title">shipping</p>
-            <p className="summary__shipping-price">$ {shipping}</p>
-          </div>
-          <div className="summary__vat">
-            <p className="summary__vat-title">{`vat (included)`}</p>
-            <p className="summary__shipping-price">$ {vat}</p>
-          </div>
-          <div className="summary__grand-total">
-            <p className="summary__grand-total-title">grand total</p>
-            <p className="summary__grand-total-price">$ {grandTotal}</p>
-          </div>
+    <div className="summary">
+      <h1 className="summary__title">Summary</h1>
+      {cartData.map((items, index) => (
+        <SummaryItems
+          key={items.product_id}
+          index={index}
+          cart_id={items.cart_id}
+          id={items.product_id}
+          item_name={items.item_name}
+          quantity={items.quantity}
+          price={items.price}
+          url_mobile={items.url_mobile}
+          url_tablet={items.url_tablet}
+          url_desktop={items.url_desktop}
+        />
+      ))}
+      <div className="summary__calculations">
+        <div className="summary__total">
+          <p className="summary__total-title">Total</p>
+          <p className="summary__total-price">$ {priceExShipping}</p>
         </div>
-        <div className="summary__button-container">
-          <button onClick={handleErrorSubmission} className="summary__button">
-            continue & pay
-          </button>
+        <div className="summary__shipping">
+          <p className="summary__shipping-title">Shipping</p>
+          <p className="summary__shipping-price">$ {shipping}</p>
         </div>
-
-        {orderComplete ? (
-          <OrderComplete grandTotal={grandTotal} cartData={cartData} />
-        ) : null}
+        <div className="summary__vat">
+          <p className="summary__vat-title">VAT (included)</p>
+          <p className="summary__vat-price">$ {vat}</p>
+        </div>
+        <div className="summary__grand-total">
+          <p className="summary__grand-total-title">Grand Total</p>
+          <p className="summary__grand-total-price">$ {grandTotal}</p>
+        </div>
       </div>
-    </>
+      <div className="summary__button-container">
+        <button onClick={handleErrorSubmission} className="summary__button">
+          Continue & Pay
+        </button>
+      </div>
+
+      {orderComplete ? (
+        <OrderComplete grandTotal={grandTotal} cartData={cartData} />
+      ) : null}
+    </div>
   );
 }
