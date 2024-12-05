@@ -28,6 +28,7 @@ export default function Summary({ handleErrorSubmission, orderComplete }) {
   const [shipping] = useState(50); // Shipping cost is constant
   // Cart ID fetched from local storage
   const cart_id = localStorage.getItem("cart_id");
+  const baseURL = import.meta.env.VITE_API_BASE_URL;
 
   // Update screen size state when the window is resized
   const handleScreenSize = () => {
@@ -64,8 +65,9 @@ export default function Summary({ handleErrorSubmission, orderComplete }) {
 
     // Sum up prices of all items in the cart
     cartData.forEach((item) => {
-      totalAllItems += item.price;
-      priceExShipping += item.price;
+      console.log(typeof item.price);
+      totalAllItems += parseFloat(item.price);
+      priceExShipping += parseFloat(item.price);
     });
 
     // Calculate VAT (20% of the price excluding shipping)
@@ -87,9 +89,7 @@ export default function Summary({ handleErrorSubmission, orderComplete }) {
     const getUpdatedCartData = async () => {
       try {
         // Make a GET request to fetch cart items
-        const response = await axios.get(
-          `http://localhost:8080/cart/getitems/${cart_id}`
-        );
+        const response = await axios.get(`${baseURL}/cart/getitems/${cart_id}`);
 
         // Check if the response status is OK
         if (response.status === 200) {

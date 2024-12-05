@@ -21,7 +21,7 @@ export default function ProductCard({
   imageData,
   handleRelatedProduct,
 }) {
-  const cartUrl = `http://localhost:8080/cart/additem/${id}`;
+  const baseURL = import.meta.env.VITE_API_BASE_URL;
 
   let featuresSplit = features.split("\n\n");
   let featuresParaOne = featuresSplit[0];
@@ -83,7 +83,7 @@ export default function ProductCard({
       alert("Please Select Item");
       return;
     } else if (quantity >= 1) {
-      axios.post(cartUrl, productCartData);
+      axios.post(`${baseURL}/cart/additem/${id}`, productCartData);
       setQuantity(0);
       alert("item added");
     }

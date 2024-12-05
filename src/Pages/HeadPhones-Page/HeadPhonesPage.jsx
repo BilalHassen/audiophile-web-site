@@ -7,13 +7,11 @@ import "./HeadPhonesPage.scss";
 import { useEffect, useState } from "react";
 export default function HeadPhonesPage() {
   const [headphonesData, setHeadphonesData] = useState();
-
+  const baseURL = import.meta.env.VITE_API_BASE_URL;
   useEffect(() => {
     const fetchData = async () => {
       try {
-        let response = await axios.get(
-          "http://localhost:8080/products/headphones"
-        );
+        let response = await axios.get(`${baseURL}/products/headphones`);
         if (response.status === 200 && Array.isArray(response.data)) {
           setHeadphonesData(response.data);
         } else {

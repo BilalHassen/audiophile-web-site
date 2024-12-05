@@ -7,13 +7,12 @@ import "./EarPhonesPage.scss";
 import axios from "axios";
 import { useEffect, useState } from "react";
 export default function EarPhonesPage() {
-  const apiURL = "http://localhost:8080/products/earphones";
-
+  const baseURL = import.meta.env.VITE_API_BASE_URL;
   const [earphonesData, setEarPhonesData] = useState([]);
 
   const getEarphonesData = async () => {
     try {
-      const response = await axios.get(apiURL);
+      const response = await axios.get(`${baseURL}/products/earphones`);
       if (response.status === 200 && Array.isArray(response.data)) {
         const data = response.data;
         setEarPhonesData(data);

@@ -5,15 +5,16 @@ import { Link } from "react-router-dom";
 import { HashLink } from "react-router-hash-link";
 
 export default function RelatedProducts({ productId, handleRelatedProduct }) {
-  const baseUrl = `http://localhost:8080/products/relatedproducts/${productId}`;
-
+  const baseURL = import.meta.env.VITE_API_BASE_URL;
   const [productData, setProductData] = useState([]);
   const [screenSize, setScreenSize] = useState(handleImageUrl());
 
   useEffect(() => {
     const getRelatedPorductData = async () => {
       try {
-        const productsData = await axios.get(baseUrl);
+        const productsData = await axios.get(
+          `${baseUrl}/products/relatedproducts/${productId}`
+        );
         let relatedProductsData = productsData.data;
         setProductData(relatedProductsData);
       } catch (error) {

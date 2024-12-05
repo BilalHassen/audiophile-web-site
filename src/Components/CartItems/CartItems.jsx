@@ -19,7 +19,7 @@ export default function CartItems({
   const [itemQuantity, setItemQuantity] = useState(quantity);
 
   // url for adding item to cart
-  const cartUrl = `http://localhost:8080/cart/updateitem/${id}`;
+  const baseURL = import.meta.env.VITE_API_BASE_URL;
 
   const CART_KEY = "cart_id";
   let localId = "";
@@ -40,7 +40,10 @@ export default function CartItems({
 
     try {
       // Perform a PUT request to update the item in the cart
-      const response = await axios.put(cartUrl, productCartData);
+      const response = await axios.put(
+        `${baseURL}/cart/updateitem/${id}`,
+        productCartData
+      );
 
       // Check if the response status is 200 (OK)
       if (response.status === 200) {

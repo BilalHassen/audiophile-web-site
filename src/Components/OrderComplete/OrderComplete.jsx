@@ -8,7 +8,7 @@ export default function OrderComplete({ cartData, grandTotal }) {
   const [quantity, setQuantity] = useState(0);
   const [items, setItems] = useState("");
   const cart_id = localStorage.getItem("cart_id");
-
+  const baseURL = import.meta.env.VITE_API_BASE_URL;
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -24,7 +24,7 @@ export default function OrderComplete({ cartData, grandTotal }) {
   const deleteAllItems = async () => {
     try {
       let response = await axios.delete(
-        `http://localhost:8080/cart/deleteitems/${cart_id}`
+        `${baseURL}/cart/deleteitems/${cart_id}`
       );
     } catch (error) {
       console.log("failed to delete items in cart", error);

@@ -14,6 +14,8 @@ export default function Cart({ closeModal, handleCartModal }) {
   const cart_id = localStorage.getItem("cart_id");
   const [isCheckout, setIsCheckout] = useState(true);
 
+  const baseURL = import.meta.env.VITE_API_BASE_URL;
+
   // create a reference to the cart__container element
   const cartRef = useRef(null);
 
@@ -43,9 +45,7 @@ export default function Cart({ closeModal, handleCartModal }) {
   // Function to get cart data from the server
   const getCartData = async () => {
     try {
-      const response = await axios.get(
-        `http://localhost:8080/cart/getitems/${cart_id}`
-      );
+      const response = await axios.get(`${baseURL}/cart/getitems/${cart_id}`);
       if (response.status === 200 && Array.isArray(response.data)) {
         setCartData(response.data);
       } else {
@@ -62,9 +62,7 @@ export default function Cart({ closeModal, handleCartModal }) {
   // Function to update the cart data
   const getUpdatedCartData = async () => {
     try {
-      const response = await axios.get(
-        `http://localhost:8080/cart/getitems/${cart_id}`
-      );
+      const response = await axios.get(`${baseURL}/cart/getitems/${cart_id}`);
       if (response.status === 200 && Array.isArray(response.data)) {
         setCartData(response.data);
       } else {
@@ -82,7 +80,7 @@ export default function Cart({ closeModal, handleCartModal }) {
   const deleteAllItems = async () => {
     try {
       const response = await axios.delete(
-        `http://localhost:8080/cart/deleteitems/${cart_id}`
+        `${baseURL}/cart/deleteitems/${cart_id}`
       );
       if (response.status === 200) {
         await getCartData(); // Refresh cart data after deletion

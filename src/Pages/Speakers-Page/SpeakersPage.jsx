@@ -8,12 +8,12 @@ import SpeakersCard from "../../Components/SpeakersCard/SpeakersCard";
 export default function SpeakersPage() {
   const [speakersData, setSpeakersData] = useState([]);
 
-  const apiURL = "http://localhost:8080/products/speakers";
+  const baseURL = import.meta.env.VITE_API_BASE_URL;
 
   useEffect(() => {
     const getSpeakersData = async () => {
       try {
-        let response = await axios.get(apiURL);
+        let response = await axios.get(`${baseURL}/products/speakers`);
         if (response.status === 200 && Array.isArray(response.data)) {
           let speakersData = response.data;
           setSpeakersData(speakersData);

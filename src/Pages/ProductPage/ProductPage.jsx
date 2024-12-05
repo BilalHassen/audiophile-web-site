@@ -12,11 +12,11 @@ export default function ProductPage() {
 
   const { id } = useParams();
 
-  const apiUrl = `http://localhost:8080/products/${id}`;
+  const baseURL = import.meta.env.VITE_API_BASE_URL;
 
   const getProductData = async () => {
     try {
-      let response = await axios.get(apiUrl);
+      let response = await axios.get(`${baseURL}/products/${id}`);
       if (
         response.status === 200 &&
         typeof response.data === "object" &&

@@ -12,7 +12,7 @@ export default function Checkout() {
   const [errors, setErrors] = useState({});
   // state for successful checkout
   const [orderComplete, setOrderComplete] = useState(false);
-
+  const baseURL = import.meta.env.VITE_API_BASE_URL;
   // state for form inputs
   const [values, setValues] = useState({
     name: "",
@@ -120,9 +120,7 @@ export default function Checkout() {
     const getUpdatedCartData = async () => {
       try {
         // Make a GET request to the server to fetch cart items
-        const response = await axios.get(
-          `http://localhost:8080/cart/getitems/${cart_id}`
-        );
+        const response = await axios.get(`${baseURL}/cart/getitems/${cart_id}`);
 
         // Check if the response status is 200 (OK)
         if (response.status === 200) {
