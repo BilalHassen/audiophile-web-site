@@ -41,7 +41,7 @@ export default function CartItems({
     try {
       // Perform a PUT request to update the item in the cart
       const response = await axios.put(
-        `${baseURL}/cart/updateitem/${id}`,
+        `${baseURL}/cart/${id}/item`,
         productCartData
       );
 

@@ -45,7 +45,7 @@ export default function Cart({ closeModal, handleCartModal }) {
   // Function to get cart data from the server
   const getCartData = async () => {
     try {
-      const response = await axios.get(`${baseURL}/cart/getitems/${cart_id}`);
+      const response = await axios.get(`${baseURL}/cart/${cart_id}/items`);
       if (response.status === 200 && Array.isArray(response.data)) {
         setCartData(response.data);
       } else {
@@ -62,7 +62,7 @@ export default function Cart({ closeModal, handleCartModal }) {
   // Function to update the cart data
   const getUpdatedCartData = async () => {
     try {
-      const response = await axios.get(`${baseURL}/cart/getitems/${cart_id}`);
+      const response = await axios.get(`${baseURL}/cart/${cart_id}/items`);
       if (response.status === 200 && Array.isArray(response.data)) {
         setCartData(response.data);
       } else {
@@ -79,9 +79,7 @@ export default function Cart({ closeModal, handleCartModal }) {
   // Function to delete all items in the cart
   const deleteAllItems = async () => {
     try {
-      const response = await axios.delete(
-        `${baseURL}/cart/deleteitems/${cart_id}`
-      );
+      const response = await axios.delete(`${baseURL}/cart/${cart_id}/items`);
       if (response.status === 200) {
         await getCartData(); // Refresh cart data after deletion
         return true;

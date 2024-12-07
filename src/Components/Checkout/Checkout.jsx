@@ -120,7 +120,7 @@ export default function Checkout() {
     const getUpdatedCartData = async () => {
       try {
         // Make a GET request to the server to fetch cart items
-        const response = await axios.get(`${baseURL}/cart/getitems/${cart_id}`);
+        const response = await axios.get(`${baseURL}/cart/${cart_id}/items`);
 
         // Check if the response status is 200 (OK)
         if (response.status === 200) {
